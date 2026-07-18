@@ -67,9 +67,19 @@ document.addEventListener("DOMContentLoaded", async () => {
     `;
 
     await loadComponent(
-        "#navbar-component",
-        "components/navbar.html"
-    );
+    "#navbar-component",
+    "components/navbar.html"
+);
+
+/* ==========================================================
+   INITIALIZE NAVBAR
+========================================================== */
+
+if (typeof initializeNavbar === "function") {
+
+    initializeNavbar();
+
+}
 
     await loadComponent(
         "#hero-component",
