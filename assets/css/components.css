@@ -196,3 +196,227 @@
     }
 
 }
+/* ==========================================================
+   HERO SECTION
+========================================================== */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    background:linear-gradient(
+        rgba(0,0,0,.60),
+        rgba(0,0,0,.60)
+    ),
+    url("../images/hero/hero.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+}
+
+
+/* ==========================================================
+   HERO CONTENT
+========================================================== */
+
+.hero-content{
+
+    max-width:700px;
+
+    color:#ffffff;
+
+}
+
+
+/* ==========================================================
+   HERO SUBTITLE
+========================================================== */
+
+.hero-subtitle{
+
+    display:inline-block;
+
+    margin-bottom:20px;
+
+    padding:8px 20px;
+
+    background:#D71920;
+
+    color:#ffffff;
+
+    border-radius:50px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+}
+
+
+/* ==========================================================
+   HERO TITLE
+========================================================== */
+
+.hero-title{
+
+    font-size:64px;
+
+    font-weight:700;
+
+    line-height:1.15;
+
+    margin-bottom:25px;
+
+}
+
+
+/* ==========================================================
+   HERO DESCRIPTION
+========================================================== */
+
+.hero-description{
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    margin-bottom:40px;
+
+    color:#f5f5f5;
+
+}
+
+
+/* ==========================================================
+   HERO BUTTONS
+========================================================== */
+
+.hero-buttons{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+
+/* ==========================================================
+   OUTLINE BUTTON
+========================================================== */
+
+.btn-outline{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:12px 30px;
+
+    border:2px solid #ffffff;
+
+    color:#ffffff;
+
+    text-decoration:none;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:.30s;
+
+}
+
+.btn-outline:hover{
+
+    background:#ffffff;
+
+    color:#D71920;
+
+}
+
+
+/* ==========================================================
+   HERO RESPONSIVE
+========================================================== */
+
+@media(max-width:991px){
+
+    .hero{
+
+        text-align:center;
+
+    }
+
+    .hero-content{
+
+        margin:auto;
+
+    }
+
+    .hero-buttons{
+
+        justify-content:center;
+
+    }
+
+    .hero-title{
+
+        font-size:48px;
+
+    }
+
+}
+
+@media(max-width:576px){
+
+    .hero{
+
+        min-height:85vh;
+
+    }
+
+    .hero-title{
+
+        font-size:36px;
+
+    }
+
+    .hero-description{
+
+        font-size:16px;
+
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+        width:100%;
+
+    }
+
+    .hero-buttons a{
+
+        width:100%;
+
+    }
+
+}
