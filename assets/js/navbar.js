@@ -1,44 +1,39 @@
 /* ==========================================================
    PAPPRITO WEB V2
    NAVBAR MODULE
-   File : assets/js/components/navbar.js
-   Version : 0.0.1
-   Description : Mobile Navigation Functions
+   File : assets/js/navbar.js
+   Version : 1.1.6
+   Description : Navbar Initialization
 ========================================================== */
-
 
 /* ==========================================================
-   SELECT ELEMENTS
+   INITIALIZE NAVBAR
 ========================================================== */
 
-const menuToggle = document.querySelector(".menu-toggle");
+function initializeNavbar() {
 
-const navMenu = document.querySelector(".nav-menu");
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector(".nav-menu");
+    const navLinks = document.querySelectorAll(".nav-menu a");
 
-const navLinks = document.querySelectorAll(".nav-menu a");
+    if (!menuToggle || !navMenu) {
+        return;
+    }
 
+    menuToggle.addEventListener("click", () => {
 
-/* ==========================================================
-   OPEN / CLOSE MENU
-========================================================== */
-
-menuToggle.addEventListener("click", () => {
-
-    navMenu.classList.toggle("active");
-
-});
-
-
-/* ==========================================================
-   AUTO CLOSE MENU
-========================================================== */
-
-navLinks.forEach(link => {
-
-    link.addEventListener("click", () => {
-
-        navMenu.classList.remove("active");
+        navMenu.classList.toggle("active");
 
     });
 
-});
+    navLinks.forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            navMenu.classList.remove("active");
+
+        });
+
+    });
+
+}
