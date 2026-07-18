@@ -1,1 +1,127 @@
+/* ==========================================================
+   PAPPRITO WEB V2
+   NAVBAR
+   File : assets/css/components/navbar.css
+   Version : 0.0.1
+   Description : Website Navigation
+========================================================== */
 
+.header{
+
+    position:sticky;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    background:#ffffff;
+
+    box-shadow:var(--shadow-sm);
+
+    z-index:var(--z-navbar);
+
+}
+
+.navbar{
+
+    height:80px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+.logo img{
+
+    height:55px;
+
+    width:auto;
+
+}
+
+.nav-menu{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:35px;
+
+}
+
+.nav-menu a{
+
+    font-weight:600;
+
+    color:var(--gray-800);
+
+    transition:var(--transition);
+
+}
+
+.nav-menu a:hover{
+
+    color:var(--primary);
+
+}
+
+.btn-order{
+
+    padding:12px 24px;
+
+    background:var(--primary);
+
+    color:#ffffff;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.btn-order:hover{
+
+    background:var(--primary-dark);
+
+}
+
+.menu-toggle{
+
+    display:none;
+
+    font-size:28px;
+
+}
+
+/* ================================
+   TABLET & MOBILE
+================================ */
+
+@media(max-width:992px){
+
+    .nav-menu{
+
+        display:none;
+
+    }
+
+    .btn-order{
+
+        display:none;
+
+    }
+
+    .menu-toggle{
+
+        display:block;
+
+    }
+
+}
