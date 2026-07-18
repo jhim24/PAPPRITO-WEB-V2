@@ -1,14 +1,18 @@
 /* ==========================================================
    PAPPRITO WEB V2
-   NAVBAR
-   File : assets/css/components/navbar.css
-   Version : 0.0.1
-   Description : Website Navigation
+   Version : 1.0.3
+   File : assets/css/components.css
+   Description : Components Styles
+========================================================== */
+
+
+/* ==========================================================
+   HEADER
 ========================================================== */
 
 .header{
 
-    position:sticky;
+    position:fixed;
 
     top:0;
 
@@ -16,13 +20,18 @@
 
     width:100%;
 
+    z-index:1000;
+
     background:#ffffff;
 
-    box-shadow:var(--shadow-sm);
-
-    z-index:var(--z-navbar);
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
 
 }
+
+
+/* ==========================================================
+   NAVBAR
+========================================================== */
 
 .navbar{
 
@@ -36,6 +45,21 @@
 
 }
 
+
+/* ==========================================================
+   LOGO
+========================================================== */
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    text-decoration:none;
+
+}
+
 .logo img{
 
     height:55px;
@@ -43,6 +67,11 @@
     width:auto;
 
 }
+
+
+/* ==========================================================
+   MENU
+========================================================== */
 
 .nav-menu{
 
@@ -52,67 +81,109 @@
 
     gap:35px;
 
+    list-style:none;
+
+}
+
+.nav-menu li{
+
+    list-style:none;
+
 }
 
 .nav-menu a{
 
+    text-decoration:none;
+
+    color:#222;
+
     font-weight:600;
 
-    color:var(--gray-800);
+    font-size:15px;
 
-    transition:var(--transition);
+    transition:.30s;
 
 }
 
 .nav-menu a:hover{
 
-    color:var(--primary);
+    color:#D71920;
 
 }
 
-.btn-order{
 
-    padding:12px 24px;
+/* ==========================================================
+   RIGHT SIDE
+========================================================== */
 
-    background:var(--primary);
+.nav-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+
+/* ==========================================================
+   BUTTON
+========================================================== */
+
+.btn-primary{
+
+    background:#D71920;
 
     color:#ffffff;
 
+    padding:12px 28px;
+
     border-radius:50px;
+
+    text-decoration:none;
 
     font-weight:600;
 
-    transition:var(--transition);
+    transition:.30s;
 
 }
 
-.btn-order:hover{
+.btn-primary:hover{
 
-    background:var(--primary-dark);
+    background:#b51419;
 
 }
+
+
+/* ==========================================================
+   MOBILE BUTTON
+========================================================== */
 
 .menu-toggle{
 
     display:none;
 
-    font-size:28px;
+    background:none;
+
+    border:none;
+
+    cursor:pointer;
+
+    font-size:26px;
+
+    color:#222;
 
 }
 
-/* ================================
-   TABLET & MOBILE
-================================ */
 
-@media(max-width:992px){
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media(max-width:991px){
 
     .nav-menu{
-
-        display:none;
-
-    }
-
-    .btn-order{
 
         display:none;
 
@@ -121,57 +192,6 @@
     .menu-toggle{
 
         display:block;
-
-    }
-
-}
-/* ==========================================================
-   MOBILE MENU
-========================================================== */
-
-@media(max-width:992px){
-
-    .nav-menu{
-
-        position:fixed;
-
-        top:80px;
-
-        left:-100%;
-
-        width:100%;
-
-        height:calc(100vh - 80px);
-
-        background:#ffffff;
-
-        display:flex;
-
-        flex-direction:column;
-
-        justify-content:flex-start;
-
-        align-items:center;
-
-        gap:30px;
-
-        padding-top:50px;
-
-        transition:.35s ease;
-
-        box-shadow:var(--shadow-md);
-
-    }
-
-    .nav-menu.active{
-
-        left:0;
-
-    }
-
-    .nav-menu a{
-
-        font-size:1.1rem;
 
     }
 
