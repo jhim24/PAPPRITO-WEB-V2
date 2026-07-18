@@ -112,8 +112,7 @@ await loadComponent(
     "#gallery-component",
     "components/gallery.html"
 );
-});
-/* ==========================================================
+   /* ==========================================================
    LOAD BRANCHES
 ========================================================== */
 
@@ -121,3 +120,4 @@ await loadComponent(
     "#branches-component",
     "components/branches.html"
 );
+});
