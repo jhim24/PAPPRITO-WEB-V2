@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const app = document.getElementById("app");
 
-   app.innerHTML = `
+  app.innerHTML = `
 
     <!-- ==========================================
          NAVBAR
@@ -71,14 +71,24 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     <div id="hero-component"></div>
 
+    <!-- ==========================================
+         ABOUT
+    =========================================== -->
+
+    <div id="about-component"></div>
+
 `;
   /* ==========================================================
    LOAD HERO
 ========================================================== */
 
+/* ==========================================================
+   LOAD ABOUT
+========================================================== */
+
 await loadComponent(
-    "#hero-component",
-    "components/hero.html"
+    "#about-component",
+    "components/about.html"
 );
 
 });
