@@ -98,3 +98,11 @@ await loadComponent(
 );
 
 });
+/* ==========================================================
+   LOAD FEATURED MENU
+========================================================== */
+
+await loadComponent(
+    "#featured-menu-component",
+    "components/featured-menu.html"
+);
