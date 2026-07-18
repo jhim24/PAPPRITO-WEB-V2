@@ -68,6 +68,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 ========================================== -->
 
 <div id="gallery-component"></div>
+<!-- ==========================================
+     BRANCHES
+========================================== -->
+
+<div id="branches-component"></div>
     `;
 
     await loadComponent(
@@ -108,3 +113,11 @@ await loadComponent(
     "components/gallery.html"
 );
 });
+/* ==========================================================
+   LOAD BRANCHES
+========================================================== */
+
+await loadComponent(
+    "#branches-component",
+    "components/branches.html"
+);
