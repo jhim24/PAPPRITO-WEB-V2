@@ -57,15 +57,28 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const app = document.getElementById("app");
 
-    app.innerHTML = `
+   app.innerHTML = `
 
-        <div id="navbar-component"></div>
+    <!-- ==========================================
+         NAVBAR
+    =========================================== -->
 
-    `;
+    <div id="navbar-component"></div>
 
-    await loadComponent(
-        "#navbar-component",
-        "components/navbar.html"
-    );
+    <!-- ==========================================
+         HERO
+    =========================================== -->
+
+    <div id="hero-component"></div>
+
+`;
+  /* ==========================================================
+   LOAD HERO
+========================================================== */
+
+await loadComponent(
+    "#hero-component",
+    "components/hero.html"
+);
 
 });
