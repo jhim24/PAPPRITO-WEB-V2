@@ -3,8 +3,8 @@
 <!-- ==========================================================
      PAPPRITO WEB V2
      File : index.html
-     Version : 0.0.1
-     Description : Homepage Base Structure
+     Version : 1.0.0
+     Description : Homepage
 ========================================================== -->
 
 <html lang="en">
@@ -12,7 +12,7 @@
 <head>
 
     <!-- ==========================================================
-         META TAGS
+         CHARACTER SET
     ========================================================== -->
 
     <meta charset="UTF-8">
@@ -25,25 +25,35 @@
         http-equiv="X-UA-Compatible"
         content="IE=edge">
 
+    <!-- ==========================================================
+         SEO
+    ========================================================== -->
+
+    <title>PAPPRITO Restaurant</title>
+
     <meta
         name="description"
         content="PAPPRITO Restaurant Official Website">
 
     <meta
         name="keywords"
-        content="Papprito, Restaurant, Filipino Food, Tagaytay">
+        content="Papprito, Restaurant, Filipino Food">
 
     <meta
         name="author"
-        content="PAPPRITO WEB V2">
-
+        content="PAPPRITO">
 
     <!-- ==========================================================
-         WEBSITE TITLE
+         PWA
     ========================================================== -->
 
-    <title>PAPPRITO Restaurant</title>
+    <link
+        rel="manifest"
+        href="manifest.json">
 
+    <meta
+        name="theme-color"
+        content="#D71920">
 
     <!-- ==========================================================
          FAVICON
@@ -51,27 +61,22 @@
 
     <link
         rel="icon"
-        type="image/png"
         href="assets/images/logo/favicon.png">
-
 
     <!-- ==========================================================
          GOOGLE FONT
     ========================================================== -->
 
-    <link
-        rel="preconnect"
+    <link rel="preconnect"
         href="https://fonts.googleapis.com">
 
-    <link
-        rel="preconnect"
+    <link rel="preconnect"
         href="https://fonts.gstatic.com"
         crossorigin>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-
 
     <!-- ==========================================================
          FONT AWESOME
@@ -81,61 +86,42 @@
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-
     <!-- ==========================================================
          CSS FILES
     ========================================================== -->
 
-    <link
-        rel="stylesheet"
-        href="assets/css/global/reset.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
 
-    <link
-        rel="stylesheet"
-        href="assets/css/global/variables.css">
+    <link rel="stylesheet" href="assets/css/variables.css">
 
-    <link
-        rel="stylesheet"
-        href="assets/css/global/typography.css">
+    <link rel="stylesheet" href="assets/css/typography.css">
 
-    <link
-        rel="stylesheet"
-        href="assets/css/global/responsive.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
 
-    <link
-        rel="stylesheet"
-        href="assets/css/components/navbar.css">
+    <link rel="stylesheet" href="assets/css/components.css">
 
-    <link
-        rel="stylesheet"
-        href="assets/css/components/footer.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
-    <link
-        rel="stylesheet"
-        href="assets/css/components/buttons.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
 
-    <link
-        rel="stylesheet"
-        href="assets/css/pages/home.css">
+    <link rel="stylesheet" href="assets/css/utilities.css">
+
+    <link rel="stylesheet" href="assets/css/responsive.css">
 
 </head>
 
 <body>
 
-    <!-- ==========================================================
-         LOADING SCREEN
-    ========================================================== -->
+<!-- ==========================================================
+     LOADING SCREEN
+========================================================== -->
 
+<div id="loader">
 
+</div>
 
-    <!-- ==========================================================
-         HEADER
-    ========================================================== -->
-
-
-
-    <!-- ==========================================================
-     NAVIGATION
+<!-- ==========================================================
+     HEADER
 ========================================================== -->
 
 <header class="header">
@@ -144,57 +130,72 @@
 
         <nav class="navbar">
 
-            <!-- ==========================
+            <!-- ===============================
                  LOGO
-            =========================== -->
+            ================================ -->
 
             <a href="index.html" class="logo">
 
                 <img
                     src="assets/images/logo/logo.png"
-                    alt="PAPPRITO Logo">
+                    alt="PAPPRITO">
 
             </a>
 
-            <!-- ==========================
+            <!-- ===============================
                  DESKTOP MENU
-            =========================== -->
+            ================================ -->
 
             <ul class="nav-menu">
 
-                <li><a href="#home">Home</a></li>
+                <li>
+                    <a href="#home">Home</a>
+                </li>
 
-                <li><a href="#menu">Menu</a></li>
+                <li>
+                    <a href="#menu">Menu</a>
+                </li>
 
-                <li><a href="#about">About</a></li>
+                <li>
+                    <a href="#about">About</a>
+                </li>
 
-                <li><a href="#gallery">Gallery</a></li>
+                <li>
+                    <a href="#gallery">Gallery</a>
+                </li>
 
-                <li><a href="#branches">Branches</a></li>
+                <li>
+                    <a href="#branches">Branches</a>
+                </li>
 
-                <li><a href="#reservation">Reservation</a></li>
+                <li>
+                    <a href="#reservation">Reservation</a>
+                </li>
 
-                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
 
             </ul>
 
-            <!-- ==========================
+            <!-- ===============================
                  ACTION BUTTON
-            =========================== -->
+            ================================ -->
 
-            <a href="#reservation" class="btn-order">
+            <a
+                href="#reservation"
+                class="btn-primary">
 
                 Order Now
 
             </a>
 
-            <!-- ==========================
-                 MOBILE MENU BUTTON
-            =========================== -->
+            <!-- ===============================
+                 MOBILE MENU
+            ================================ -->
 
             <button
-                class="menu-toggle"
-                aria-label="Open Menu">
+                class="menu-toggle">
 
                 <i class="fa-solid fa-bars"></i>
 
@@ -206,112 +207,8 @@
 
 </header>
 
+<!-- ==========================================================
+     HOME START
+========================================================== -->
 
-
-    <!-- ==========================================================
-         HERO SECTION
-    ========================================================== -->
-
-
-
-    <!-- ==========================================================
-         FEATURED CATEGORIES
-    ========================================================== -->
-
-
-
-    <!-- ==========================================================
-         BEST SELLERS
-    ========================================================== -->
-
-
-
-    <!-- ==========================================================
-         FEATURED MENU
-    ========================================================== -->
-
-
-
-    <!-- ==========================================================
-         ABOUT
-    ========================================================== -->
-
-
-
-    <!-- ==========================================================
-         WHY CHOOSE US
-    ========================================================== -->
-
-
-
-    <!-- ==========================================================
-         PROMOTIONS
-    ========================================================== -->
-
-
-
-    <!-- ==========================================================
-         GALLERY
-    ========================================================== -->
-
-
-
-    <!-- ==========================================================
-         BRANCHES
-    ========================================================== -->
-
-
-
-    <!-- ==========================================================
-         TESTIMONIALS
-    ========================================================== -->
-
-
-
-    <!-- ==========================================================
-         RESERVATION
-    ========================================================== -->
-
-
-
-    <!-- ==========================================================
-         NEWSLETTER
-    ========================================================== -->
-
-
-
-    <!-- ==========================================================
-         CONTACT
-    ========================================================== -->
-
-
-
-    <!-- ==========================================================
-         FOOTER
-    ========================================================== -->
-
-
-
-    <!-- ==========================================================
-         JAVASCRIPT FILES
-    ========================================================== -->
-
-    <script src="assets/js/global/config.js"></script>
-
-    <script src="assets/js/global/helpers.js"></script>
-
-    <script src="assets/js/global/app.js"></script>
-
-    <script src="assets/js/components/navbar.js"></script>
-
-    <script src="assets/js/components/loader.js"></script>
-
-    <script src="assets/js/components/slider.js"></script>
-
-    <script src="assets/js/components/animation.js"></script>
-
-    <script src="assets/js/pages/home.js"></script>
-
-</body>
-
-</html>
+<main id="home">
