@@ -1,6 +1,6 @@
 /* ==========================================================
    PAPPRITO WEB V2
-   Version : 1.0.2
+   Version : 1.1.3
    File : assets/js/app.js
    Description : Component Loader
 ========================================================== */
@@ -35,13 +35,10 @@ async function loadComponent(selector, file) {
         element.innerHTML = `
             <div style="
                 padding:20px;
-                color:#fff;
                 background:#D71920;
-                text-align:center;
-                font-weight:bold;">
-                Failed to load:
-                <br>
-                ${file}
+                color:#fff;
+                text-align:center;">
+                Failed to load ${file}
             </div>
         `;
 
@@ -57,52 +54,36 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const app = document.getElementById("app");
 
- app.innerHTML = `
+    app.innerHTML = `
 
-    <!-- ==========================================
-         NAVBAR
-    =========================================== -->
+        <div id="navbar-component"></div>
 
-    <div id="navbar-component"></div>
+        <div id="hero-component"></div>
 
-    <!-- ==========================================
-         HERO
-    =========================================== -->
+        <div id="about-component"></div>
 
-    <div id="hero-component"></div>
+        <div id="featured-menu-component"></div>
 
-    <!-- ==========================================
-         ABOUT
-    =========================================== -->
+    `;
 
-    <div id="about-component"></div>
+    await loadComponent(
+        "#navbar-component",
+        "components/navbar.html"
+    );
 
-    <!-- ==========================================
-         FEATURED MENU
-    =========================================== -->
+    await loadComponent(
+        "#hero-component",
+        "components/hero.html"
+    );
 
-    <div id="featured-menu-component"></div>
+    await loadComponent(
+        "#about-component",
+        "components/about.html"
+    );
 
-`;
-  /* ==========================================================
-   LOAD HERO
-========================================================== */
-
-/* ==========================================================
-   LOAD ABOUT
-========================================================== */
-
-await loadComponent(
-    "#about-component",
-    "components/about.html"
-);
+    await loadComponent(
+        "#featured-menu-component",
+        "components/featured-menu.html"
+    );
 
 });
-/* ==========================================================
-   LOAD FEATURED MENU
-========================================================== */
-
-await loadComponent(
-    "#featured-menu-component",
-    "components/featured-menu.html"
-);
