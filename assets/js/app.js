@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const app = document.getElementById("app");
 
-  app.innerHTML = `
+ app.innerHTML = `
 
     <!-- ==========================================
          NAVBAR
@@ -76,6 +76,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     =========================================== -->
 
     <div id="about-component"></div>
+
+    <!-- ==========================================
+         FEATURED MENU
+    =========================================== -->
+
+    <div id="featured-menu-component"></div>
 
 `;
   /* ==========================================================
