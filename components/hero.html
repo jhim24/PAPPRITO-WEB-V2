@@ -1,19 +1,44 @@
 <!-- ==========================================================
      PAPPRITO WEB V2
-     Version : 1.0.5
+     Version : 1.2.7
      File : components/hero.html
-     Description : Hero Section
+     Description : Hero Section with Background Video
 ========================================================== -->
 
 <section id="home" class="hero">
 
+    <!-- ==========================================
+         BACKGROUND VIDEO
+    =========================================== -->
+
+    <video
+        class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline>
+
+        <source
+            src="assets/videos/hero.mp4"
+            type="video/mp4">
+
+        Your browser does not support HTML5 video.
+
+    </video>
+
+    <!-- ==========================================
+         DARK OVERLAY
+    =========================================== -->
+
+    <div class="hero-overlay"></div>
+
+    <!-- ==========================================
+         HERO CONTENT
+    =========================================== -->
+
     <div class="container">
 
         <div class="hero-content">
-
-            <!-- ==========================================
-                 SUBTITLE
-            =========================================== -->
 
             <span class="hero-subtitle">
 
@@ -21,41 +46,32 @@
 
             </span>
 
-            <!-- ==========================================
-                 TITLE
-            =========================================== -->
-
             <h1 class="hero-title">
 
                 Authentic Filipino Cuisine
 
             </h1>
 
-            <!-- ==========================================
-                 DESCRIPTION
-            =========================================== -->
-
             <p class="hero-description">
 
-                Enjoy authentic Filipino flavors made with
-                quality ingredients, warm hospitality, and
-                unforgettable dining experiences.
+                Enjoy authentic Filipino flavors made with quality ingredients,
+                warm hospitality, and unforgettable dining experiences.
 
             </p>
 
-            <!-- ==========================================
-                 BUTTONS
-            =========================================== -->
-
             <div class="hero-buttons">
 
-                <a href="#menu" class="btn-primary">
+                <a
+                    href="#menu"
+                    class="btn-primary">
 
                     View Menu
 
                 </a>
 
-                <a href="#reservation" class="btn-outline">
+                <a
+                    href="#reservation"
+                    class="btn-outline">
 
                     Reserve Table
 
