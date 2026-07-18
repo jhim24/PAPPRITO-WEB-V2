@@ -63,7 +63,11 @@ document.addEventListener("DOMContentLoaded", async () => {
         <div id="about-component"></div>
 
         <div id="featured-menu-component"></div>
+        <!-- ==========================================
+     GALLERY
+========================================== -->
 
+<div id="gallery-component"></div>
     `;
 
     await loadComponent(
@@ -95,5 +99,12 @@ if (typeof initializeNavbar === "function") {
         "#featured-menu-component",
         "components/featured-menu.html"
     );
+/* ==========================================================
+   LOAD GALLERY
+========================================================== */
 
+await loadComponent(
+    "#gallery-component",
+    "components/gallery.html"
+);
 });
