@@ -21,6 +21,8 @@ async function initializeMenu() {
 
     await loadProducts();
 
+    renderProducts();
+
 }
 /* ==========================================================
    LOAD PRODUCTS
