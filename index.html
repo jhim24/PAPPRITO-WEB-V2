@@ -1,19 +1,7 @@
 <!DOCTYPE html>
-
-<!-- ==========================================================
-     PAPPRITO WEB V2
-     Version : 4.0.1
-     File : index.html
-     Description : Main Website
-========================================================== -->
-
 <html lang="en">
 
 <head>
-
-    <!-- ==========================================================
-         META
-    ========================================================== -->
 
     <meta charset="UTF-8">
 
@@ -23,41 +11,21 @@
     <meta http-equiv="X-UA-Compatible"
           content="IE=edge">
 
-    <!-- ==========================================================
-         SEO
-    ========================================================== -->
-
     <title>PAPPRITO Restaurant</title>
 
     <meta name="description"
           content="Official PAPPRITO Restaurant Website">
 
-    <meta name="keywords"
-          content="Papprito, Filipino Restaurant, Tagaytay">
-
-    <meta name="author"
-          content="PAPPRITO">
-
-    <!-- ==========================================================
-         PWA
-    ========================================================== -->
+    <meta name="theme-color"
+          content="#D71920">
 
     <link rel="manifest"
           href="manifest.json">
 
-    <meta name="theme-color"
-          content="#D71920">
-
-    <!-- ==========================================================
-         FAVICON
-    ========================================================== -->
-
     <link rel="icon"
           href="favicon.ico">
 
-    <!-- ==========================================================
-         GOOGLE FONT
-    ========================================================== -->
+    <!-- Google Font -->
 
     <link rel="preconnect"
           href="https://fonts.googleapis.com">
@@ -69,16 +37,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
           rel="stylesheet">
 
-    <!-- ==========================================================
-         FONT AWESOME
-    ========================================================== -->
+    <!-- Font Awesome -->
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-    <!-- ==========================================================
-         STYLES
-    ========================================================== -->
+    <!-- Main CSS -->
 
     <link rel="stylesheet"
           href="assets/css/style.css">
@@ -86,122 +50,41 @@
 </head>
 
 <body>
-<!-- ==========================================================
-     HEADER
-========================================================== -->
 
-<header id="site-header">
+    <!-- Header -->
+    <header id="header"></header>
 
-    <!-- Top Header -->
+    <!-- Hero -->
+    <section id="hero"></section>
 
-    <div class="top-header">
+    <!-- Featured Menu -->
+    <section id="featured-menu"></section>
 
-        <div class="container">
+    <!-- About -->
+    <section id="about"></section>
 
-            <div class="top-header-left">
+    <!-- Dining Spaces -->
+    <section id="dining"></section>
 
-                <span>
-                    <i class="fa-solid fa-location-dot"></i>
-                    Tagaytay City, Cavite
-                </span>
+    <!-- Gallery -->
+    <section id="gallery"></section>
 
-            </div>
+    <!-- Branches -->
+    <section id="branches"></section>
 
-            <div class="top-header-right">
+    <!-- Reservation -->
+    <section id="reservation"></section>
 
-                <span>
-                    <i class="fa-solid fa-phone"></i>
-                    +63 917 XXX XXXX
-                </span>
+    <!-- Footer -->
+    <footer id="footer"></footer>
 
-                <span>
-                    <i class="fa-regular fa-clock"></i>
-                    Open Daily • 10:00 AM – 10:00 PM
-                </span>
+    <!-- JavaScript -->
 
-            </div>
-
-        </div>
-
-    </div>
-
-    <!-- Main Navigation -->
-
-    <nav class="navbar">
-
-        <div class="container">
-
-            <!-- Logo -->
-
-            <a href="index.html" class="logo">
-
-                <img
-                    src="assets/images/logo/logo.png"
-                    alt="PAPPRITO Logo">
-
-                <span class="logo-text">
-                    PAPPRITO
-                </span>
-
-            </a>
-
-            <!-- Desktop Menu -->
-
-            <ul class="nav-menu">
-
-                <li><a href="index.html" class="active">Home</a></li>
-
-                <li><a href="about.html">About</a></li>
-
-                <li><a href="menu.html">Menu</a></li>
-
-                <li><a href="gallery.html">Gallery</a></li>
-
-                <li><a href="branches.html">Branches</a></li>
-
-                <li><a href="reservation.html">Reservation</a></li>
-
-                <li><a href="contact.html">Contact</a></li>
-
-            </ul>
-
-            <!-- Mobile Toggle -->
-
-            <button
-                class="menu-toggle"
-                id="menuToggle"
-                aria-label="Toggle Navigation">
-
-                <i class="fa-solid fa-bars"></i>
-
-            </button>
-
-        </div>
-
-    </nav>
-
-</header>
-
-<!-- ==========================================================
-     MAIN APPLICATION
-========================================================== -->
-
-<main id="app">
-
-</main>
-<!-- ==========================================================
-     JAVASCRIPT FILES
-========================================================== -->
-
-<script src="assets/js/navbar.js"></script>
-<script src="assets/js/slider.js"></script>
-<script src="assets/js/loader.js"></script>
-<script src="assets/js/gallery.js"></script>
-<script src="assets/js/menu.js"></script>
-<script src="assets/js/reservation.js"></script>
-<script src="assets/js/contact.js"></script>
-<script src="assets/js/animation.js"></script>
-<script src="assets/js/app.js"></script>
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/slider.js"></script>
+    <script src="assets/js/gallery.js"></script>
+    <script src="assets/js/reservation.js"></script>
+    <script src="assets/js/animation.js"></script>
 
 </body>
 
