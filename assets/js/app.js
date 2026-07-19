@@ -95,15 +95,24 @@ if (typeof initializeNavbar === "function") {
 
 }
 
-    await loadComponent(
-        "#hero-component",
-        "components/hero.html"
-    );
+   await loadComponent(
+    "#hero-component",
+    "components/hero.html"
+);
 
-    await loadComponent(
-        "#about-component",
-        "components/about.html"
-    );
+/* ==========================================================
+   LOAD MENU
+========================================================== */
+
+await loadComponent(
+    "#menu-component",
+    "components/menu.html"
+);
+
+await loadComponent(
+    "#about-component",
+    "components/about.html"
+);
 
     await loadComponent(
         "#featured-menu-component",
