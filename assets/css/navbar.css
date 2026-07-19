@@ -218,3 +218,85 @@
     }
 
 }
+/* ==========================================================
+   PREMIUM STICKY NAVBAR
+========================================================== */
+
+#site-header{
+
+    position:sticky;
+    top:0;
+    left:0;
+
+    width:100%;
+
+    z-index:9999;
+
+    transition:
+        background .35s ease,
+        box-shadow .35s ease,
+        padding .35s ease;
+
+}
+
+#site-header.scrolled{
+
+    background:#ffffff;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.navbar{
+
+    transition:all .35s ease;
+
+}
+
+.nav-menu a{
+
+    position:relative;
+
+    transition:color .30s ease;
+
+}
+
+.nav-menu a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:-8px;
+
+    width:0;
+
+    height:3px;
+
+    background:#D71920;
+
+    border-radius:50px;
+
+    transition:width .30s ease;
+
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after{
+
+    width:100%;
+
+}
+
+.logo img{
+
+    transition:transform .30s ease;
+
+}
+
+.logo:hover img{
+
+    transform:scale(1.05);
+
+}
