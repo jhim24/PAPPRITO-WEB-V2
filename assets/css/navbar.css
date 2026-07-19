@@ -71,7 +71,27 @@ header{
     width:auto;
 
 }
+/* ==========================================================
+   LOGO TEXT
+========================================================== */
 
+.logo-text{
+
+    font-size:40px;
+
+    font-weight:900;
+
+    color:var(--primary);
+
+    letter-spacing:1px;
+
+    line-height:1;
+
+    text-transform:uppercase;
+
+    white-space:nowrap;
+
+}
 /* ==========================================================
    MENU
 ========================================================== */
@@ -196,25 +216,28 @@ header{
 ========================== */
 
 @media (max-width:992px){
-   .navbar{
+ .navbar{
 
     height:72px;
 
+    position:relative;
+
+}
+   .logo img{
+
+    height:42px;
+
+    width:auto;
+
 }
 
-    .navbar{
+.logo-text{
 
-        position:relative;
+    font-size:28px;
 
-    }
+    margin-left:10px;
 
-    .logo img{
-
-        width:150px;
-
-        height:auto;
-
-    }
+}
 
     .nav-right .btn-primary{
 
@@ -323,6 +346,50 @@ header{
         color:var(--primary);
 
         padding-left:34px;
+
+    }
+
+}
+/* ==========================================================
+   SMALL MOBILE DEVICES
+   576px and below
+========================================================== */
+
+@media (max-width:576px){
+
+    .navbar{
+
+        height:64px;
+
+    }
+
+    .logo{
+
+        gap:8px;
+
+    }
+
+    .logo img{
+
+        height:36px;
+
+        width:auto;
+
+    }
+
+    .logo-text{
+
+        font-size:22px;
+
+        margin-left:6px;
+
+        letter-spacing:.5px;
+
+    }
+
+    .menu-toggle{
+
+        font-size:24px;
 
     }
 
