@@ -1,0 +1,186 @@
+/* ==========================================================
+   PAPPRITO WEB V2
+   Version : 2.3.9
+   File : assets/css/footer.css
+   Description : Professional Footer
+========================================================== */
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.footer{
+
+    background:var(--dark);
+
+    color:#fff;
+
+    padding:80px 0 30px;
+
+}
+
+/* ==========================================================
+   GRID
+========================================================== */
+
+.footer-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+    gap:40px;
+
+    margin-bottom:50px;
+
+}
+
+/* ==========================================================
+   LOGO
+========================================================== */
+
+.footer-logo{
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:var(--secondary);
+
+    margin-bottom:20px;
+
+}
+
+/* ==========================================================
+   DESCRIPTION
+========================================================== */
+
+.footer-description{
+
+    color:#d1d5db;
+
+    line-height:1.8;
+
+}
+
+/* ==========================================================
+   TITLES
+========================================================== */
+
+.footer-title{
+
+    color:var(--secondary);
+
+    margin-bottom:20px;
+
+    font-size:20px;
+
+}
+
+/* ==========================================================
+   LINKS
+========================================================== */
+
+.footer-links{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+}
+
+.footer-links a{
+
+    color:#d1d5db;
+
+    transition:var(--transition);
+
+}
+
+.footer-links a:hover{
+
+    color:var(--secondary);
+
+    padding-left:8px;
+
+}
+
+/* ==========================================================
+   CONTACT
+========================================================== */
+
+.footer-contact{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+    color:#d1d5db;
+
+}
+
+/* ==========================================================
+   SOCIAL
+========================================================== */
+
+.footer-social{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:20px;
+
+}
+
+.footer-social a{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    transition:var(--transition);
+
+}
+
+.footer-social a:hover{
+
+    background:var(--secondary);
+
+    color:var(--dark);
+
+    transform:translateY(-3px);
+
+}
+
+/* ==========================================================
+   COPYRIGHT
+========================================================== */
+
+.footer-bottom{
+
+    border-top:1px solid rgba(255,255,255,.15);
+
+    padding-top:25px;
+
+    text-align:center;
+
+    color:#9ca3af;
+
+}
