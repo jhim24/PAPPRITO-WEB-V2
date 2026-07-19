@@ -109,6 +109,15 @@ await loadComponent(
     "components/menu.html"
 );
 
+/* ==========================================================
+   INITIALIZE MENU
+========================================================== */
+
+if (typeof initializeMenu === "function") {
+
+    initializeMenu();
+
+}
 await loadComponent(
     "#about-component",
     "components/about.html"
