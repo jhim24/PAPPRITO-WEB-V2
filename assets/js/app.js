@@ -73,6 +73,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 ========================================== -->
 
 <div id="branches-component"></div>
+
+<div id="footer-component"></div>
     `;
 
     await loadComponent(
@@ -119,5 +121,13 @@ await loadComponent(
 await loadComponent(
     "#branches-component",
     "components/branches.html"
+);
+   /* ==========================================================
+   LOAD FOOTER
+========================================================== */
+
+await loadComponent(
+    "#footer-component",
+    "components/footer.html"
 );
 });
