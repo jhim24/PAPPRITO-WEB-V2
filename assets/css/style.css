@@ -671,3 +671,154 @@ button{
     box-shadow:none;
 
 }
+/* ==========================================================
+   MOBILE MENU
+========================================================== */
+
+.mobile-menu{
+
+    position:fixed;
+
+    top:0;
+
+    right:-100%;
+
+    width:320px;
+
+    max-width:90%;
+
+    height:100vh;
+
+    background:var(--white);
+
+    z-index:10001;
+
+    transition:var(--transition);
+
+    box-shadow:-5px 0 25px rgba(0,0,0,.15);
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.mobile-menu.active{
+
+    right:0;
+
+}
+
+/* ==========================================================
+   MOBILE MENU HEADER
+========================================================== */
+
+.mobile-menu-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:25px;
+
+    border-bottom:1px solid #e5e7eb;
+
+}
+
+.mobile-logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.mobile-logo img{
+
+    height:50px;
+
+    width:auto;
+
+}
+
+.menu-close{
+
+    font-size:30px;
+
+    color:var(--dark);
+
+    cursor:pointer;
+
+}
+
+/* ==========================================================
+   MOBILE NAVIGATION
+========================================================== */
+
+.mobile-nav{
+
+    padding:25px;
+
+}
+
+.mobile-nav li{
+
+    border-bottom:1px solid #f1f1f1;
+
+}
+
+.mobile-nav a{
+
+    display:block;
+
+    padding:18px 0;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.mobile-nav a:hover{
+
+    color:var(--primary);
+
+    padding-left:10px;
+
+}
+
+/* ==========================================================
+   MENU OVERLAY
+========================================================== */
+
+.menu-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:var(--transition);
+
+    z-index:10000;
+
+}
+
+.menu-overlay.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
