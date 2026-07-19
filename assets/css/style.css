@@ -1,6 +1,12 @@
 /* ==========================================================
    PAPPRITO WEB V3
-   Global Foundation
+   File        : style.css
+   Description : Global Styles
+   Version     : 1.0.0
+========================================================== */
+
+/* ==========================================================
+   RESET
 ========================================================== */
 
 *{
@@ -9,139 +15,96 @@
     box-sizing:border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+/* ==========================================================
+   ROOT VARIABLES
+========================================================== */
+
+:root{
+
+    --primary:#D71920;
+    --secondary:#FFC107;
+    --dark:#111827;
+    --light:#FFFFFF;
+    --gray:#6B7280;
+
+    --container:1280px;
+
+    --transition:.3s ease;
+
 }
+
+/* ==========================================================
+   HTML
+========================================================== */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+/* ==========================================================
+   BODY
+========================================================== */
 
 body{
+
     font-family:'Poppins',sans-serif;
+
     background:#ffffff;
+
     color:#222;
-    line-height:1.6;
+
+    overflow-x:hidden;
+
 }
+
+/* ==========================================================
+   IMAGES
+========================================================== */
 
 img{
+
     display:block;
-    max-width:100%;
+
+    width:100%;
+
 }
+
+/* ==========================================================
+   LINKS
+========================================================== */
 
 a{
+
     text-decoration:none;
+
     color:inherit;
+
 }
+
+/* ==========================================================
+   LIST
+========================================================== */
 
 ul{
+
     list-style:none;
+
 }
+
+/* ==========================================================
+   CONTAINER
+========================================================== */
 
 .container{
+
     width:100%;
-    max-width:1280px;
+
+    max-width:var(--container);
+
     margin:auto;
+
     padding:0 20px;
-}
-
-/* ==========================================================
-   TOP BAR
-========================================================== */
-
-.top-bar{
-    background:#d71920;
-    color:#fff;
-    font-size:14px;
-}
-
-.top-bar .container{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    min-height:40px;
-}
-
-.top-right{
-    display:flex;
-    gap:15px;
-}
-
-.top-right a{
-    color:#fff;
-    transition:.3s;
-}
-
-.top-right a:hover{
-    color:#ffcc00;
-}
-
-/* ==========================================================
-   NAVBAR
-========================================================== */
-
-.navbar{
-    background:#ffffff;
-    position:sticky;
-    top:0;
-    z-index:999;
-    box-shadow:0 2px 12px rgba(0,0,0,.08);
-}
-
-.navbar .container{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    min-height:80px;
-}
-
-.logo img{
-    height:60px;
-}
-
-.nav-menu{
-    display:flex;
-    gap:30px;
-    align-items:center;
-}
-
-.nav-menu a{
-    font-weight:600;
-    transition:.3s;
-}
-
-.nav-menu a:hover{
-    color:#d71920;
-}
-
-.menu-toggle{
-    display:none;
-    border:none;
-    background:none;
-    font-size:26px;
-    cursor:pointer;
-}
-
-/* ==========================================================
-   MOBILE
-========================================================== */
-
-@media(max-width:992px){
-
-    .top-bar{
-        display:none;
-    }
-
-    .nav-menu{
-        display:none;
-    }
-
-    .menu-toggle{
-        display:block;
-    }
-
-    .navbar .container{
-        min-height:70px;
-    }
-
-    .logo img{
-        height:52px;
-    }
 
 }
