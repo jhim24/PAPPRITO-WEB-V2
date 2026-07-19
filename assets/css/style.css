@@ -108,3 +108,89 @@ ul{
     padding:0 20px;
 
 }
+/* ==========================================================
+   TOP HEADER
+========================================================== */
+
+.top-header{
+
+    background:var(--dark);
+
+    color:var(--light);
+
+    font-size:14px;
+
+}
+
+.top-header .container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    min-height:45px;
+
+    gap:20px;
+
+}
+
+.top-header-left,
+.top-header-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.top-header-left a,
+.top-header-left span,
+.top-header-right a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+.top-header-left a{
+
+    transition:var(--transition);
+
+}
+
+.top-header-left a:hover{
+
+    color:var(--secondary);
+
+}
+
+.top-header-right a{
+
+    width:34px;
+
+    height:34px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    transition:var(--transition);
+
+}
+
+.top-header-right a:hover{
+
+    background:var(--primary);
+
+}
