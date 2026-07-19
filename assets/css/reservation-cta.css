@@ -1,0 +1,86 @@
+/* ==========================================================
+   PAPPRITO WEB V2
+   File : reservation-cta.css
+========================================================== */
+
+.reservation-cta{
+
+    padding:120px 0;
+
+    background:linear-gradient(135deg,#121212,#1f1f1f);
+
+}
+
+.reservation-box{
+
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+
+    background:#181818;
+
+    padding:70px 50px;
+
+    border-radius:30px;
+
+    border:2px solid var(--secondary);
+
+    box-shadow:0 30px 80px rgba(0,0,0,.35);
+
+}
+
+.reservation-tag{
+
+    display:inline-block;
+
+    background:var(--secondary);
+
+    color:#000;
+
+    padding:10px 24px;
+
+    border-radius:999px;
+
+    font-weight:700;
+
+    margin-bottom:25px;
+
+}
+
+.reservation-box h2{
+
+    color:#fff;
+
+    font-size:48px;
+
+    margin-bottom:20px;
+
+}
+
+.reservation-box p{
+
+    color:#d7d7d7;
+
+    font-size:20px;
+
+    line-height:1.9;
+
+    max-width:700px;
+
+    margin:0 auto 40px;
+
+}
+
+.reservation-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
