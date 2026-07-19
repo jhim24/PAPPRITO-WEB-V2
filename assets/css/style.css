@@ -23,6 +23,8 @@
    COMPONENTS
 ========================================================== */
 
+@import url("header-top.css");
+
 @import url("navbar.css");
 
 @import url("hero.css");
