@@ -248,12 +248,21 @@ header{
 
     }
 
-    .menu-toggle{
+   .menu-toggle{
 
-        display:block;
+    display:flex;
 
-    }
+    align-items:center;
 
+    justify-content:center;
+
+    width:44px;
+
+    height:44px;
+
+    font-size:28px;
+
+}
    .nav-menu{
 
     position:absolute;
@@ -266,7 +275,7 @@ header{
 
     background:#ffffff;
 
-    display:flex;
+    display:none;
 
     flex-direction:column;
 
@@ -296,7 +305,7 @@ header{
 }
 
     .nav-menu.active{
-
+     display:flex;
     max-height:500px;
 
     opacity:1;
