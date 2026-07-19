@@ -1,80 +1,66 @@
 <!-- ==========================================================
      PAPPRITO WEB V2
-     Version : 1.0.1
+     Version : 3.0.0
      File : components/navbar.html
-     Description : Main Navigation Bar
 ========================================================== -->
 
-<header class="header">
+<header>
 
     <div class="container">
 
         <nav class="navbar">
 
-            <!-- ==========================================
-                 LOGO
-            =========================================== -->
+            <!-- LOGO -->
+            <a href="index.html" class="logo">
 
-           <a href="index.html" class="logo">
+                <img src="assets/images/logo/logo.png" alt="PAPPRITO">
 
-    <img
-        src="assets/images/logo/logo.png"
-        alt="PAPPRITO Logo">
+                <span class="logo-text">
+                    PAPPRITO
+                </span>
 
-    <span class="logo-text">
-        PAPPRITO
-    </span>
+            </a>
 
-</a>
+            <!-- HAMBURGER -->
+            <button
+                id="menuToggle"
+                class="menu-toggle"
+                type="button"
+                aria-label="Open Menu"
+                aria-expanded="false">
 
-            <!-- ==========================================
-                 DESKTOP MENU
-            =========================================== -->
+                <i class="fa-solid fa-bars"></i>
 
-           <ul
-    id="navMenu"
-    class="nav-menu">
+            </button>
 
-    <li><a href="index.html">Home</a></li>
+            <!-- MENU -->
+            <ul id="navMenu" class="nav-menu">
 
-    <li><a href="about.html">About</a></li>
+                <li><a href="index.html">Home</a></li>
 
-    <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About</a></li>
 
-    <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="menu.html">Menu</a></li>
 
-    <li><a href="branches.html">Branches</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
 
-    <li><a href="reservation.html">Reservation</a></li>
+                <li><a href="branches.html">Branches</a></li>
 
-    <li><a href="contact.html">Contact</a></li>
+                <li><a href="reservation.html">Reservation</a></li>
 
-</ul>
-            <!-- ==========================================
-                 RIGHT SIDE
-            =========================================== -->
+                <li><a href="contact.html">Contact</a></li>
 
-            <div class="nav-right">
+                <li class="mobile-order">
 
-                <a
-                    href="#reservation"
-                    class="btn-primary">
+                    <a href="reservation.html" class="nav-order">
 
-                    Order Now
+                        Order Now
 
-                </a>
+                    </a>
 
-   <button
-    id="menuToggle"
-    class="menu-toggle"
-    aria-label="Toggle Menu"
-    style="display:block !important;background:yellow;color:red;border:2px solid red;padding:10px;">
+                </li>
 
-    MENU
-
-</button>
-
-            </div>
+            </ul>
 
         </nav>
 
