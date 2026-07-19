@@ -1,1 +1,168 @@
+/* ==========================================================
+   PAPPRITO WEB V2
+   Version : 2.4.0
+   File : assets/css/responsive.css
+   Description : Responsive Layout
+========================================================== */
 
+/* ==========================================================
+   LARGE TABLETS
+========================================================== */
+
+@media (max-width:1200px){
+
+    .container{
+
+        width:min(100%, calc(100% - 32px));
+
+    }
+
+}
+
+/* ==========================================================
+   TABLETS
+========================================================== */
+
+@media (max-width:992px){
+
+    section{
+
+        padding:80px 0;
+
+    }
+
+    .section-title{
+
+        font-size:36px;
+
+    }
+
+    .hero-content h1{
+
+        font-size:48px;
+
+    }
+
+    .hero-content p{
+
+        font-size:18px;
+
+    }
+
+    .page-hero h1{
+
+        font-size:42px;
+
+    }
+
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width:768px){
+
+    section{
+
+        padding:60px 0;
+
+    }
+
+    .container{
+
+        width:calc(100% - 24px);
+
+    }
+
+    .navbar{
+
+        height:70px;
+
+    }
+
+    .hero{
+
+        min-height:80vh;
+
+    }
+
+    .hero-content h1{
+
+        font-size:36px;
+
+    }
+
+    .hero-content p{
+
+        font-size:16px;
+
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+        width:100%;
+
+    }
+
+    .hero-buttons .btn{
+
+        width:100%;
+
+    }
+
+    .section-title{
+
+        font-size:30px;
+
+    }
+
+    .page-hero{
+
+        padding:120px 0 60px;
+
+    }
+
+    .page-hero h1{
+
+        font-size:34px;
+
+    }
+
+}
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width:480px){
+
+    .section-title{
+
+        font-size:26px;
+
+    }
+
+    .hero-content h1{
+
+        font-size:30px;
+
+    }
+
+    .hero-content p{
+
+        font-size:15px;
+
+    }
+
+    .btn{
+
+        padding:12px 20px;
+
+        font-size:15px;
+
+    }
+
+}
