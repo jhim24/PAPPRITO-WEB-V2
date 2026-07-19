@@ -1,181 +1,54 @@
 /* ==========================================================
    PAPPRITO WEB V2
-   Version : 1.1.3
-   File : assets/js/app.js
-   Description : Component Loader
+   Version : 2.6.1
+   File : assets/js/home.js
+   Description : Homepage Loader
 ========================================================== */
+
+document.addEventListener("DOMContentLoaded", initializeHome);
 
 /* ==========================================================
-   LOAD HTML COMPONENT
+   INITIALIZE HOME
 ========================================================== */
 
-async function loadComponent(selector, file) {
+async function initializeHome(){
 
-    const element = document.querySelector(selector);
+    const app = document.getElementById("app");
 
-    if (!element) {
-        console.error(`Container not found: ${selector}`);
+    if(!app){
+
+        console.error("Application root (#app) not found.");
+
         return;
+
     }
 
-    try {
+    try{
 
-        const response = await fetch(file);
+        const response = await fetch("components/home-content.html");
 
-        if (!response.ok) {
-            throw new Error(`Unable to load ${file}`);
+        if(!response.ok){
+
+            throw new Error("Unable to load Home Component.");
+
         }
 
-        element.innerHTML = await response.text();
+        app.innerHTML = await response.text();
 
-    } catch (error) {
+    }
+
+    catch(error){
 
         console.error(error);
 
-        element.innerHTML = `
-            <div style="
-                padding:20px;
-                background:#D71920;
-                color:#fff;
-                text-align:center;">
-                Failed to load ${file}
-            </div>
+        app.innerHTML = `
+            <section style="padding:120px 20px;text-align:center">
+                <h2>Unable to load homepage.</h2>
+                <p>Please check the file path:</p>
+                <strong>components/home-content.html</strong>
+            </section>
         `;
 
     }
 
 }
-
-/* ==========================================================
-   INITIALIZE WEBSITE
-========================================================== */
-
-document.addEventListener("DOMContentLoaded", async () => {
-
-    const app = document.getElementById("app");
-
-    app.innerHTML = `
-
-        <div id="navbar-component"></div>
-
-       <div id="hero-component"></div>
-
-       <div id="dining-spaces-component"></div>
-
-       <div id="menu-component"></div>
-
-       <div id="about-component"></div>
-
-        <div id="featured-menu-component"></div>
-        
-        <!-- ==========================================
-     GALLERY
-========================================== -->
-
-<div id="gallery-component"></div>
-<!-- ==========================================
-     BRANCHES
-========================================== -->
-
-<div id="branches-component"></div>
-
-<div id="footer-component"></div>
-    `;
-
-    await loadComponent(
-    "#navbar-component",
-    "components/navbar.html"
-);
-
-/* ==========================================================
-   INITIALIZE NAVBAR
-========================================================== */
-
-if (typeof initializeNavbar === "function") {
-
-    initializeNavbar();
-
-}
-
-   await loadComponent(
-    "#hero-component",
-    "components/hero.html"
-);
-
-   /* ==========================================================
-   LOAD DINING SPACES
-========================================================== */
-
-await loadComponent(
-    "#dining-spaces-component",
-    "components/dining-spaces.html"
-);
-   
-/* ==========================================================
-   LOAD MENU COMPONENT
-========================================================== */
-
-if (document.querySelector("#menu-component")) {
-
-    await loadComponent(
-        "#menu-component",
-        "components/menu.html"
-    );
-
-}
-
-/* ==========================================================
-   INITIALIZE MENU
-========================================================== */
-
-if (typeof initializeMenu === "function") {
-
-    initializeMenu();
-
-}
-await loadComponent(
-    "#about-component",
-    "components/about.html"
-);
-
-    await loadComponent(
-        "#featured-menu-component",
-        "components/featured-menu.html"
-    );
-/* ==========================================================
-   LOAD GALLERY
-========================================================== */
-
-await loadComponent(
-    "#gallery-component",
-    "components/gallery.html"
-);
-   /* ==========================================================
-   LOAD BRANCHES
-========================================================== */
-
-await loadComponent(
-    "#branches-component",
-    "components/branches.html"
-);
-   /* ==========================================================
-   LOAD FOOTER
-========================================================== */
-
-await loadComponent(
-    "#footer-component",
-    "components/footer.html"
-);
-   /* ==========================================================
-   LOAD ABOUT CONTENT
-========================================================== */
-
-if (document.querySelector("#about-content-component")) {
-
-    await loadComponent(
-        "#about-content-component",
-        "components/about-content.html"
-    );
-
-}
-});
