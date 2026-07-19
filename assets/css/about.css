@@ -1,0 +1,95 @@
+/* ==========================================================
+   PAPPRITO WEB V3
+   File        : about.css
+   Description : About Page
+   Version     : 3.0.0
+========================================================== */
+
+/* ==========================================================
+   ABOUT HERO
+========================================================== */
+
+#about-hero{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-height:420px;
+
+    padding:120px 20px 80px;
+
+    background-image:url("../images/about/about-banner.jpg");
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    background-size:cover;
+
+    overflow:hidden;
+
+}
+
+/* ==========================================================
+   OVERLAY
+========================================================== */
+
+#about-hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        rgba(0,0,0,.70),
+        rgba(0,0,0,.60)
+    );
+
+}
+
+/* ==========================================================
+   CONTENT
+========================================================== */
+
+.about-hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    text-align:center;
+
+    color:#ffffff;
+
+    max-width:800px;
+
+    margin:auto;
+
+}
+
+.about-hero-content h1{
+
+    font-size:3.5rem;
+
+    font-weight:800;
+
+    margin-bottom:15px;
+
+}
+
+.about-hero-content p{
+
+    font-size:1.1rem;
+
+    line-height:1.8;
+
+    opacity:.95;
+
+}
