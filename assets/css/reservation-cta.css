@@ -35,17 +35,35 @@
 
     display:inline-block;
 
-    background:var(--secondary);
+    position:relative;
 
-    color:#000;
+    margin-bottom:28px;
 
-    padding:10px 24px;
-
-    border-radius:999px;
+    font-size:15px;
 
     font-weight:700;
 
-    margin-bottom:25px;
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    color:var(--secondary);
+
+}
+
+.reservation-tag::after{
+
+    content:"";
+
+    display:block;
+
+    width:60px;
+
+    height:2px;
+
+    margin:12px auto 0;
+
+    background:var(--secondary);
 
 }
 
