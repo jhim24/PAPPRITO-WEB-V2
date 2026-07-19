@@ -162,4 +162,16 @@ await loadComponent(
     "#footer-component",
     "components/footer.html"
 );
+   /* ==========================================================
+   LOAD ABOUT CONTENT
+========================================================== */
+
+if (document.querySelector("#about-content-component")) {
+
+    await loadComponent(
+        "#about-content-component",
+        "components/about-content.html"
+    );
+
+}
 });
