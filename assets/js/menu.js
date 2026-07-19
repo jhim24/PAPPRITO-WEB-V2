@@ -15,9 +15,9 @@ let products = [];
    INITIALIZE MENU
 ========================================================== */
 
-function initializeMenu() {
+async function initializeMenu() {
 
-    loadSampleProducts();
+    await loadProducts();
 
     renderProducts(products);
 
@@ -28,39 +28,38 @@ function initializeMenu() {
 }
 
 /* ==========================================================
-   SAMPLE DATA
-   (Temporary - Firebase will replace this later)
+   LOAD PRODUCTS FROM FIREBASE
 ========================================================== */
 
-function loadSampleProducts() {
+async function loadProducts() {
 
-    products = [
+    try {
 
-        {
-            id: 1,
-            name: "Bulalo",
-            category: "main",
-            price: 710,
-            image: "assets/images/menu/bulalo.jpg"
-        },
+        const snapshot = await db
+            .ref("products")
+            .once("value");
 
-        {
-            id: 2,
-            name: "Lechon Kawali",
-            category: "main",
-            price: 395,
-            image: "assets/images/menu/lechon-kawali.jpg"
-        },
+        products = [];
 
-        {
-            id: 3,
-            name: "Halo-Halo",
-            category: "dessert",
-            price: 180,
-            image: "assets/images/menu/halo-halo.jpg"
-        }
+        snapshot.forEach(item => {
 
-    ];
+            products.push({
+
+                id: item.key,
+
+                ...item.val()
+
+            });
+
+        });
+
+    } catch (error) {
+
+        console.error("Unable to load products:", error);
+
+        products = [];
+
+    }
 
 }
 
