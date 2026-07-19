@@ -274,3 +274,92 @@ button{
     color:var(--primary);
 
 }
+/* ==========================================================
+   HEADER
+========================================================== */
+
+#header{
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    z-index:1000;
+
+}
+
+/* ==========================================================
+   TOP HEADER
+========================================================== */
+
+.top-header{
+
+    background:rgba(17,24,39,.95);
+
+    color:var(--white);
+
+    font-size:14px;
+
+}
+
+.top-header .container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    min-height:45px;
+
+}
+
+.top-header-left,
+.top-header-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.top-header-left a,
+.top-header-left span{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+.top-header-right a{
+
+    width:36px;
+
+    height:36px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    transition:var(--transition);
+
+}
+
+.top-header-right a:hover{
+
+    background:var(--primary);
+
+}
