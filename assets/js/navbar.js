@@ -1,48 +1,75 @@
 /* ==========================================================
    PAPPRITO WEB V2
-   NAVBAR MODULE
+   Version : 3.0.2
    File : assets/js/navbar.js
-   Version : 1.1.6
-   Description : Navbar Initialization
-========================================================== */
-
-/* ==========================================================
-   INITIALIZE NAVBAR
+   Description : Responsive Navbar
 ========================================================== */
 
 function initializeNavbar() {
 
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navMenu = document.querySelector(".nav-menu");
-    const navLinks = document.querySelectorAll(".nav-menu a");
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
 
-    if (!menuToggle || !navMenu) {
-        return;
-    }
+    if (!menuToggle || !navMenu) return;
 
-    menuToggle.addEventListener("click", () => {
+    // Remove duplicate listeners if reloaded
+    const newToggle = menuToggle.cloneNode(true);
+    menuToggle.parentNode.replaceChild(newToggle, menuToggle);
+
+    newToggle.addEventListener("click", () => {
 
         navMenu.classList.toggle("active");
 
+        const expanded = navMenu.classList.contains("active");
+
+        newToggle.setAttribute("aria-expanded", expanded);
+
+        const icon = newToggle.querySelector("i");
+
+        if (icon) {
+            icon.className = expanded
+                ? "fa-solid fa-xmark"
+                : "fa-solid fa-bars";
+        }
+
     });
 
-    navLinks.forEach(link => {
+    // Close menu after clicking a link (mobile)
+    navMenu.querySelectorAll("a").forEach(link => {
 
         link.addEventListener("click", () => {
 
             navMenu.classList.remove("active");
 
+            newToggle.setAttribute("aria-expanded", "false");
+
+            const icon = newToggle.querySelector("i");
+
+            if (icon) {
+                icon.className = "fa-solid fa-bars";
+            }
+
         });
 
     });
 
+    // Auto close when resizing to desktop
+    window.addEventListener("resize", () => {
+
+        if (window.innerWidth > 992) {
+
+            navMenu.classList.remove("active");
+
+            newToggle.setAttribute("aria-expanded", "false");
+
+            const icon = newToggle.querySelector("i");
+
+            if (icon) {
+                icon.className = "fa-solid fa-bars";
+            }
+
+        }
+
+    });
+
 }
-/* ==========================================================
-   AUTO INITIALIZE
-========================================================== */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    initializeNavbar();
-
-});
