@@ -54,11 +54,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const app = document.getElementById("app");
 
-    app.innerHTML = `
+   app.innerHTML = `
+
+        <div id="header-top-component"></div>
 
         <div id="navbar-component"></div>
 
-       <div id="hero-component"></div>
+        <div id="hero-component"></div>
 
        <div id="dining-spaces-component"></div>
 
@@ -81,7 +83,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 <div id="footer-component"></div>
     `;
-
+await loadComponent(
+    "#header-top-component",
+    "components/header-top.html"
+);
     await loadComponent(
     "#navbar-component",
     "components/navbar.html"
