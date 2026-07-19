@@ -1,162 +1,73 @@
 /* ==========================================================
    PAPPRITO WEB V2
-   Version : 1.4.3
+   Version : 2.1.2
    File : assets/js/menu.js
-   Description : Menu Module
+   Description : Menu Page Loader
 ========================================================== */
 
 /* ==========================================================
-   GLOBAL PRODUCTS ARRAY
+   LOAD HTML COMPONENT
 ========================================================== */
 
-let products = [];
+async function loadComponent(selector, file) {
 
-/* ==========================================================
-   INITIALIZE MENU
-========================================================== */
+    const element = document.querySelector(selector);
 
-async function initializeMenu() {
-
-    await loadProducts();
-
-    renderProducts(products);
-
-    initializeSearch();
-
-    initializeCategories();
-
-}
-
-/* ==========================================================
-   LOAD PRODUCTS FROM FIREBASE
-========================================================== */
-
-async function loadProducts() {
+    if (!element) return;
 
     try {
 
-        const snapshot = await db
-            .ref("products")
-            .once("value");
+        const response = await fetch(file);
 
-        products = [];
+        if (!response.ok) {
 
-        snapshot.forEach(item => {
+            throw new Error(`Unable to load ${file}`);
 
-            products.push({
+        }
 
-                id: item.key,
+        element.innerHTML = await response.text();
 
-                ...item.val()
+    }
 
-            });
+    catch (error) {
 
-        });
-
-    } catch (error) {
-
-        console.error("Unable to load products:", error);
-
-        products = [];
+        console.error(error);
 
     }
 
 }
 
 /* ==========================================================
-   RENDER PRODUCTS
+   INITIALIZE MENU PAGE
 ========================================================== */
 
-function renderProducts(data) {
+document.addEventListener("DOMContentLoaded", async () => {
 
-    const grid = document.getElementById("menu-grid");
+    await loadComponent(
+        "#navbar-component",
+        "components/navbar.html"
+    );
 
-    if (!grid) return;
+    await loadComponent(
+        "#menu-component",
+        "components/menu.html"
+    );
 
-    grid.innerHTML = "";
+    await loadComponent(
+        "#footer-component",
+        "components/footer.html"
+    );
 
-    data.forEach(product => {
+    if (typeof initializeNavbar === "function") {
 
-        grid.innerHTML += `
-            <div class="menu-card">
+        initializeNavbar();
 
-                <img src="${product.image}" alt="${product.name}">
+    }
 
-                <div class="menu-content">
+    if (typeof initializeMenu === "function") {
 
-                    <h3>${product.name}</h3>
+        initializeMenu();
 
-                    <span class="price">
-                        ₱${product.price}
-                    </span>
+    }
 
-                </div>
-
-            </div>
-        `;
-
-    });
-
-}
-
-/* ==========================================================
-   SEARCH
-========================================================== */
-
-function initializeSearch() {
-
-    const search = document.getElementById("menu-search");
-
-    if (!search) return;
-
-    search.addEventListener("input", function () {
-
-        const keyword = this.value.toLowerCase();
-
-        const filtered = products.filter(product =>
-            product.name.toLowerCase().includes(keyword)
-        );
-
-        renderProducts(filtered);
-
-    });
-
-}
-
-/* ==========================================================
-   CATEGORY FILTER
-========================================================== */
-
-function initializeCategories() {
-
-    const buttons = document.querySelectorAll(".category-btn");
-
-    buttons.forEach(button => {
-
-        button.addEventListener("click", () => {
-
-            buttons.forEach(btn => btn.classList.remove("active"));
-
-            button.classList.add("active");
-
-            const category = button.dataset.category;
-
-            if (category === "all") {
-
-                renderProducts(products);
-
-                return;
-
-            }
-
-            renderProducts(
-
-                products.filter(product => product.category === category)
-
-            );
-
-        });
-
-    });
-
-}
+});
