@@ -1,39 +1,65 @@
 /* ==========================================================
    PAPPRITO WEB V2
-   Version : 3.0.1
    File : assets/css/navbar.css
+   Version : 4.0.5
 ========================================================== */
 
-/* HEADER */
-
-header{
-
-    position:fixed;
-
-    top:0;
-
-    left:0;
-
-    width:100%;
-
-    background:#D71920;
-
-    z-index:9999;
-
-    box-shadow:0 4px 18px rgba(0,0,0,.15);
-
+:root{
+    --header-height:80px;
 }
-/* NAVBAR */
+
+/* ==========================
+   HEADER
+========================== */
+
+#site-header{
+    position:sticky;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:#fff;
+}
+
+/* ==========================
+   TOP HEADER
+========================== */
+
+.top-header{
+    background:#D71920;
+    color:#fff;
+    font-size:.85rem;
+}
+
+.top-header .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:8px 20px;
+}
+
+.top-header-left,
+.top-header-right{
+    display:flex;
+    gap:20px;
+    align-items:center;
+}
+
+/* ==========================
+   NAVBAR
+========================== */
 
 .navbar{
-    height:80px;
+    background:#fff;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+.navbar .container{
     display:flex;
     align-items:center;
     justify-content:space-between;
-    position:relative;
+    height:80px;
 }
-
-/* LOGO */
 
 .logo{
     display:flex;
@@ -44,129 +70,69 @@ header{
 
 .logo img{
     height:52px;
+    width:auto;
 }
 
 .logo-text{
-    color:#fff;
-    font-size:34px;
-    font-weight:900;
-    letter-spacing:1px;
+    font-size:28px;
+    font-weight:700;
+    color:#D71920;
 }
 
-/* MENU */
+/* ==========================
+   MENU
+========================== */
 
 .nav-menu{
     display:flex;
-    align-items:center;
-    gap:28px;
+    gap:30px;
     list-style:none;
-    margin:0;
-    padding:0;
 }
 
 .nav-menu a{
-    color:#fff;
     text-decoration:none;
+    color:#222;
     font-weight:600;
     transition:.3s;
 }
 
-.nav-menu a:hover{
-    color:#FFD54F;
+.nav-menu a:hover,
+.nav-menu a.active{
+    color:#D71920;
 }
 
-/* ORDER BUTTON */
-
-.nav-order{
-    background:#FFD54F;
-    color:#D71920 !important;
-    padding:12px 22px;
-    border-radius:8px;
-    font-weight:700;
-}
-
-/* HAMBURGER */
+/* ==========================
+   HAMBURGER
+========================== */
 
 .menu-toggle{
     display:none;
-    background:none;
     border:none;
-    color:#fff;
-    font-size:28px;
+    background:none;
+    font-size:30px;
     cursor:pointer;
 }
 
-/* MOBILE */
+/* ==========================
+   MOBILE
+========================== */
 
-@media(max-width:992px){
+@media (max-width:768px){
 
-    .navbar{
-        height:70px;
-    }
-
-    .logo img{
-        height:40px;
+    .top-header{
+        display:none;
     }
 
     .logo-text{
-        font-size:24px;
+        display:none;
+    }
+
+    .nav-menu{
+        display:none;
     }
 
     .menu-toggle{
         display:block;
-    }
-
-    .nav-menu{
-
-        position:absolute;
-        top:70px;
-        left:0;
-        right:0;
-
-        display:none;
-        flex-direction:column;
-
-        background:#D71920;
-
-        padding:20px 0;
-
-        gap:0;
-    }
-
-    .nav-menu.active{
-        display:flex;
-    }
-
-    .nav-menu li{
-        width:100%;
-    }
-
-    .nav-menu a{
-
-        display:block;
-
-        width:100%;
-
-        padding:16px 24px;
-    }
-
-    .nav-order{
-
-        margin:10px 20px;
-
-        text-align:center;
-    }
-
-}
-
-@media(max-width:576px){
-
-    .logo-text{
-    display:none;
-}
-
-    .logo img{
-        height:34px;
     }
 
 }
