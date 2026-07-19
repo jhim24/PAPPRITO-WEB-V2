@@ -1,0 +1,55 @@
+/* ==========================================================
+   PAPPRITO WEB V2
+   Version : 1.7.6
+   File : assets/css/about.css
+   Description : About Page Styles
+========================================================== */
+
+/* ==========================================================
+   ABOUT PAGE
+========================================================== */
+
+.about-content{
+
+    padding:100px 0;
+
+    background:#f8f9fa;
+
+}
+
+.about-block{
+
+    margin-bottom:70px;
+
+}
+
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:30px;
+
+}
+
+.values-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+.about-card,
+.value-card{
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:30px;
+
+}
