@@ -17,7 +17,9 @@ let allProducts = [];
 
 async function initializeMenu() {
 
-    console.log("Menu Module Initialized");
+    console.log("Initializing Menu Module...");
+
+    await loadProducts();
 
 }
 /* ==========================================================
