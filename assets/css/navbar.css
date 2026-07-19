@@ -75,7 +75,7 @@ header{
    MENU
 ========================================================== */
 
-.nav-links{
+.nav-menu{
 
     display:flex;
 
@@ -85,7 +85,7 @@ header{
 
 }
 
-.nav-links a{
+.nav-menu a{
 
     position:relative;
 
@@ -97,15 +97,14 @@ header{
 
 }
 
-.nav-links a:hover,
-
-.nav-links a.active{
+.nav-menu a:hover,
+.nav-menu a.active{
 
     color:var(--primary);
 
 }
 
-.nav-links a::after{
+.nav-menu a::after{
 
     content:"";
 
@@ -127,9 +126,8 @@ header{
 
 }
 
-.nav-links a:hover::after,
-
-.nav-links a.active::after{
+.nav-menu a:hover::after,
+.nav-menu a.active::after{
 
     width:100%;
 
@@ -218,40 +216,58 @@ header{
 
     }
 
-    .nav-menu{
+   .nav-menu{
 
-        position:absolute;
+    position:absolute;
 
-        top:100%;
+    top:100%;
 
-        left:0;
+    left:0;
 
-        width:100%;
+    width:100%;
 
-        background:#ffffff;
+    background:#ffffff;
 
-        display:none;
+    display:flex;
 
-        flex-direction:column;
+    flex-direction:column;
 
-        gap:0;
+    gap:0;
 
-        padding:15px 0;
+    max-height:0;
 
-        border-top:1px solid #eee;
+    overflow:hidden;
 
-        box-shadow:0 10px 25px rgba(0,0,0,.10);
+    opacity:0;
 
-        z-index:999;
+    visibility:hidden;
 
-    }
+    transform:translateY(-10px);
+
+    transition:
+        max-height .35s ease,
+        opacity .30s ease,
+        transform .30s ease;
+
+    border-top:1px solid #eee;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.10);
+
+    z-index:999;
+
+}
 
     .nav-menu.active{
 
-        display:flex;
+    max-height:500px;
 
-    }
+    opacity:1;
 
+    visibility:visible;
+
+    transform:translateY(0);
+
+}
     .nav-menu li{
 
         width:100%;
@@ -260,24 +276,28 @@ header{
 
     }
 
-    .nav-menu li a{
+   .nav-menu li a{
 
-        display:block;
+    display:block;
 
-        width:100%;
+    width:100%;
 
-        padding:16px 24px;
+    padding:18px 28px;
 
-        color:#222;
+    color:#222;
 
-        font-size:16px;
+    font-size:16px;
 
-        border-bottom:1px solid #f2f2f2;
+    font-weight:600;
 
-        transition:.25s;
+    border-bottom:1px solid #f2f2f2;
 
-    }
+    transition:
+        background .25s,
+        color .25s,
+        padding-left .25s;
 
+}
     .nav-menu li:last-child a{
 
         border-bottom:none;
