@@ -58,7 +58,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         <div id="navbar-component"></div>
 
-        <div id="hero-component"></div>
+       <div id="hero-component"></div>
+
+       <div id="dining-spaces-component"></div>
 
        <div id="menu-component"></div>
 
