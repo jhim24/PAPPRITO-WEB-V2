@@ -60,9 +60,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         <div id="hero-component"></div>
 
-        <div id="about-component"></div>
+       <div id="menu-component"></div>
+
+       <div id="about-component"></div>
 
         <div id="featured-menu-component"></div>
+        
         <!-- ==========================================
      GALLERY
 ========================================== -->
