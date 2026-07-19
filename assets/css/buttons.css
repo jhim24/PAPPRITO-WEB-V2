@@ -1,0 +1,134 @@
+/* ==========================================================
+   PAPPRITO WEB V2
+   Version : 2.3.7
+   File : assets/css/buttons.css
+   Description : Global Buttons
+========================================================== */
+
+/* ==========================================================
+   BASE BUTTON
+========================================================== */
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:14px 30px;
+
+    border-radius:var(--radius-md);
+
+    font-size:var(--font-size-md);
+
+    font-weight:600;
+
+    text-decoration:none;
+
+    transition:var(--transition);
+
+    cursor:pointer;
+
+}
+
+/* ==========================================================
+   PRIMARY BUTTON
+========================================================== */
+
+.btn-primary{
+
+    background:var(--primary);
+
+    color:#fff;
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.btn-primary:hover{
+
+    background:var(--primary-dark);
+
+    transform:translateY(-2px);
+
+}
+
+/* ==========================================================
+   SECONDARY BUTTON
+========================================================== */
+
+.btn-secondary{
+
+    background:var(--secondary);
+
+    color:var(--dark);
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.btn-secondary:hover{
+
+    filter:brightness(0.95);
+
+    transform:translateY(-2px);
+
+}
+
+/* ==========================================================
+   OUTLINE BUTTON
+========================================================== */
+
+.btn-outline{
+
+    border:2px solid #fff;
+
+    color:#fff;
+
+    background:transparent;
+
+}
+
+.btn-outline:hover{
+
+    background:#fff;
+
+    color:var(--primary);
+
+}
+
+/* ==========================================================
+   DARK OUTLINE
+========================================================== */
+
+.btn-outline-dark{
+
+    border:2px solid var(--primary);
+
+    color:var(--primary);
+
+    background:transparent;
+
+}
+
+.btn-outline-dark:hover{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+/* ==========================================================
+   FULL WIDTH
+========================================================== */
+
+.btn-block{
+
+    width:100%;
+
+}
