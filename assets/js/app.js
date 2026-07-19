@@ -37,26 +37,17 @@ async function initializeHome() {
 
     if (!app) return;
 
-    app.innerHTML = `
-
-        <section id="hero-component"></section>
-
-        <section id="dining-spaces-component"></section>
-
-        <section id="menu-component"></section>
-
-        <section id="about-component"></section>
-
-        <section id="featured-menu-component"></section>
-
-        <section id="gallery-component"></section>
-
-        <section id="branches-component"></section>
-
-        <section id="footer-component"></section>
-
-    `;
-
+   app.innerHTML = `
+<div id="hero-component"></div>
+<div id="dining-spaces-component"></div>
+<div id="menu-component"></div>
+<div id="about-component"></div>
+<div id="featured-menu-component"></div>
+<div id="gallery-component"></div>
+<div id="branches-component"></div>
+<div id="footer-component"></div>
+`;
+   
     await Promise.all([
 
         loadComponent("#hero-component", "components/hero.html"),
