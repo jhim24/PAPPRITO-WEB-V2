@@ -87,15 +87,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     "components/navbar.html"
 );
 
-/* ==========================================================
-   INITIALIZE NAVBAR
-========================================================== */
-
-if (typeof initializeNavbar === "function") {
-
-    initializeNavbar();
-
-}
+// Hintaying ma-render ang navbar bago i-initialize
+requestAnimationFrame(() => {
+    if (typeof initializeNavbar === "function") {
+        initializeNavbar();
+    }
+});
 
    await loadComponent(
     "#hero-component",
