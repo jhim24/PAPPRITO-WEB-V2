@@ -112,13 +112,17 @@ await loadComponent(
 );
    
 /* ==========================================================
-   LOAD MENU
+   LOAD MENU COMPONENT
 ========================================================== */
 
-await loadComponent(
-    "#menu-component",
-    "components/menu.html"
-);
+if (document.querySelector("#menu-component")) {
+
+    await loadComponent(
+        "#menu-component",
+        "components/menu.html"
+    );
+
+}
 
 /* ==========================================================
    INITIALIZE MENU
