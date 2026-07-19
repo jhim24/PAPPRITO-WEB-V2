@@ -50,6 +50,8 @@ const mobileLinks = document.querySelectorAll(".mobile-nav a");
 
 menuToggle.addEventListener("click", () => {
 
+    console.log("Hamburger clicked");
+
     mobileMenu.classList.add("active");
     menuOverlay.classList.add("active");
 
