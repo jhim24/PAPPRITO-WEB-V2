@@ -158,3 +158,140 @@ header{
     background:var(--primary-dark);
 
 }
+/* ==========================================================
+   MOBILE NAVBAR
+========================================================== */
+
+.menu-toggle{
+
+    display:none;
+
+    background:none;
+
+    border:none;
+
+    font-size:28px;
+
+    color:var(--primary);
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.menu-toggle:hover{
+
+    color:var(--secondary);
+
+}
+
+/* ==========================
+   TABLET & MOBILE
+========================== */
+
+@media (max-width:992px){
+
+    .navbar{
+
+        position:relative;
+
+    }
+
+    .logo img{
+
+        width:150px;
+
+        height:auto;
+
+    }
+
+    .nav-right .btn-primary{
+
+        display:none;
+
+    }
+
+    .menu-toggle{
+
+        display:block;
+
+    }
+
+    .nav-menu{
+
+        position:absolute;
+
+        top:100%;
+
+        left:0;
+
+        width:100%;
+
+        background:#ffffff;
+
+        display:none;
+
+        flex-direction:column;
+
+        gap:0;
+
+        padding:15px 0;
+
+        border-top:1px solid #eee;
+
+        box-shadow:0 10px 25px rgba(0,0,0,.10);
+
+        z-index:999;
+
+    }
+
+    .nav-menu.active{
+
+        display:flex;
+
+    }
+
+    .nav-menu li{
+
+        width:100%;
+
+        list-style:none;
+
+    }
+
+    .nav-menu li a{
+
+        display:block;
+
+        width:100%;
+
+        padding:16px 24px;
+
+        color:#222;
+
+        font-size:16px;
+
+        border-bottom:1px solid #f2f2f2;
+
+        transition:.25s;
+
+    }
+
+    .nav-menu li:last-child a{
+
+        border-bottom:none;
+
+    }
+
+    .nav-menu li a:hover{
+
+        background:#fff8e6;
+
+        color:var(--primary);
+
+        padding-left:34px;
+
+    }
+
+}
