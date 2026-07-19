@@ -1,75 +1,60 @@
 /* ==========================================================
    PAPPRITO WEB V2
-   Version : 3.0.2
    File : assets/js/navbar.js
-   Description : Responsive Navbar
+   Version : 4.0.6
+   Description : Mobile Navigation
 ========================================================== */
 
-function initializeNavbar() {
+document.addEventListener("DOMContentLoaded", () => {
 
     const menuToggle = document.getElementById("menuToggle");
-    const navMenu = document.getElementById("navMenu");
+    const navMenu = document.querySelector(".nav-menu");
 
     if (!menuToggle || !navMenu) return;
 
-    // Remove duplicate listeners if reloaded
-    const newToggle = menuToggle.cloneNode(true);
-    menuToggle.parentNode.replaceChild(newToggle, menuToggle);
-
-    newToggle.addEventListener("click", () => {
+    menuToggle.addEventListener("click", () => {
 
         navMenu.classList.toggle("active");
 
-        const expanded = navMenu.classList.contains("active");
+        const expanded =
+            menuToggle.getAttribute("aria-expanded") === "true";
 
-        newToggle.setAttribute("aria-expanded", expanded);
+        menuToggle.setAttribute(
+            "aria-expanded",
+            !expanded
+        );
 
-        const icon = newToggle.querySelector("i");
+        const icon = menuToggle.querySelector("i");
 
-        if (icon) {
-            icon.className = expanded
-                ? "fa-solid fa-xmark"
-                : "fa-solid fa-bars";
+        if (navMenu.classList.contains("active")) {
+
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-xmark");
+
+        } else {
+
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+
         }
 
     });
 
-    // Close menu after clicking a link (mobile)
-    navMenu.querySelectorAll("a").forEach(link => {
+    document.querySelectorAll(".nav-menu a").forEach(link => {
 
         link.addEventListener("click", () => {
 
             navMenu.classList.remove("active");
 
-            newToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-expanded", "false");
 
-            const icon = newToggle.querySelector("i");
+            const icon = menuToggle.querySelector("i");
 
-            if (icon) {
-                icon.className = "fa-solid fa-bars";
-            }
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
 
         });
 
     });
 
-    // Auto close when resizing to desktop
-    window.addEventListener("resize", () => {
-
-        if (window.innerWidth > 992) {
-
-            navMenu.classList.remove("active");
-
-            newToggle.setAttribute("aria-expanded", "false");
-
-            const icon = newToggle.querySelector("i");
-
-            if (icon) {
-                icon.className = "fa-solid fa-bars";
-            }
-
-        }
-
-    });
-
-}
+});
