@@ -1,0 +1,160 @@
+/* ==========================================================
+   PAPPRITO WEB V2
+   Version : 2.3.5
+   File : assets/css/navbar.css
+   Description : Navigation Bar
+========================================================== */
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    z-index:1000;
+
+    background:#ffffff;
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+/* ==========================================================
+   NAVBAR
+========================================================== */
+
+.navbar{
+
+    height:80px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+/* ==========================================================
+   LOGO
+========================================================== */
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    font-size:26px;
+
+    font-weight:700;
+
+    color:var(--primary);
+
+}
+
+.logo img{
+
+    height:52px;
+
+    width:auto;
+
+}
+
+/* ==========================================================
+   MENU
+========================================================== */
+
+.nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:30px;
+
+}
+
+.nav-links a{
+
+    position:relative;
+
+    color:var(--dark);
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.nav-links a:hover,
+
+.nav-links a.active{
+
+    color:var(--primary);
+
+}
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-6px;
+
+    width:0;
+
+    height:3px;
+
+    background:var(--primary);
+
+    transition:var(--transition);
+
+    border-radius:20px;
+
+}
+
+.nav-links a:hover::after,
+
+.nav-links a.active::after{
+
+    width:100%;
+
+}
+
+/* ==========================================================
+   CTA BUTTON
+========================================================== */
+
+.nav-btn{
+
+    padding:12px 24px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    border-radius:var(--radius-md);
+
+    transition:var(--transition);
+
+}
+
+.nav-btn:hover{
+
+    background:var(--primary-dark);
+
+}
