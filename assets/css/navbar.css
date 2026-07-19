@@ -21,9 +21,9 @@ header{
 
     z-index:1000;
 
-    background:#ffffff;
+    background:var(--primary);
 
-    box-shadow:var(--shadow-sm);
+    box-shadow:0 4px 18px rgba(0,0,0,.18);
 
 }
 
