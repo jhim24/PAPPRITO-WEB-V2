@@ -216,13 +216,16 @@ header{
 ========================== */
 
 @media (max-width:992px){
- .navbar{
+.navbar{
 
     height:72px;
 
     position:relative;
 
+    padding:0 16px;
+
 }
+
    .logo img{
 
     height:42px;
@@ -359,9 +362,11 @@ header{
 
     .navbar{
 
-        height:64px;
+    height:64px;
 
-    }
+    padding:0 12px;
+
+}
 
     .logo{
 
