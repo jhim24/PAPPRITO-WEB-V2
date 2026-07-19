@@ -408,3 +408,28 @@ header{
     }
 
 }
+/* ==========================================================
+   DEBUG MOBILE
+========================================================== */
+
+@media (max-width:992px){
+
+    .menu-toggle{
+
+        display:flex !important;
+
+    }
+
+    .nav-menu{
+
+        display:none !important;
+
+    }
+
+    .nav-menu.active{
+
+        display:flex !important;
+
+    }
+
+}
