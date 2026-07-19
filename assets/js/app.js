@@ -102,6 +102,15 @@ if (typeof initializeNavbar === "function") {
     "components/hero.html"
 );
 
+   /* ==========================================================
+   LOAD DINING SPACES
+========================================================== */
+
+await loadComponent(
+    "#dining-spaces-component",
+    "components/dining-spaces.html"
+);
+   
 /* ==========================================================
    LOAD MENU
 ========================================================== */
