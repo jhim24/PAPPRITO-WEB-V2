@@ -1,22 +1,11 @@
 /* ==========================================================
    PAPPRITO WEB V2
-   Version : 1.1.3
+   Version : 4.0.4
    File : assets/js/app.js
-   Description : Component Loader
-========================================================== */
-
-/* ==========================================================
-   LOAD HTML COMPONENT
+   Description : Homepage Component Loader
 ========================================================== */
 
 async function loadComponent(selector, file) {
-
-    const element = document.querySelector(selector);
-
-    if (!element) {
-        console.error(`Container not found: ${selector}`);
-        return;
-    }
 
     try {
 
@@ -26,152 +15,68 @@ async function loadComponent(selector, file) {
             throw new Error(`Unable to load ${file}`);
         }
 
-        element.innerHTML = await response.text();
+        const html = await response.text();
+
+        const element = document.querySelector(selector);
+
+        if (element) {
+            element.innerHTML = html;
+        }
 
     } catch (error) {
 
         console.error(error);
 
-        element.innerHTML = `
-            <div style="
-                padding:20px;
-                background:#D71920;
-                color:#fff;
-                text-align:center;">
-                Failed to load ${file}
-            </div>
-        `;
-
     }
 
 }
 
-/* ==========================================================
-   INITIALIZE WEBSITE
-========================================================== */
-
-document.addEventListener("DOMContentLoaded", async () => {
+async function initializeHome() {
 
     const app = document.getElementById("app");
 
-  app.innerHTML = `
+    if (!app) return;
 
-        <div id="hero-component"></div>
+    app.innerHTML = `
 
-        <div id="hero-component"></div>
+        <section id="hero-component"></section>
 
-       <div id="dining-spaces-component"></div>
+        <section id="dining-spaces-component"></section>
 
-       <div id="menu-component"></div>
+        <section id="menu-component"></section>
 
-       <div id="about-component"></div>
+        <section id="about-component"></section>
 
-        <div id="featured-menu-component"></div>
-        
-        <!-- ==========================================
-     GALLERY
-========================================== -->
+        <section id="featured-menu-component"></section>
 
-<div id="gallery-component"></div>
-<!-- ==========================================
-     BRANCHES
-========================================== -->
+        <section id="gallery-component"></section>
 
-<div id="branches-component"></div>
+        <section id="branches-component"></section>
 
-<div id="footer-component"></div>
+        <section id="footer-component"></section>
+
     `;
-await loadComponent(
-    "#navbar-component",
-    "components/navbar.html"
-);
 
-// Hintaying ma-render ang navbar bago i-initialize
-requestAnimationFrame(() => {
-    if (typeof initializeNavbar === "function") {
-        initializeNavbar();
-    }
-});
+    await Promise.all([
 
-   await loadComponent(
-    "#hero-component",
-    "components/hero.html"
-);
+        loadComponent("#hero-component", "components/hero.html"),
 
-   /* ==========================================================
-   LOAD DINING SPACES
-========================================================== */
+        loadComponent("#dining-spaces-component", "components/dining-spaces.html"),
 
-await loadComponent(
-    "#dining-spaces-component",
-    "components/dining-spaces.html"
-);
-   
-/* ==========================================================
-   LOAD MENU COMPONENT
-========================================================== */
+        loadComponent("#menu-component", "components/menu.html"),
 
-if (document.querySelector("#menu-component")) {
+        loadComponent("#about-component", "components/about.html"),
 
-    await loadComponent(
-        "#menu-component",
-        "components/menu.html"
-    );
+        loadComponent("#featured-menu-component", "components/featured-menu.html"),
+
+        loadComponent("#gallery-component", "components/gallery.html"),
+
+        loadComponent("#branches-component", "components/branches.html"),
+
+        loadComponent("#footer-component", "components/footer.html")
+
+    ]);
 
 }
 
-/* ==========================================================
-   INITIALIZE MENU
-========================================================== */
-
-if (typeof initializeMenu === "function") {
-
-    initializeMenu();
-
-}
-await loadComponent(
-    "#about-component",
-    "components/about.html"
-);
-
-    await loadComponent(
-        "#featured-menu-component",
-        "components/featured-menu.html"
-    );
-/* ==========================================================
-   LOAD GALLERY
-========================================================== */
-
-await loadComponent(
-    "#gallery-component",
-    "components/gallery.html"
-);
-   /* ==========================================================
-   LOAD BRANCHES
-========================================================== */
-
-await loadComponent(
-    "#branches-component",
-    "components/branches.html"
-);
-   /* ==========================================================
-   LOAD FOOTER
-========================================================== */
-
-await loadComponent(
-    "#footer-component",
-    "components/footer.html"
-);
-   /* ==========================================================
-   LOAD ABOUT CONTENT
-========================================================== */
-
-if (document.querySelector("#about-content-component")) {
-
-    await loadComponent(
-        "#about-content-component",
-        "components/about-content.html"
-    );
-
-}
-});
+document.addEventListener("DOMContentLoaded", initializeHome);
