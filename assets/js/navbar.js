@@ -37,3 +37,12 @@ function initializeNavbar() {
     });
 
 }
+/* ==========================================================
+   AUTO INITIALIZE
+========================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    initializeNavbar();
+
+});
