@@ -1130,3 +1130,135 @@
     }
 
 }
+/* ==========================================================
+   MENU SECTION
+========================================================== */
+
+.menu-section{
+
+    padding:100px 0;
+
+    background:#ffffff;
+
+}
+
+
+/* ==========================================================
+   MENU SEARCH
+========================================================== */
+
+.menu-search{
+
+    max-width:500px;
+
+    margin:40px auto;
+
+}
+
+.menu-search input{
+
+    width:100%;
+
+    padding:16px 20px;
+
+    border:2px solid #eeeeee;
+
+    border-radius:50px;
+
+    font-size:16px;
+
+    outline:none;
+
+    transition:.30s ease;
+
+}
+
+.menu-search input:focus{
+
+    border-color:#D71920;
+
+}
+
+
+/* ==========================================================
+   CATEGORY BUTTONS
+========================================================== */
+
+.menu-categories{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:50px;
+
+}
+
+.category-btn{
+
+    border:none;
+
+    background:#f4f4f4;
+
+    color:#333;
+
+    padding:12px 24px;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.30s ease;
+
+}
+
+.category-btn:hover,
+.category-btn.active{
+
+    background:#D71920;
+
+    color:#ffffff;
+
+}
+
+
+/* ==========================================================
+   MENU GRID
+========================================================== */
+
+.menu-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media(max-width:576px){
+
+    .menu-section{
+
+        padding:70px 0;
+
+    }
+
+    .menu-search{
+
+        margin:30px auto;
+
+    }
+
+}
