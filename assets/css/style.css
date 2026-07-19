@@ -369,11 +369,9 @@ button{
 
 .navbar{
 
-    background:rgba(255,255,255,.98);
+    background:var(--primary);
 
-    backdrop-filter:blur(12px);
-
-    box-shadow:0 2px 15px rgba(0,0,0,.08);
+    box-shadow:0 5px 20px rgba(0,0,0,.18);
 
 }
 
@@ -401,6 +399,10 @@ button{
 
     align-items:center;
 
+    gap:15px;
+
+    color:var(--white);
+
 }
 
 .logo img{
@@ -410,7 +412,33 @@ button{
     width:auto;
 
 }
+.logo-text h2{
 
+    font-size:28px;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+    color:var(--white);
+
+    line-height:1;
+
+}
+
+.logo-text span{
+
+    display:block;
+
+    font-size:13px;
+
+    color:var(--secondary);
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+}
 /* ==========================================================
    NAVIGATION MENU
 ========================================================== */
@@ -429,6 +457,8 @@ button{
 
     position:relative;
 
+    color:var(--white);
+
     font-size:15px;
 
     font-weight:600;
@@ -436,13 +466,11 @@ button{
     transition:var(--transition);
 
 }
-
 .nav-menu a:hover{
 
-    color:var(--primary);
+    color:var(--secondary);
 
 }
-
 .nav-menu a::after{
 
     content:"";
@@ -457,7 +485,7 @@ button{
 
     height:2px;
 
-    background:var(--primary);
+  background:var(--secondary);
 
     transition:var(--transition);
 
