@@ -34,3 +34,56 @@ window.addEventListener("scroll", () => {
     });
 
 });
+/* ==========================================================
+   MOBILE MENU
+========================================================== */
+
+const menuToggle = document.querySelector(".menu-toggle");
+const mobileMenu = document.querySelector(".mobile-menu");
+const menuClose = document.querySelector(".menu-close");
+const menuOverlay = document.querySelector(".menu-overlay");
+const mobileLinks = document.querySelectorAll(".mobile-nav a");
+
+/* ==========================================================
+   OPEN MENU
+========================================================== */
+
+menuToggle.addEventListener("click", () => {
+
+    mobileMenu.classList.add("active");
+    menuOverlay.classList.add("active");
+
+});
+
+/* ==========================================================
+   CLOSE MENU FUNCTION
+========================================================== */
+
+function closeMenu(){
+
+    mobileMenu.classList.remove("active");
+    menuOverlay.classList.remove("active");
+
+}
+
+/* ==========================================================
+   CLOSE BUTTON
+========================================================== */
+
+menuClose.addEventListener("click", closeMenu);
+
+/* ==========================================================
+   OVERLAY
+========================================================== */
+
+menuOverlay.addEventListener("click", closeMenu);
+
+/* ==========================================================
+   CLOSE WHEN MENU IS CLICKED
+========================================================== */
+
+mobileLinks.forEach(link=>{
+
+    link.addEventListener("click", closeMenu);
+
+});
