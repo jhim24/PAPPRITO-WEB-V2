@@ -591,3 +591,38 @@ button{
     }
 
 }
+/* ==========================================================
+   STICKY HEADER
+========================================================== */
+
+#header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    z-index:9999;
+
+    transition:var(--transition);
+
+}
+
+#header.scrolled{
+
+    background:rgba(255,255,255,.98);
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+#header.scrolled .navbar{
+
+    box-shadow:none;
+
+}
