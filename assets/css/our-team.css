@@ -716,15 +716,13 @@
 
     }
 
-    .management-card{
+   .management-card{
 
-        max-width:450px;
+    width:100%;
 
-        width:100%;
+    margin:0;
 
-        margin:0 auto;
-
-    }
+}
 
     .management-card img{
 
