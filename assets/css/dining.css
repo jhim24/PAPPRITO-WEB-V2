@@ -1,0 +1,249 @@
+/* ==========================================================
+   PAPPRITO WEB V3
+   File : dining.css
+   Description : Our Dining Spaces
+========================================================== */
+
+/* ==========================================================
+   DINING SPACES SECTION
+========================================================== */
+
+#dining-spaces{
+
+    padding:100px 0;
+
+    background:#ffffff;
+
+}
+
+/* ==========================================================
+   SECTION TITLE
+========================================================== */
+
+#dining-spaces .section-title{
+
+    max-width:800px;
+
+    margin:0 auto 60px;
+
+    text-align:center;
+
+}
+
+#dining-spaces .section-title span{
+
+    display:inline-block;
+
+    margin-bottom:12px;
+
+    color:#D71920;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+}
+
+#dining-spaces .section-title h2{
+
+    font-size:42px;
+
+    font-weight:700;
+
+    color:#222;
+
+    margin-bottom:20px;
+
+}
+
+#dining-spaces .section-title p{
+
+    font-size:17px;
+
+    color:#666;
+
+    line-height:1.8;
+
+}
+
+/* ==========================================================
+   GRID
+========================================================== */
+
+.dining-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
+
+/* ==========================================================
+   CARD
+========================================================== */
+
+.dining-card{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    transition:.35s ease;
+
+}
+
+.dining-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.15);
+
+}
+
+/* ==========================================================
+   IMAGE
+========================================================== */
+
+.dining-card img{
+
+    width:100%;
+
+    aspect-ratio:4/3;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.4s;
+
+}
+
+.dining-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+/* ==========================================================
+   CONTENT
+========================================================== */
+
+.dining-content{
+
+    padding:22px;
+
+}
+
+.dining-content h3{
+
+    margin-bottom:12px;
+
+    font-size:22px;
+
+    color:#222;
+
+    font-weight:700;
+
+}
+
+.dining-content p{
+
+    color:#666;
+
+    font-size:15px;
+
+    line-height:1.7;
+
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width:992px){
+
+    .dining-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width:768px){
+
+    #dining-spaces{
+
+        padding:70px 0;
+
+    }
+
+    #dining-spaces .section-title{
+
+        margin-bottom:35px;
+
+    }
+
+    #dining-spaces .section-title h2{
+
+        font-size:30px;
+
+    }
+
+    #dining-spaces .section-title p{
+
+        font-size:15px;
+
+    }
+
+    .dining-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:16px;
+
+    }
+
+    .dining-card{
+
+        border-radius:14px;
+
+    }
+
+    .dining-content{
+
+        padding:16px;
+
+    }
+
+    .dining-content h3{
+
+        font-size:17px;
+
+        margin-bottom:8px;
+
+    }
+
+    .dining-content p{
+
+        font-size:13px;
+
+        line-height:1.5;
+
+    }
+
+}
