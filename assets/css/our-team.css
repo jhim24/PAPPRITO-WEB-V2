@@ -359,72 +359,16 @@
 
     }
 
-    .team-card{
+   .team-card{
 
-        max-width:420px;
+    width:100%;
 
-        width:100%;
-
-        margin:0 auto;
-
-    }
-
-}
-/* ==========================================================
-   TEAM RESPONSIVE
-========================================================== */
-
-@media (max-width:992px){
-
-    .team-grid{
-
-        grid-template-columns:repeat(2,1fr);
-
-        gap:25px;
-
-    }
+    margin:0;
 
 }
 
-@media (max-width:768px){
-
-    #meet-team{
-
-        padding:70px 20px;
-
-    }
-
-    #meet-team .section-heading h2{
-
-        font-size:32px;
-
-    }
-
-    #meet-team .section-heading p{
-
-        font-size:15px;
-
-    }
-
-    .team-grid{
-
-        grid-template-columns:1fr;
-
-        gap:25px;
-
-    }
-
-    .team-card{
-
-        max-width:420px;
-
-        width:100%;
-
-        margin:0 auto;
-
-    }
-
 }
+
 /* ==========================================================
    MANAGEMENT TEAM
 ========================================================== */
