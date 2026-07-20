@@ -90,36 +90,46 @@ mobileLinks.forEach(link=>{
 
 });
 /* ==========================================================
-   HERO BACKGROUND MUSIC
+   HERO VIDEO PLAY / PAUSE
 ========================================================== */
 
-const musicButton = document.getElementById("music-toggle");
-const heroMusic = document.getElementById("hero-music");
+document.addEventListener("DOMContentLoaded", () => {
 
-if (musicButton && heroMusic) {
+    const button = document.getElementById("music-toggle");
+    const video = document.getElementById("hero-video");
 
-    musicButton.addEventListener("click", () => {
+    if (!button || !video) return;
 
-        if (heroMusic.paused) {
+    button.addEventListener("click", async () => {
 
-            heroMusic.play();
+        if (video.paused) {
 
-            musicButton.innerHTML = `
-                <i class="fa-solid fa-pause"></i>
-                <span>Pause Music</span>
-            `;
+            try {
+
+                await video.play();
+
+                button.innerHTML = `
+                    <i class="fa-solid fa-pause"></i>
+                    <span>Pause Video</span>
+                `;
+
+            } catch (err) {
+
+                console.error(err);
+
+            }
 
         } else {
 
-            heroMusic.pause();
+            video.pause();
 
-            musicButton.innerHTML = `
+            button.innerHTML = `
                 <i class="fa-solid fa-play"></i>
-                <span>Play Music</span>
+                <span>Play Video</span>
             `;
 
         }
 
     });
 
-}
+});
