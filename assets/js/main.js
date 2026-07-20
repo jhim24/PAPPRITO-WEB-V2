@@ -89,3 +89,37 @@ mobileLinks.forEach(link=>{
     link.addEventListener("click", closeMenu);
 
 });
+/* ==========================================================
+   HERO BACKGROUND MUSIC
+========================================================== */
+
+const musicButton = document.getElementById("music-toggle");
+const heroMusic = document.getElementById("hero-music");
+
+if (musicButton && heroMusic) {
+
+    musicButton.addEventListener("click", () => {
+
+        if (heroMusic.paused) {
+
+            heroMusic.play();
+
+            musicButton.innerHTML = `
+                <i class="fa-solid fa-pause"></i>
+                <span>Pause Music</span>
+            `;
+
+        } else {
+
+            heroMusic.pause();
+
+            musicButton.innerHTML = `
+                <i class="fa-solid fa-play"></i>
+                <span>Play Music</span>
+            `;
+
+        }
+
+    });
+
+}
