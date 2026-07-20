@@ -267,3 +267,88 @@
     color:rgba(255,255,255,.92);
 
 }
+/* ==========================================================
+   HERO VIDEO ANIMATION
+========================================================== */
+
+.hero-video{
+
+    animation:heroZoom 18s ease-in-out infinite alternate;
+
+}
+
+@keyframes heroZoom{
+
+    from{
+
+        transform:scale(1);
+
+    }
+
+    to{
+
+        transform:scale(1.12);
+
+    }
+
+}
+
+/* ==========================================================
+   HERO CONTENT ANIMATION
+========================================================== */
+
+.hero-content{
+
+    animation:heroFadeUp 1.2s ease forwards;
+
+}
+
+@keyframes heroFadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================================
+   HERO BUTTON ANIMATION
+========================================================== */
+
+.hero-buttons{
+
+    animation:heroButtons 1.8s ease forwards;
+
+}
+
+@keyframes heroButtons{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
