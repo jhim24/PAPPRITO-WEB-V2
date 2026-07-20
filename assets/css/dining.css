@@ -17,10 +17,10 @@
 }
 
 /* ==========================================================
-   SECTION TITLE
+   SECTION HEADING
 ========================================================== */
 
-#dining-spaces .section-title{
+.section-heading{
 
     max-width:800px;
 
@@ -30,25 +30,29 @@
 
 }
 
-#dining-spaces .section-title span{
+.section-heading span{
 
-    display:inline-block;
-
-    margin-bottom:12px;
+    display:block;
 
     color:#D71920;
 
-    font-size:14px;
+    font-size:15px;
 
     font-weight:700;
 
-    letter-spacing:2px;
+    letter-spacing:4px;
 
     text-transform:uppercase;
 
+    margin-bottom:12px;
+
 }
 
-#dining-spaces .section-title h2{
+.section-heading h2{
+
+    display:inline-block;
+
+    position:relative;
 
     font-size:42px;
 
@@ -56,11 +60,39 @@
 
     color:#222;
 
+    padding-bottom:15px;
+
     margin-bottom:20px;
 
 }
 
-#dining-spaces .section-title p{
+.section-heading h2::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:0;
+
+    transform:translateX(-50%);
+
+    width:100px;
+
+    height:4px;
+
+    background:#D71920;
+
+    border-radius:50px;
+
+}
+
+.section-heading p{
+
+    max-width:700px;
+
+    margin:0 auto;
 
     font-size:17px;
 
@@ -69,7 +101,6 @@
     line-height:1.8;
 
 }
-
 /* ==========================================================
    GRID
 ========================================================== */
