@@ -425,3 +425,244 @@
     }
 
 }
+/* ==========================================================
+   MANAGEMENT TEAM
+========================================================== */
+
+#management-team{
+
+    padding:100px 0;
+
+    background:#f8f9fb;
+
+}
+
+#management-team .section-heading{
+
+    max-width:800px;
+
+    margin:0 auto 60px;
+
+    text-align:center;
+
+}
+
+#management-team .section-heading span{
+
+    display:block;
+
+    color:#D71920;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    margin-bottom:15px;
+
+}
+
+#management-team .section-heading h2{
+
+    display:inline-block;
+
+    position:relative;
+
+    font-size:42px;
+
+    font-weight:700;
+
+    color:#222;
+
+    margin-bottom:20px;
+
+    padding-bottom:15px;
+
+}
+
+#management-team .section-heading h2::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:0;
+
+    transform:translateX(-50%);
+
+    width:90px;
+
+    height:4px;
+
+    background:#D71920;
+
+    border-radius:50px;
+
+}
+
+#management-team .section-heading p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    font-size:17px;
+
+    color:#666;
+
+    line-height:1.8;
+
+}
+
+/* ==========================================================
+   MANAGEMENT GRID
+========================================================== */
+
+.management-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:40px;
+
+}
+
+/* ==========================================================
+   MANAGEMENT CARD
+========================================================== */
+
+.management-card{
+
+    background:#fff;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
+
+    transition:.35s ease;
+
+}
+
+.management-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.15);
+
+}
+
+.management-card img{
+
+    width:100%;
+
+    height:340px;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.4s;
+
+}
+
+.management-card:hover img{
+
+    transform:scale(1.05);
+
+}
+
+.management-content{
+
+    padding:30px;
+
+    text-align:center;
+
+}
+
+.management-content h3{
+
+    font-size:28px;
+
+    color:#222;
+
+    margin-bottom:8px;
+
+    font-weight:700;
+
+}
+
+.management-content h4{
+
+    color:#D71920;
+
+    font-size:17px;
+
+    margin-bottom:18px;
+
+    font-weight:600;
+
+}
+
+.management-content p{
+
+    color:#666;
+
+    line-height:1.8;
+
+    margin-bottom:25px;
+
+}
+
+/* ==========================================================
+   SOCIAL ICONS
+========================================================== */
+
+.team-social{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:12px;
+
+}
+
+.team-social a{
+
+    width:42px;
+
+    height:42px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#D71920;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    transition:.3s ease;
+
+}
+
+.team-social a:hover{
+
+    background:#111;
+
+    transform:translateY(-4px);
+
+}
