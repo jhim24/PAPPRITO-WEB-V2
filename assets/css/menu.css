@@ -1,0 +1,123 @@
+/* ==========================================================
+   PAPPRITO WEB V3
+   File        : menu.css
+   Description : Menu Page Styles
+   Version     : 3.0.0
+========================================================== */
+
+
+/* ==========================================================
+   MENU HERO
+========================================================== */
+
+#menu-hero{
+
+    position:relative;
+
+    min-height:420px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    background:url("../images/menu/menu-banner.jpg") center center/cover no-repeat;
+
+    overflow:hidden;
+
+}
+
+#menu-hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.60);
+
+}
+
+.menu-hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:900px;
+
+    color:#fff;
+
+    padding:20px;
+
+}
+
+.menu-hero-content span{
+
+    display:inline-block;
+
+    margin-bottom:18px;
+
+    color:var(--secondary);
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.menu-hero-content h1{
+
+    font-size:56px;
+
+    margin-bottom:20px;
+
+    font-weight:700;
+
+}
+
+.menu-hero-content p{
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    max-width:700px;
+
+    margin:auto;
+
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media(max-width:768px){
+
+    #menu-hero{
+
+        min-height:320px;
+
+    }
+
+    .menu-hero-content h1{
+
+        font-size:38px;
+
+    }
+
+    .menu-hero-content p{
+
+        font-size:16px;
+
+    }
+
+}
