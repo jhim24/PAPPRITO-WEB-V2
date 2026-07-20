@@ -655,6 +655,7 @@ button{
     }
 
 }
+
 /* ==========================================================
    STICKY HEADER
 ========================================================== */
@@ -1090,5 +1091,72 @@ button{
         justify-content:center;
 
     }
+
+}
+/* ==========================================================
+   MOBILE FOOTER QUICK LINKS
+========================================================== */
+
+.footer-column .quick-links{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:15px 10px;
+
+    padding:0;
+
+    margin-top:20px;
+
+    list-style:none;
+
+}
+
+.footer-column .quick-links li{
+
+    margin:0;
+
+}
+
+.footer-column .quick-links a{
+
+    display:block;
+
+    text-align:center;
+
+    padding:10px;
+
+    border-radius:10px;
+
+   color:#d1d5db;
+
+    text-decoration:none;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.footer-column .quick-links a:hover{
+
+    background:rgba(215,25,32,.08);
+
+    color:var(--primary);
+
+}
+
+/* Second Row */
+
+.footer-column .quick-links li:nth-child(4){
+
+    grid-column:1 / 2;
+
+}
+
+.footer-column .quick-links li:nth-child(5){
+
+    grid-column:2 / 3;
 
 }
