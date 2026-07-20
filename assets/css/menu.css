@@ -121,3 +121,92 @@
     }
 
 }
+/* ==========================================================
+   MENU CATEGORY
+========================================================== */
+
+#menu-category{
+
+    background:#ffffff;
+
+    padding:30px 0;
+
+    position:sticky;
+
+    top:85px;
+
+    z-index:100;
+
+    border-bottom:1px solid #eeeeee;
+
+}
+
+.menu-category-wrapper{
+
+    display:flex;
+
+    gap:15px;
+
+    overflow-x:auto;
+
+    scrollbar-width:none;
+
+}
+
+.menu-category-wrapper::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+.category-btn{
+
+    flex:0 0 auto;
+
+    padding:12px 24px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#f3f4f6;
+
+    color:#111827;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.category-btn:hover{
+
+    background:var(--secondary);
+
+    color:#111827;
+
+}
+
+.category-btn.active{
+
+    background:var(--primary);
+
+    color:#ffffff;
+
+}
+
+@media(max-width:768px){
+
+    #menu-category{
+
+        top:70px;
+
+        padding:20px 0;
+
+    }
+
+}
