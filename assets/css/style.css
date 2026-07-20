@@ -1009,7 +1009,43 @@ button{
     transform:translateY(-5px);
 
 }
+/* ==========================================================
+   FOOTER ORDER BUTTON
+========================================================== */
 
+.footer-order-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    margin-top:25px;
+
+    padding:14px 20px;
+
+    background:var(--primary);
+
+    color:#ffffff;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.footer-order-btn:hover{
+
+    background:#b8141a;
+
+    transform:translateY(-2px);
+
+}
 /* ==========================================================
    FOOTER BOTTOM
 ========================================================== */
