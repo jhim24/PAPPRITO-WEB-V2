@@ -91,3 +91,40 @@
     color:#f5f5f5;
 
 }
+/* ==========================================================
+   OUR TEAM HERO RESPONSIVE
+========================================================== */
+
+@media (max-width:768px){
+
+    #team-hero{
+
+        min-height:350px;
+
+        padding:90px 20px;
+
+    }
+
+    .team-hero-content h1{
+
+        font-size:38px;
+
+    }
+
+    .team-hero-content p{
+
+        font-size:15px;
+
+        line-height:1.7;
+
+    }
+
+    .team-hero-content .hero-subtitle{
+
+        font-size:13px;
+
+        letter-spacing:2px;
+
+    }
+
+}
