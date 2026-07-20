@@ -666,3 +666,88 @@
     transform:translateY(-4px);
 
 }
+/* ==========================================================
+   MANAGEMENT TEAM RESPONSIVE
+========================================================== */
+
+@media (max-width:992px){
+
+    .management-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:30px;
+
+    }
+
+    .management-card img{
+
+        height:280px;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    #management-team{
+
+        padding:70px 20px;
+
+    }
+
+    #management-team .section-heading h2{
+
+        font-size:32px;
+
+    }
+
+    #management-team .section-heading p{
+
+        font-size:15px;
+
+    }
+
+    .management-grid{
+
+        grid-template-columns:1fr;
+
+        gap:25px;
+
+    }
+
+    .management-card{
+
+        max-width:450px;
+
+        width:100%;
+
+        margin:0 auto;
+
+    }
+
+    .management-card img{
+
+        height:260px;
+
+    }
+
+    .management-content{
+
+        padding:25px;
+
+    }
+
+    .management-content h3{
+
+        font-size:24px;
+
+    }
+
+    .management-content h4{
+
+        font-size:16px;
+
+    }
+
+}
