@@ -19,22 +19,28 @@
 
     justify-content:center;
 
-    min-height:420px;
+    min-height:520px;
 
     padding:120px 20px 80px;
 
-    background-image:url("../images/about/about-banner.jpg");
+    overflow:hidden;
 
-    background-position:center;
+    background:
+        linear-gradient(
+            rgba(0,0,0,.78),
+            rgba(0,0,0,.70)
+        ),
+        url("../images/logo/logo.png");
 
     background-repeat:no-repeat;
 
+    background-position:center;
+
     background-size:cover;
 
-    overflow:hidden;
+    background-attachment:fixed;
 
 }
-
 /* ==========================================================
    OVERLAY
 ========================================================== */
