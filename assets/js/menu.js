@@ -184,27 +184,55 @@ function renderProducts(){
                 ? product.image
                 : "../assets/images/no-product.png";
 
-        container.innerHTML += `
+       container.innerHTML += `
 
-        <div class="menu-card">
+<div class="menu-card">
 
-            <img
-                src="${image}"
-                alt="${product.name}">
+    <div class="menu-image">
 
-            <div class="menu-card-body">
+        <img
+            src="${image}"
+            alt="${product.name}">
 
-                <h3>${product.name}</h3>
+    </div>
 
-                <p>${product.categoryName}</p>
+    <div class="menu-card-body">
 
-                <h4>₱${Number(product.sellingPrice || 0).toFixed(2)}</h4>
+        <span class="menu-category">
+            ${product.categoryName}
+        </span>
+
+        <h3>
+            ${product.name}
+        </h3>
+
+        <p>
+            ${product.description || "Freshly prepared with quality ingredients."}
+        </p>
+
+        <div class="menu-footer">
+
+            <div class="menu-price">
+
+                ₱${Number(product.sellingPrice || 0).toFixed(2)}
 
             </div>
 
+            <button
+                class="menu-order-btn"
+                data-id="${product.id}">
+
+                Order Now
+
+            </button>
+
         </div>
 
-        `;
+    </div>
+
+</div>
+
+`;
 
     });
 
