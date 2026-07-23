@@ -458,47 +458,7 @@ font-size:22px;
 
 }
 
-.footer-bottom{
 
-    text-align:center;
-
-    border-top:1px solid rgba(255,255,255,.10);
-
-    padding-top:30px;
-
-}
-
-.back-home{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:12px;
-
-    padding:14px 34px;
-
-    border-radius:50px;
-
-    background:#FFD54A;
-
-    color:#111;
-
-    text-decoration:none;
-
-    font-weight:700;
-
-    transition:.30s;
-
-}
-
-.back-home:hover{
-
-    background:#fff;
-
-    transform:translateY(-3px);
-
-}
 @media(max-width:768px){
 
 #branches-footer .footer-grid{
@@ -516,14 +476,6 @@ padding:25px;
 .footer-card h3{
 
 font-size:20px;
-
-}
-
-.back-home{
-
-width:100%;
-
-justify-content:center;
 
 }
 
