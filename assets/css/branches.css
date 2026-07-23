@@ -1,0 +1,304 @@
+/* ==========================================================
+   PAPPRITO WEB V3
+   File : branches.css
+   Description : Branches Page
+========================================================== */
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+#branches-hero{
+
+    position:relative;
+
+    padding:140px 20px 100px;
+
+    background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+    url("../images/branches/hero.jpg") center/cover no-repeat;
+
+    text-align:center;
+
+    color:#fff;
+
+}
+
+#branches-hero .hero-content{
+
+    max-width:800px;
+
+    margin:auto;
+
+}
+
+#branches-hero span{
+
+    display:inline-block;
+
+    color:#FFD54A;
+
+    font-weight:700;
+
+    letter-spacing:3px;
+
+    margin-bottom:15px;
+
+}
+
+#branches-hero h1{
+
+    font-size:52px;
+
+    margin-bottom:20px;
+
+}
+
+#branches-hero p{
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    opacity:.95;
+
+}
+
+/* ==========================================================
+   BRANCHES
+========================================================== */
+
+#branches{
+
+    padding:90px 20px;
+
+    background:#fafafa;
+
+}
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+.section-title span{
+
+    color:#D71920;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+}
+
+.section-title h2{
+
+    font-size:40px;
+
+    margin:12px 0;
+
+    color:#222;
+
+}
+
+.section-title p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    color:#666;
+
+    line-height:1.8;
+
+}
+
+/* ==========================================================
+   GRID
+========================================================== */
+
+.branches-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+
+    gap:35px;
+
+}
+
+/* ==========================================================
+   CARD
+========================================================== */
+
+.branch-card{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+}
+
+.branch-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 25px 45px rgba(0,0,0,.15);
+
+}
+
+.branch-image{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.branch-image img{
+
+    width:100%;
+
+    height:280px;
+
+    object-fit:cover;
+
+    transition:.4s;
+
+}
+
+.branch-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+/* ==========================================================
+   BADGE
+========================================================== */
+
+.branch-badge{
+
+    position:absolute;
+
+    top:18px;
+
+    left:18px;
+
+    background:#D71920;
+
+    color:#fff;
+
+    padding:8px 16px;
+
+    border-radius:50px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+}
+
+/* ==========================================================
+   CONTENT
+========================================================== */
+
+.branch-content{
+
+    padding:30px;
+
+}
+
+.branch-content h3{
+
+    color:#D71920;
+
+    margin-bottom:15px;
+
+    font-size:28px;
+
+}
+
+.branch-content p{
+
+    color:#666;
+
+    line-height:1.8;
+
+    margin-bottom:25px;
+
+}
+
+.branch-content ul{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0;
+
+}
+
+.branch-content li{
+
+    margin-bottom:15px;
+
+    color:#444;
+
+}
+
+.branch-content li i{
+
+    width:25px;
+
+    color:#D71920;
+
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media(max-width:768px){
+
+#branches-hero{
+
+padding:120px 20px 80px;
+
+}
+
+#branches-hero h1{
+
+font-size:38px;
+
+}
+
+.section-title h2{
+
+font-size:30px;
+
+}
+
+.branch-content{
+
+padding:22px;
+
+}
+
+.branch-content h3{
+
+font-size:22px;
+
+}
+
+}
