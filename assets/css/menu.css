@@ -131,7 +131,7 @@
 
     top:85px;
 
-    z-index:100;
+    z-index:90;
 
     background:#ffffff;
 
@@ -225,7 +225,7 @@
 
 #menu-items{
 
-    padding:70px 0;
+    padding:40px 0 70px;
 
     background:#f8f9fb;
 
