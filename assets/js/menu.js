@@ -183,7 +183,9 @@ function renderProducts(){
 
        container.innerHTML += `
 
-<div class="menu-card">
+<div
+    class="menu-card"
+    onclick="openProductModal('${product.id}')">
 
     <div class="menu-image">
 
@@ -215,9 +217,9 @@ function renderProducts(){
 
             </div>
 
-            <button
-                class="menu-order-btn"
-                data-id="${product.id}">
+         <button
+    class="menu-order-btn"
+    onclick="event.stopPropagation(); openProductModal('${product.id}')">
 
                 Order Now
 
@@ -234,3 +236,57 @@ function renderProducts(){
     });
 
 }
+/* ==========================================================
+   PRODUCT MODAL
+========================================================== */
+
+function openProductModal(productId){
+
+    const product = products.find(p => p.id === productId);
+
+    if(!product) return;
+
+    document.getElementById("modalImage").src =
+        product.image || "../assets/images/no-product.png";
+
+    document.getElementById("modalCategory").textContent =
+        product.categoryName || "";
+
+    document.getElementById("modalName").textContent =
+        product.name || "";
+
+    document.getElementById("modalDescription").textContent =
+        product.description || "Freshly prepared with quality ingredients.";
+
+    document.getElementById("modalPrice").textContent =
+        "₱" + Number(product.sellingPrice || 0).toFixed(2);
+
+    document
+        .getElementById("productModal")
+        .classList.add("active");
+
+}
+
+function closeProductModal(){
+
+    document
+        .getElementById("productModal")
+        .classList.remove("active");
+
+}
+
+document
+    .getElementById("closeProductModal")
+    .addEventListener("click", closeProductModal);
+
+document
+    .getElementById("productModal")
+    .addEventListener("click", function(e){
+
+        if(e.target.id === "productModal"){
+
+            closeProductModal();
+
+        }
+
+    });
