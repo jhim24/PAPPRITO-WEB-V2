@@ -157,7 +157,19 @@
 
 .branch-section{
 
-    margin-bottom:90px;
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    align-items:center;
+
+    gap:40px;
+
+    max-width:1400px;
+
+    margin:70px auto;
+
+    padding:0 20px;
 
 }
 
