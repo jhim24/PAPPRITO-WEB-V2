@@ -14,6 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     loadCategories();
 
+    loadProducts();
+
 });
 
 /* ==========================================================
@@ -86,6 +88,89 @@ function renderCategories(){
                 ${category.name}
 
             </button>
+
+        `;
+
+    });
+
+}
+/* ==========================================================
+   LOAD PRODUCTS
+========================================================== */
+
+let products = [];
+
+function loadProducts(){
+
+    db.ref("products")
+
+      .orderByChild("name")
+
+      .once("value")
+
+      .then((snapshot)=>{
+
+          products = [];
+
+          snapshot.forEach((child)=>{
+
+              const product = child.val();
+
+              product.id = child.key;
+
+              if(product.status === "Active"){
+
+                  products.push(product);
+
+              }
+
+          });
+
+          renderProducts();
+
+      });
+
+}
+
+/* ==========================================================
+   RENDER PRODUCTS
+========================================================== */
+
+function renderProducts(){
+
+    const container =
+        document.getElementById("menu-products");
+
+    if(!container) return;
+
+    container.innerHTML = "";
+
+    products.forEach(product=>{
+
+        const image =
+            product.image && product.image !== ""
+                ? product.image
+                : "../assets/images/no-product.png";
+
+        container.innerHTML += `
+
+        <div class="menu-card">
+
+            <img
+                src="${image}"
+                alt="${product.name}">
+
+            <div class="menu-card-body">
+
+                <h3>${product.name}</h3>
+
+                <p>${product.categoryName}</p>
+
+                <h4>₱${Number(product.sellingPrice || 0).toFixed(2)}</h4>
+
+            </div>
+
+        </div>
 
         `;
 
