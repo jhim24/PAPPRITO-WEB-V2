@@ -1,1 +1,515 @@
+<!DOCTYPE html>
 
+<!-- ==========================================================
+     PAPPRITO WEB V3
+     File        : reservation.html
+     Description : Table Reservation
+     Version     : 3.0.0
+========================================================== -->
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Reservation | PAPPRITO Restaurant</title>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/global.css">
+<link rel="stylesheet" href="../assets/css/reservation.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<header id="header"></header>
+
+<main>
+
+<!-- ==========================================================
+     HERO
+========================================================== -->
+
+<section id="reservation-hero">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <span>BOOK YOUR TABLE</span>
+
+            <h1>RESERVATION</h1>
+
+            <p>
+
+                Reserve your table today and enjoy authentic Filipino
+                cuisine with family, friends, and loved ones at
+                PAPPRITO Restaurant.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="../index.html" class="btn-home">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    Back to Home
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================================
+     RESERVATION FORM
+========================================================== -->
+
+<section id="reservation-form">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>PAPPRITO RESTAURANT</span>
+
+            <h2>Reserve Your Table</h2>
+
+            <p>
+
+                Fill out the reservation form below and our team will
+                confirm your booking as soon as possible.
+
+            </p>
+
+        </div>
+
+        <div class="reservation-grid">
+
+            <!-- ==========================================
+                 RESERVATION FORM
+            =========================================== -->
+
+            <div class="reservation-card">
+
+                <form id="bookingForm">
+
+                    <div class="form-group">
+
+                        <label>Full Name</label>
+
+                        <input
+                            type="text"
+                            id="fullname"
+                            placeholder="Enter your full name"
+                            required>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Mobile Number</label>
+
+                        <input
+                            type="tel"
+                            id="mobile"
+                            placeholder="+63 912 345 6789"
+                            required>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Email Address</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="example@email.com">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Select Branch</label>
+
+                        <select id="branch" required>
+
+                            <option value="">Choose Branch</option>
+
+                            <option>
+                                PAPPRITO Rotunda Main
+                            </option>
+
+                            <option>
+                                PAPPRITO Mahogany
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label>Date</label>
+
+                            <input
+                                type="date"
+                                id="date"
+                                required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Time</label>
+
+                            <input
+                                type="time"
+                                id="time"
+                                required>
+
+                                   <!-- ==========================================
+                 RESTAURANT INFORMATION
+            =========================================== -->
+
+            <div class="reservation-info">
+
+                <div class="info-card">
+
+                    <h3>
+
+                        <i class="fa-solid fa-store"></i>
+
+                        PAPPRITO Restaurant
+
+                    </h3>
+
+                    <p>
+
+                        We are excited to welcome you. Reserve your
+                        table in advance for a smooth and enjoyable
+                        dining experience.
+
+                    </p>
+
+                    <ul class="info-list">
+
+                        <li>
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            Tagaytay City, Cavite, Philippines
+
+                        </li>
+
+                        <li>
+
+                            <i class="fa-solid fa-phone"></i>
+
+                            +63 912 345 6789
+
+                        </li>
+
+                        <li>
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                            info@papprito.com
+
+                        </li>
+
+                        <li>
+
+                            <i class="fa-solid fa-clock"></i>
+
+                            Daily • 9:00 AM – 10:00 PM
+
+                        </li>
+
+                        <li>
+
+                            <i class="fa-solid fa-car"></i>
+
+                            Free Parking Available
+
+                        </li>
+
+                        <li>
+
+                            <i class="fa-solid fa-wifi"></i>
+
+                            Free Wi-Fi
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <!-- ======================================
+                     BRANCHES
+                ======================================= -->
+
+                <div class="info-card">
+
+                    <h3>
+
+                        <i class="fa-solid fa-map-location-dot"></i>
+
+                        Our Branches
+
+                    </h3>
+
+                    <div class="branch-item">
+
+                        <h4>
+
+                            PAPPRITO Rotunda Main
+
+                        </h4>
+
+                        <p>
+
+                            Tagaytay Rotunda,
+                            Tagaytay City
+
+                        </p>
+
+                    </div>
+
+                    <div class="branch-item">
+
+                        <h4>
+
+                            PAPPRITO Mahogany
+
+                        </h4>
+
+                        <p>
+
+                            Mahogany Avenue,
+                            Tagaytay City
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================================
+     GOOGLE MAP
+========================================================== -->
+
+<section id="reservation-map">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>LOCATION</span>
+
+            <h2>Find Us Easily</h2>
+
+            <p>
+
+                Visit our restaurant and enjoy an unforgettable
+                dining experience.
+
+            </p>
+
+        </div>
+
+        <div class="map-wrapper">
+
+            <iframe
+
+                src="https://www.google.com/maps?q=Tagaytay&output=embed"
+
+                loading="lazy"
+
+                allowfullscreen>
+
+            </iframe>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ==========================================================
+     FREQUENTLY ASKED QUESTIONS
+========================================================== -->
+
+<section id="reservation-faq">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>HELP CENTER</span>
+
+            <h2>Reservation Guidelines</h2>
+
+            <p>
+
+                Please review our reservation policies before booking
+                your table.
+
+            </p>
+
+        </div>
+
+        <div class="faq-grid">
+
+            <div class="faq-card">
+
+                <h3>
+
+                    <i class="fa-solid fa-circle-question"></i>
+
+                    How do I reserve a table?
+
+                </h3>
+
+                <p>
+
+                    Complete the reservation form. Our staff will
+                    contact you to confirm your booking.
+
+                </p>
+
+            </div>
+
+            <div class="faq-card">
+
+                <h3>
+
+                    <i class="fa-solid fa-users"></i>
+
+                    Do you accept walk-ins?
+
+                </h3>
+
+                <p>
+
+                    Yes. Walk-ins are welcome, subject to table
+                    availability.
+
+                </p>
+
+            </div>
+
+            <div class="faq-card">
+
+                <h3>
+
+                    <i class="fa-solid fa-calendar-xmark"></i>
+
+                    Can I cancel my reservation?
+
+                </h3>
+
+                <p>
+
+                    Yes. Please notify us at least two hours before
+                    your reserved schedule.
+
+                </p>
+
+            </div>
+
+            <div class="faq-card">
+
+                <h3>
+
+                    <i class="fa-solid fa-cake-candles"></i>
+
+                    Do you accommodate special occasions?
+
+                </h3>
+
+                <p>
+
+                    Absolutely! Birthdays, anniversaries, meetings,
+                    and family gatherings are always welcome.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================================
+     RESERVATION FOOTER
+========================================================== -->
+
+<footer id="reservation-footer">
+
+    <div class="container">
+
+        <div class="footer-card">
+
+            <h2>
+
+                Ready to Dine at PAPPRITO?
+
+            </h2>
+
+            <p>
+
+                We look forward to serving you with authentic Filipino
+                cuisine and exceptional hospitality.
+
+            </p>
+
+            <a
+                href="../index.html"
+                class="btn-home">
+
+                <i class="fa-solid fa-house"></i>
+
+                Back to Home
+
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+</main>
+
+<script src="../assets/js/main.js"></script>
+
+<script src="../assets/js/reservation.js"></script>
+
+</body>
+
+</html>
