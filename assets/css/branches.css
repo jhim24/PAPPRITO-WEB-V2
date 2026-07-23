@@ -209,6 +209,12 @@
 
     position:relative;
 
+    width:100vw;
+
+    margin-left:calc(50% - 50vw);
+
+    margin-right:calc(50% - 50vw);
+
     overflow:hidden;
 
 }
@@ -231,7 +237,11 @@
 
     width:100%;
 
-    height:100%;
+    height:70vh;
+
+    min-height:420px;
+
+    max-height:700px;
 
     object-fit:cover;
 
