@@ -92,8 +92,26 @@ function renderCategories(){
         `;
 
     });
+const buttons = wrapper.querySelectorAll(".category-btn");
 
+buttons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        buttons.forEach(btn => btn.classList.remove("active"));
+
+        button.classList.add("active");
+
+        selectedCategory = button.dataset.category;
+
+        renderProducts();
+
+    });
+
+});
+   
 }
+
 /* ==========================================================
    LOAD PRODUCTS
 ========================================================== */
@@ -131,27 +149,6 @@ function loadProducts(){
       });
 
 }
-/* ==========================================
-   CATEGORY BUTTON EVENTS
-========================================== */
-
-const buttons = document.querySelectorAll(".category-btn");
-
-buttons.forEach(button=>{
-
-    button.addEventListener("click",()=>{
-
-        buttons.forEach(btn=>btn.classList.remove("active"));
-
-        button.classList.add("active");
-
-        selectedCategory = button.dataset.category;
-
-        renderProducts();
-
-    });
-
-});
 /* ==========================================================
    RENDER PRODUCTS
 ========================================================== */
