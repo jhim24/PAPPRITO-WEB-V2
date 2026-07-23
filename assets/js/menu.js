@@ -97,7 +97,7 @@ function renderCategories(){
 /* ==========================================================
    LOAD PRODUCTS
 ========================================================== */
-
+let selectedCategory = "all";
 let products = [];
 
 function loadProducts(){
@@ -131,7 +131,27 @@ function loadProducts(){
       });
 
 }
+/* ==========================================
+   CATEGORY BUTTON EVENTS
+========================================== */
 
+const buttons = document.querySelectorAll(".category-btn");
+
+buttons.forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+        buttons.forEach(btn=>btn.classList.remove("active"));
+
+        button.classList.add("active");
+
+        selectedCategory = button.dataset.category;
+
+        renderProducts();
+
+    });
+
+});
 /* ==========================================================
    RENDER PRODUCTS
 ========================================================== */
@@ -145,7 +165,19 @@ function renderProducts(){
 
     container.innerHTML = "";
 
-    products.forEach(product=>{
+   products
+.filter(product => {
+
+    if(selectedCategory === "all"){
+
+        return true;
+
+    }
+
+    return product.categoryName === selectedCategory;
+
+})
+.forEach(product=>{
 
         const image =
             product.image && product.image !== ""
