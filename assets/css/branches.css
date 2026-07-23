@@ -109,7 +109,7 @@
 
 #branches{
 
-    padding:90px 20px;
+    padding:50px 20px 35px;
 
     background:#fafafa;
 
@@ -165,15 +165,15 @@
 
     display:grid;
 
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:1fr 1fr;
 
-    align-items:center;
+    align-items:stretch;
 
-    gap:40px;
+    gap:35px;
 
     max-width:1400px;
 
-    margin:70px auto;
+    margin:35px auto;
 
     padding:0 20px;
 
@@ -189,19 +189,20 @@
 
     width:100%;
 
+    height:100%;
+
     overflow:hidden;
 
-}
+    border-radius:20px;
 
+}
 .branch-image img{
 
     width:100%;
 
-    height:70vh;
+    height:100%;
 
-    min-height:450px;
-
-    max-height:720px;
+    min-height:100%;
 
     object-fit:cover;
 
