@@ -352,3 +352,150 @@ font-size:22px;
 }
 
 }
+/* ==========================================================
+   BRANCHES FOOTER
+========================================================== */
+
+#branches-footer{
+
+    background:#111;
+
+    padding:70px 20px 30px;
+
+    color:#fff;
+
+}
+
+#branches-footer .footer-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:35px;
+
+    margin-bottom:45px;
+
+}
+
+.footer-card{
+
+    background:#1b1b1b;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    padding:35px;
+
+    transition:.35s;
+
+}
+
+.footer-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#D71920;
+
+    box-shadow:0 20px 40px rgba(215,25,32,.20);
+
+}
+
+.footer-card h3{
+
+    color:#FFD54A;
+
+    font-size:24px;
+
+    margin-bottom:20px;
+
+}
+
+.footer-card h3 i{
+
+    color:#D71920;
+
+    margin-right:10px;
+
+}
+
+.footer-card p{
+
+    color:#ddd;
+
+    line-height:1.8;
+
+    margin-bottom:25px;
+
+}
+
+.footer-card a{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    background:#D71920;
+
+    padding:12px 22px;
+
+    border-radius:50px;
+
+    transition:.30s;
+
+}
+
+.footer-card a:hover{
+
+    background:#b51218;
+
+}
+
+.footer-bottom{
+
+    text-align:center;
+
+    border-top:1px solid rgba(255,255,255,.10);
+
+    padding-top:30px;
+
+}
+
+.back-home{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:14px 34px;
+
+    border-radius:50px;
+
+    background:#FFD54A;
+
+    color:#111;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    transition:.30s;
+
+}
+
+.back-home:hover{
+
+    background:#fff;
+
+    transform:translateY(-3px);
+
+}
