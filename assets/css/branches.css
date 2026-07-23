@@ -581,7 +581,23 @@
     font-size:20px;
 
 }
+.branch-section{
 
+    grid-template-columns:1fr;
+
+}
+
+.branch-section.reverse .branch-image{
+
+    order:1;
+
+}
+
+.branch-section.reverse .branch-content{
+
+    order:2;
+
+}
 }
 
 /* ==========================================================
