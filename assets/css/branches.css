@@ -173,9 +173,9 @@
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
 
-    gap:35px;
+    gap:30px;
 
 }
 
@@ -326,7 +326,13 @@
 padding:120px 20px 80px;
 
 }
+.branches-grid{
 
+    grid-template-columns:1fr;
+
+    gap:25px;
+
+}
 #branches-hero h1{
 
 font-size:38px;
@@ -478,5 +484,16 @@ padding:25px;
 font-size:20px;
 
 }
+
+}
+*{
+
+    box-sizing:border-box;
+
+}
+
+img{
+
+    max-width:100%;
 
 }
