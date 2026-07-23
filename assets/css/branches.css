@@ -499,3 +499,32 @@ font-size:22px;
     transform:translateY(-3px);
 
 }
+@media(max-width:768px){
+
+#branches-footer .footer-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.footer-card{
+
+padding:25px;
+
+}
+
+.footer-card h3{
+
+font-size:20px;
+
+}
+
+.back-home{
+
+width:100%;
+
+justify-content:center;
+
+}
+
+}
