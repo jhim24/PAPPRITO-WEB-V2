@@ -1,0 +1,110 @@
+/* ==========================================================
+   PAPPRITO WEB V4
+   FACEBOOK SECTION
+========================================================== */
+
+#facebook-section{
+
+    padding:90px 0;
+
+    background:#f8fafc;
+
+}
+
+.facebook-wrapper{
+
+    margin-top:50px;
+
+    width:100%;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    background:#ffffff;
+
+    box-shadow:0 15px 45px rgba(0,0,0,.10);
+
+    padding:20px;
+
+}
+
+/* Facebook Plugin */
+
+.facebook-wrapper .fb-page{
+
+    width:100% !important;
+
+}
+
+.facebook-wrapper span{
+
+    width:100% !important;
+
+}
+
+.facebook-wrapper iframe{
+
+    width:100% !important;
+
+    border:none !important;
+
+    border-radius:18px;
+
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media(max-width:992px){
+
+    #facebook-section{
+
+        padding:70px 0;
+
+    }
+
+    .facebook-wrapper{
+
+        padding:15px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    #facebook-section{
+
+        padding:60px 0;
+
+    }
+
+    .facebook-wrapper{
+
+        padding:10px;
+
+        border-radius:18px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    #facebook-section{
+
+        padding:50px 0;
+
+    }
+
+    .facebook-wrapper{
+
+        padding:8px;
+
+        border-radius:15px;
+
+    }
+
+}
