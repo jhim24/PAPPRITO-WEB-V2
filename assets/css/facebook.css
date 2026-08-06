@@ -1,12 +1,11 @@
 /* ==========================================================
-   PAPPRITO WEB V5
-   File : facebook.css
-
-   Description : Facebook Section
+   PAPPRITO WEB V6
+   File        : facebook.css
+   Description : Premium Facebook Section
 ========================================================== */
 
 /* ==========================================================
-   ROOT VARIABLES
+   VARIABLES
 ========================================================== */
 
 :root{
@@ -17,17 +16,17 @@
 
     --fb-dark:#111827;
 
-    --fb-text:#6B7280;
+    --fb-gray:#6B7280;
 
-    --fb-bg:#F8FAFC;
+    --fb-light:#F8FAFC;
 
     --fb-white:#FFFFFF;
 
     --fb-radius:20px;
 
-    --fb-shadow:0 10px 30px rgba(0,0,0,.08);
+    --fb-shadow:0 12px 35px rgba(0,0,0,.08);
 
-    --fb-transition:.30s ease;
+    --fb-transition:.35s ease;
 
 }
 
@@ -37,11 +36,13 @@
 
 #facebook-section{
 
+    position:relative;
+
     width:100%;
 
     padding:90px 0;
 
-    background:var(--fb-bg);
+    background:var(--fb-light);
 
     overflow:hidden;
 
@@ -71,17 +72,23 @@
 
     max-width:850px;
 
-    margin:0 auto 50px;
+    margin:0 auto 55px;
 
     text-align:center;
 
 }
 
+/* Badge */
+
 #facebook-section .section-heading span{
 
-    display:inline-block;
+    display:inline-flex;
 
-    padding:10px 20px;
+    align-items:center;
+
+    justify-content:center;
+
+    padding:10px 22px;
 
     border-radius:50px;
 
@@ -99,9 +106,11 @@
 
 }
 
+/* Title */
+
 #facebook-section .section-heading h2{
 
-    margin:20px 0 18px;
+    margin:20px 0;
 
     font-size:48px;
 
@@ -113,13 +122,15 @@
 
 }
 
+/* Description */
+
 #facebook-section .section-heading p{
 
-    max-width:700px;
+    max-width:720px;
 
     margin:auto;
 
-    color:var(--fb-text);
+    color:var(--fb-gray);
 
     font-size:17px;
 
@@ -127,9 +138,7 @@
 
 }
 
-/* ==========================================================
-   TITLE DECORATION
-========================================================== */
+/* Underline */
 
 #facebook-section .section-heading::after{
 
@@ -141,11 +150,15 @@
 
     height:5px;
 
-    margin:28px auto 0;
+    margin:30px auto 0;
 
     border-radius:50px;
 
-    background:var(--fb-primary);
+    background:linear-gradient(
+        90deg,
+        var(--fb-primary),
+        var(--fb-secondary)
+    );
 
 }
 /* ==========================================================
@@ -154,30 +167,35 @@
 
 .facebook-wrapper{
 
-    width:100vw;
+    width:100%;
 
-    margin-left:calc(50% - 50vw);
-
-    margin-right:calc(50% - 50vw);
+    margin:0 auto;
 
     overflow:hidden;
 
 }
+
 /* ==========================================================
    FACEBOOK CARD
 ========================================================== */
 
 .facebook-card{
 
+    width:100%;
+
+    max-width:1280px;
+
+    margin:0 auto;
+
     background:var(--fb-white);
 
-    border-radius:var(--fb-radius);
+    border-radius:22px;
 
     overflow:hidden;
 
-    box-shadow:var(--fb-shadow);
-
     border:1px solid rgba(0,0,0,.05);
+
+    box-shadow:var(--fb-shadow);
 
     transition:var(--fb-transition);
 
@@ -185,9 +203,11 @@
 
 .facebook-card:hover{
 
-    transform:translateY(-4px);
+    transform:translateY(-6px);
 
-    box-shadow:0 18px 40px rgba(0,0,0,.12);
+    box-shadow:
+
+        0 20px 45px rgba(0,0,0,.14);
 
 }
 
@@ -197,11 +217,13 @@
 
 .fb-page{
 
+    display:block !important;
+
     width:100% !important;
 
-    max-width:none !important;
+    max-width:100% !important;
 
-    display:block !important;
+    margin:0 auto !important;
 
 }
 
@@ -223,57 +245,47 @@
 
     max-width:100% !important;
 
-    margin:0 auto !important;
-
     border:none !important;
+
+    margin:0 auto !important;
 
     background:#fff;
 
 }
-.fb-page iframe{
 
-    width:100% !important;
-
-    max-width:none !important;
-
-    border:none !important;
-
-    display:block !important;
-
-    border-radius:0;
-
-}
 /* ==========================================================
    FACEBOOK LOADING
 ========================================================== */
 
 .facebook-loading{
 
-    display:flex;
+    min-height:350px;
 
-    justify-content:center;
+    display:flex;
 
     align-items:center;
 
-    min-height:300px;
+    justify-content:center;
 
-    color:var(--fb-text);
+    flex-direction:column;
 
-    font-weight:600;
+    gap:15px;
+
+    color:var(--fb-gray);
 
 }
 
 .facebook-loading i{
 
-    margin-right:10px;
+    font-size:38px;
 
     color:var(--fb-primary);
 
-    animation:fbSpin 1s linear infinite;
+    animation:facebookSpin 1s linear infinite;
 
 }
 
-@keyframes fbSpin{
+@keyframes facebookSpin{
 
     from{
 
@@ -293,14 +305,34 @@
 ========================================================== */
 
 /* ==========================================================
+   LARGE DESKTOP
+========================================================== */
+
+@media (min-width:1400px){
+
+    .facebook-card{
+
+        max-width:1320px;
+
+    }
+
+}
+
+/* ==========================================================
    LAPTOP
 ========================================================== */
 
 @media (max-width:1200px){
 
-    .facebook-wrapper{
+    #facebook-section .container{
 
-        max-width:860px;
+        padding:0 24px;
+
+    }
+
+    .facebook-card{
+
+        max-width:100%;
 
     }
 
@@ -320,7 +352,7 @@
 
     #facebook-section .container{
 
-        padding:0 18px;
+        padding:0 20px;
 
     }
 
@@ -342,9 +374,9 @@
 
     }
 
-    .facebook-wrapper{
+    .facebook-card{
 
-        max-width:100%;
+        border-radius:18px;
 
     }
 
@@ -364,7 +396,7 @@
 
     #facebook-section .container{
 
-        padding:0 12px;
+        padding:0 15px;
 
     }
 
@@ -376,7 +408,7 @@
 
     #facebook-section .section-heading h2{
 
-        font-size:30px;
+        font-size:32px;
 
     }
 
@@ -392,17 +424,31 @@
 
         width:100%;
 
-        max-width:100%;
-
-        margin:0 auto;
-
         padding:0;
 
     }
 
     .facebook-card{
 
+        width:100%;
+
         border-radius:16px;
+
+    }
+
+    .fb-page,
+
+    .fb-page span,
+
+    .fb-page iframe{
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        display:block !important;
+
+        margin:0 auto !important;
 
     }
 
@@ -422,7 +468,7 @@
 
     #facebook-section .container{
 
-        padding:0 8px;
+        padding:0 10px;
 
     }
 
@@ -438,54 +484,26 @@
 
     }
 
-    .facebook-wrapper{
-
-        width:100%;
-
-        max-width:100%;
-
-        margin:0 auto;
-
-        padding:0;
-
-    }
-
     .facebook-card{
 
         border-radius:12px;
 
     }
 
-    .fb-page,
-
-    .fb-page span,
-
-    .fb-page iframe{
-
-        width:100% !important;
-
-        max-width:100% !important;
-
-        margin:0 auto !important;
-
-        display:block !important;
-
-    }
-
 }
 /* ==========================================================
-   PAPPRITO WEB V5
+   PAPPRITO WEB V6
    PART 4
    PREMIUM EFFECTS
 ========================================================== */
 
 /* ==========================================================
-   FACEBOOK FADE ANIMATION
+   FADE IN ANIMATION
 ========================================================== */
 
 .facebook-wrapper{
 
-    animation:facebookFade .7s ease both;
+    animation:facebookFade .6s ease both;
 
 }
 
@@ -494,7 +512,6 @@
     from{
 
         opacity:0;
-
         transform:translateY(25px);
 
     }
@@ -502,7 +519,6 @@
     to{
 
         opacity:1;
-
         transform:translateY(0);
 
     }
@@ -510,7 +526,7 @@
 }
 
 /* ==========================================================
-   FACEBOOK CARD EFFECT
+   FACEBOOK CARD TOP BORDER
 ========================================================== */
 
 .facebook-card{
@@ -526,11 +542,9 @@
     position:absolute;
 
     top:0;
-
     left:0;
 
     width:100%;
-
     height:5px;
 
     background:linear-gradient(
@@ -539,23 +553,33 @@
         var(--fb-secondary)
     );
 
+    z-index:2;
+
 }
 
 /* ==========================================================
-   HOVER EFFECT
+   PREMIUM HOVER
 ========================================================== */
+
+.facebook-card{
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
 
 .facebook-card:hover{
 
-    transform:translateY(-6px);
+    transform:translateY(-8px);
 
     box-shadow:
-        0 20px 45px rgba(0,0,0,.15);
+        0 25px 55px rgba(0,0,0,.16);
 
 }
 
 /* ==========================================================
-   FACEBOOK IFRAME
+   IFRAME SMOOTH
 ========================================================== */
 
 .fb-page iframe{
@@ -592,15 +616,57 @@
 
 }
 
+.facebook-rounded{
+
+    border-radius:var(--fb-radius);
+
+}
+
 .facebook-shadow{
 
     box-shadow:var(--fb-shadow);
 
 }
 
-.facebook-rounded{
+/* ==========================================================
+   CUSTOM SCROLLBAR
+========================================================== */
 
-    border-radius:var(--fb-radius);
+.facebook-wrapper::-webkit-scrollbar{
+
+    height:8px;
+
+}
+
+.facebook-wrapper::-webkit-scrollbar-track{
+
+    background:#f3f4f6;
+
+}
+
+.facebook-wrapper::-webkit-scrollbar-thumb{
+
+    background:var(--fb-primary);
+
+    border-radius:20px;
+
+}
+
+.facebook-wrapper::-webkit-scrollbar-thumb:hover{
+
+    background:#b8141a;
+
+}
+
+/* ==========================================================
+   SELECTION
+========================================================== */
+
+#facebook-section ::selection{
+
+    background:var(--fb-secondary);
+
+    color:#111;
 
 }
 
