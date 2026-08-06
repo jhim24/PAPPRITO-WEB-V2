@@ -94,7 +94,9 @@
 
     margin:0 auto;
 
-    padding:0 20px;
+    padding:0;
+
+    overflow:hidden;
 
 }
 
@@ -128,7 +130,11 @@
 
     width:100% !important;
 
-    margin:0 auto;
+    max-width:100% !important;
+
+    margin:0 !important;
+
+    overflow:hidden;
 
 }
 
@@ -137,6 +143,8 @@
     display:block !important;
 
     width:100% !important;
+
+    max-width:100% !important;
 
 }
 
@@ -227,19 +235,23 @@
 
     }
 
-    .fb-page{
+    .facebook-wrapper{
 
-        width:calc(100% + 15px) !important;
-
-        margin-right:-15px;
+        padding:0;
 
     }
 
+    .fb-page,
+
+    .fb-page span,
+
     .fb-page iframe{
 
-        width:calc(100% + 15px) !important;
+        width:100% !important;
 
-        margin-right:-15px;
+        max-width:100% !important;
+
+        margin:0 !important;
 
     }
 
