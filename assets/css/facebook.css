@@ -83,22 +83,20 @@
 }
 
 /* ==========================================================
-   FULL WIDTH FACEBOOK
+   FACEBOOK WRAPPER
 ========================================================== */
 
 .facebook-wrapper{
 
-    width:100vw;
+    width:100%;
 
-    margin-left:calc(50% - 50vw);
+    max-width:1280px;
 
-    margin-right:calc(50% - 50vw);
+    margin:0 auto;
 
-    padding:0;
+    padding:0 20px;
 
-    overflow:hidden;
-
-    background:#fff;
+    box-sizing:border-box;
 
 }
 
@@ -110,9 +108,9 @@
 
     display:block !important;
 
-    width:calc(100% + 40px) !important;
+    width:100% !important;
 
-    margin-right:-40px;
+    margin:0 auto;
 
 }
 
@@ -128,16 +126,15 @@
 
     display:block !important;
 
-    width:calc(100% + 40px) !important;
+    width:100% !important;
 
-    max-width:none !important;
-
-    margin-right:-40px;
+    max-width:100% !important;
 
     border:none !important;
 
-}
+    border-radius:18px;
 
+}
 /* ==========================================================
    MOBILE
 ========================================================== */
@@ -184,21 +181,17 @@
 
     }
 
-    .fb-page{
+ .fb-page{
 
-        width:calc(100% + 25px) !important;
+    width:100% !important;
 
-        margin-right:-25px;
+}
 
-    }
+.fb-page iframe{
 
-    .fb-page iframe{
+    width:100% !important;
 
-        width:calc(100% + 25px) !important;
-
-        margin-right:-25px;
-
-    }
+}
 
 }
 
