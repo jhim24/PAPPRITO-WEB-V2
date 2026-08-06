@@ -322,3 +322,44 @@
     color:#111827;
 
 }
+/* ==========================================================
+   FACEBOOK FULL WIDTH FIX
+========================================================== */
+
+.facebook-wrapper{
+
+    width:100vw;
+
+    margin-left:calc(50% - 50vw);
+
+    overflow:hidden;
+
+    padding:0;
+
+    background:transparent;
+
+}
+
+.facebook-wrapper .fb-page{
+
+    width:calc(100% + 30px) !important;
+
+    margin-right:-30px;
+
+}
+
+.facebook-wrapper .fb-page span{
+
+    width:100% !important;
+
+}
+
+.facebook-wrapper .fb-page iframe{
+
+    width:calc(100% + 30px) !important;
+
+    margin-right:-30px;
+
+    border:none !important;
+
+}
