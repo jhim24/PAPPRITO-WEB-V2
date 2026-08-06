@@ -213,11 +213,15 @@
 
 @media(max-width:480px){
 
-    #facebook-section{
+    .facebook-wrapper{
 
-        padding:50px 0;
+    width:100%;
 
-    }
+    padding-left:0;
+
+    padding-right:0;
+
+}
 
     #facebook-section .section-heading h2{
 
