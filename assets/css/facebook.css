@@ -1,6 +1,7 @@
 /* ==========================================================
    PAPPRITO WEB V5
    File : facebook.css
+
    Description : Facebook Section
 ========================================================== */
 
@@ -153,16 +154,15 @@
 
 .facebook-wrapper{
 
-    width:100%;
+    width:100vw;
 
-    max-width:900px;
+    margin-left:calc(50% - 50vw);
 
-    margin:0 auto;
+    margin-right:calc(50% - 50vw);
 
-    padding:0;
+    overflow:hidden;
 
 }
-
 /* ==========================================================
    FACEBOOK CARD
 ========================================================== */
@@ -197,15 +197,11 @@
 
 .fb-page{
 
-    display:block !important;
-
     width:100% !important;
 
-    max-width:100% !important;
+    max-width:none !important;
 
-    margin:0 auto !important;
-
-    overflow:hidden;
+    display:block !important;
 
 }
 
@@ -234,7 +230,19 @@
     background:#fff;
 
 }
+.fb-page iframe{
 
+    width:100% !important;
+
+    max-width:none !important;
+
+    border:none !important;
+
+    display:block !important;
+
+    border-radius:0;
+
+}
 /* ==========================================================
    FACEBOOK LOADING
 ========================================================== */
