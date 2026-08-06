@@ -90,13 +90,11 @@
 
     width:100%;
 
-    max-width:768px;
+    max-width:690px;
 
     margin:0 auto;
 
-    padding:0 5px;
-
-    overflow:hidden;
+    padding:0;
 
 }
 
@@ -163,14 +161,19 @@
 
     }
 
-    #facebook-section .section-heading{
+  #facebook-section .section-heading{
 
-        padding:0 15px;
+    width:100%;
 
-        margin-bottom:30px;
+    max-width:690px;
 
-    }
+    margin:0 auto 40px;
 
+    padding:0;
+
+    text-align:center;
+
+}
     #facebook-section .section-heading h2{
 
         font-size:30px;
