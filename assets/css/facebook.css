@@ -10,35 +10,11 @@
 
 #facebook-section{
 
-    padding:90px 0;
+    width:100%;
 
-}
+    padding:80px 0;
 
-.facebook-full{
-
-    width:100vw;
-
-    margin-left:calc(50% - 50vw);
-
-    margin-right:calc(50% - 50vw);
-
-}
-
-.facebook-wrapper{
-
-    width:100vw;
-
-    margin-left:calc(50% - 50vw);
-
-    margin-right:calc(50% - 50vw);
-
-    padding:0;
-
-    border-radius:0;
-
-    background:transparent;
-
-    box-shadow:none;
+    background:#f8fafc;
 
     overflow:hidden;
 
@@ -50,9 +26,15 @@
 
 #facebook-section .section-heading{
 
+    width:100%;
+
+    max-width:900px;
+
+    margin:0 auto 40px;
+
     text-align:center;
 
-    margin-bottom:50px;
+    padding:0 20px;
 
 }
 
@@ -76,27 +58,21 @@
 
     text-transform:uppercase;
 
-    margin-bottom:18px;
-
 }
 
 #facebook-section .section-heading h2{
 
+    margin:18px 0;
+
     font-size:46px;
 
     color:#111827;
-
-    margin-bottom:18px;
 
     font-weight:800;
 
 }
 
 #facebook-section .section-heading p{
-
-    max-width:760px;
-
-    margin:auto;
 
     color:#666;
 
@@ -107,32 +83,22 @@
 }
 
 /* ==========================================================
-   FACEBOOK CONTAINER
+   FULL WIDTH FACEBOOK
 ========================================================== */
-
-.facebook-full{
-
-    width:100%;
-
-}
 
 .facebook-wrapper{
 
-    width:100%;
+    width:100vw;
 
-    max-width:1400px;
+    margin-left:calc(50% - 50vw);
 
-    margin:auto;
+    margin-right:calc(50% - 50vw);
 
-    padding:20px;
-
-    background:#ffffff;
-
-    border-radius:24px;
-
-    box-shadow:0 15px 40px rgba(0,0,0,.08);
+    padding:0;
 
     overflow:hidden;
+
+    background:#fff;
 
 }
 
@@ -140,78 +106,53 @@
    FACEBOOK PAGE
 ========================================================== */
 
-.facebook-wrapper .fb-page{
-
-    display:block;
-
-    width:100% !important;
-
-}
-
-.facebook-wrapper span{
-
-    width:100% !important;
+.fb-page{
 
     display:block !important;
 
+    width:calc(100% + 40px) !important;
+
+    margin-right:-40px;
+
 }
 
-.facebook-wrapper iframe{
+.fb-page span{
+
+    display:block !important;
 
     width:100% !important;
 
-    max-width:100% !important;
+}
+
+.fb-page iframe{
+
+    display:block !important;
+
+    width:calc(100% + 40px) !important;
+
+    max-width:none !important;
+
+    margin-right:-40px;
 
     border:none !important;
 
 }
-/* ==========================================================
-   HOVER
-========================================================== */
-
-.facebook-wrapper:hover{
-
-    transform:translateY(-4px);
-
-    transition:.30s;
-
-    box-shadow:0 20px 50px rgba(0,0,0,.12);
-
-}
 
 /* ==========================================================
-   RESPONSIVE
+   MOBILE
 ========================================================== */
 
-@media(max-width:1200px){
+@media(max-width:992px){
 
     #facebook-section{
 
-        padding:80px 0;
+        padding:70px 0;
 
     }
-
-    .facebook-wrapper{
-
-        padding:18px;
-
-    }
-
-}
-
-@media(max-width:992px){
 
     #facebook-section .section-heading h2{
 
         font-size:38px;
-
-    }
-
-    .facebook-wrapper{
-
-        padding:15px;
-
-        border-radius:20px;
 
     }
 
@@ -227,7 +168,7 @@
 
     #facebook-section .section-heading{
 
-        margin-bottom:35px;
+        padding:0 15px;
 
     }
 
@@ -243,11 +184,19 @@
 
     }
 
-    .facebook-wrapper{
+    .fb-page{
 
-        padding:10px;
+        width:calc(100% + 25px) !important;
 
-        border-radius:16px;
+        margin-right:-25px;
+
+    }
+
+    .fb-page iframe{
+
+        width:calc(100% + 25px) !important;
+
+        margin-right:-25px;
 
     }
 
@@ -267,99 +216,20 @@
 
     }
 
-    #facebook-section .section-heading span{
+    .fb-page{
 
-        font-size:11px;
+        width:calc(100% + 15px) !important;
 
-        letter-spacing:1px;
-
-    }
-
-    .facebook-wrapper{
-
-        padding:8px;
-
-        border-radius:12px;
+        margin-right:-15px;
 
     }
 
-}
+    .fb-page iframe{
 
-/* ==========================================================
-   FACEBOOK BUTTON (OPTIONAL)
-========================================================== */
+        width:calc(100% + 15px) !important;
 
-.facebook-button{
+        margin-right:-15px;
 
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:10px;
-
-    margin-top:35px;
-
-    padding:15px 35px;
-
-    background:#D71920;
-
-    color:#fff;
-
-    border-radius:50px;
-
-    font-weight:700;
-
-    transition:.30s;
-
-}
-
-.facebook-button:hover{
-
-    background:#ffcc00;
-
-    color:#111827;
-
-}
-/* ==========================================================
-   FACEBOOK FULL WIDTH FIX
-========================================================== */
-
-.facebook-wrapper{
-
-    width:100vw;
-
-    margin-left:calc(50% - 50vw);
-
-    overflow:hidden;
-
-    padding:0;
-
-    background:transparent;
-
-}
-
-.facebook-wrapper .fb-page{
-
-    width:calc(100% + 30px) !important;
-
-    margin-right:-30px;
-
-}
-
-.facebook-wrapper .fb-page span{
-
-    width:100% !important;
-
-}
-
-.facebook-wrapper .fb-page iframe{
-
-    width:calc(100% + 30px) !important;
-
-    margin-right:-30px;
-
-    border:none !important;
+    }
 
 }
