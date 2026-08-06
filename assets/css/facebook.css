@@ -94,9 +94,27 @@
 
     margin:0 auto;
 
-    padding:0 20px;
+    padding:0 50px;
 
-    box-sizing:border-box;
+}
+
+@media(max-width:768px){
+
+    .facebook-wrapper{
+
+        padding:0 20px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .facebook-wrapper{
+
+        padding:0 15px;
+
+    }
 
 }
 
