@@ -1,9 +1,11 @@
 /* ==========================================================
    PAPPRITO WEBSITE V8
-   MENU SYSTEM
-   FILE : menu.js
+   FILE        : menu.js
+   DESCRIPTION : Foodpanda-Style Menu System
+   VERSION     : 8.0.0
+
    PART 1
-   CORE DATA + FIREBASE
+   CORE + FIREBASE + INITIALIZATION
 ========================================================== */
 
 
@@ -17,31 +19,31 @@ let menuProducts = [];
 
 let selectedCategory = "all";
 
+let menuSearchValue = "";
+
 let selectedProduct = null;
 
 let selectedQuantity = 1;
 
 let menuCart = [];
 
-let menuSearchValue = "";
+let menuInitialized = false;
 
 
 /* ==========================================================
-   CONSTANTS
+   STORAGE
 ========================================================== */
 
 const MENU_CART_STORAGE =
     "pappritoMenuCart";
 
-const MENU_DEFAULT_IMAGE =
-    "../assets/images/no-product.png";
-
 
 /* ==========================================================
-   INITIALIZATION LOCK
+   DEFAULT IMAGE
 ========================================================== */
 
-let menuInitialized = false;
+const MENU_DEFAULT_IMAGE =
+    "../assets/images/no-product.png";
 
 
 /* ==========================================================
@@ -50,7 +52,7 @@ let menuInitialized = false;
 
 document.addEventListener(
     "DOMContentLoaded",
-    () => {
+    function(){
 
         waitForFirebase();
 
@@ -59,7 +61,7 @@ document.addEventListener(
 
 
 /* ==========================================================
-   FIREBASE WAIT
+   WAIT FOR FIREBASE
 ========================================================== */
 
 function waitForFirebase(){
@@ -77,9 +79,10 @@ function waitForFirebase(){
 
     let attempts = 0;
 
-    const timer =
+
+    const firebaseTimer =
         setInterval(
-            () => {
+            function(){
 
                 attempts++;
 
@@ -88,7 +91,9 @@ function waitForFirebase(){
                     typeof db !== "undefined"
                 ){
 
-                    clearInterval(timer);
+                    clearInterval(
+                        firebaseTimer
+                    );
 
                     initializeMenu();
 
@@ -101,10 +106,12 @@ function waitForFirebase(){
                     attempts >= 50
                 ){
 
-                    clearInterval(timer);
+                    clearInterval(
+                        firebaseTimer
+                    );
 
                     console.error(
-                        "PAPPRITO MENU: Firebase database unavailable."
+                        "PAPPRITO MENU: Firebase database not available."
                     );
 
                     showMenuError();
@@ -115,7 +122,7 @@ function waitForFirebase(){
             200
         );
 
-    }
+}
 
 
 /* ==========================================================
@@ -138,28 +145,37 @@ async function initializeMenu(){
 
         showMenuLoading();
 
+
         await loadMenuCategories();
+
 
         await loadMenuProducts();
 
+
         loadCart();
+
 
         initializeMenuEvents();
 
+
         updateCartUI();
+
 
         updateMenuResultCount();
 
+
         console.log(
-            "PAPPRITO MENU V8 READY"
+            "PAPPRITO MENU V8 INITIALIZED"
         );
+
 
     }catch(error){
 
         console.error(
-            "PAPPRITO MENU ERROR:",
+            "PAPPRITO MENU INITIALIZATION ERROR:",
             error
         );
+
 
         showMenuError();
 
@@ -207,7 +223,7 @@ async function loadMenuCategories(){
 
 
     snapshot.forEach(
-        child => {
+        function(child){
 
             const category =
                 child.val() || {};
@@ -256,7 +272,7 @@ async function loadMenuProducts(){
 
 
     snapshot.forEach(
-        child => {
+        function(child){
 
             const product =
                 child.val() || {};
@@ -286,10 +302,10 @@ async function loadMenuProducts(){
 
 
 /* ==========================================================
-   DEFAULT IMAGE
+   PRODUCT IMAGE
 ========================================================== */
 
-function getMenuProductImage(
+function getProductImage(
     product
 ){
 
@@ -316,12 +332,12 @@ function getMenuProductImage(
 ========================================================== */
 
 function formatMenuPrice(
-    amount
+    value
 ){
 
     return "₱" +
         Number(
-            amount || 0
+            value || 0
         ).toLocaleString(
             "en-PH",
             {
@@ -334,7 +350,7 @@ function formatMenuPrice(
 
 
 /* ==========================================================
-   SAFE HTML
+   ESCAPE HTML
 ========================================================== */
 
 function escapeHTML(
@@ -374,7 +390,7 @@ function escapeHTML(
 
 
 /* ==========================================================
-   LOADING
+   LOADING STATE
 ========================================================== */
 
 function showMenuLoading(){
@@ -414,7 +430,7 @@ function showMenuLoading(){
 
 
 /* ==========================================================
-   ERROR
+   ERROR STATE
 ========================================================== */
 
 function showMenuError(){
@@ -468,10 +484,12 @@ function showMenuError(){
 }
 /* ==========================================================
    PAPPRITO WEBSITE V8
-   MENU SYSTEM
-   FILE : menu.js
+   FILE        : menu.js
+   DESCRIPTION : Foodpanda-Style Menu System
+   VERSION     : 8.0.0
+
    PART 1
-   CORE DATA + FIREBASE
+   CORE + FIREBASE + INITIALIZATION
 ========================================================== */
 
 
@@ -485,31 +503,31 @@ let menuProducts = [];
 
 let selectedCategory = "all";
 
+let menuSearchValue = "";
+
 let selectedProduct = null;
 
 let selectedQuantity = 1;
 
 let menuCart = [];
 
-let menuSearchValue = "";
+let menuInitialized = false;
 
 
 /* ==========================================================
-   CONSTANTS
+   STORAGE
 ========================================================== */
 
 const MENU_CART_STORAGE =
     "pappritoMenuCart";
 
-const MENU_DEFAULT_IMAGE =
-    "../assets/images/no-product.png";
-
 
 /* ==========================================================
-   INITIALIZATION LOCK
+   DEFAULT IMAGE
 ========================================================== */
 
-let menuInitialized = false;
+const MENU_DEFAULT_IMAGE =
+    "../assets/images/no-product.png";
 
 
 /* ==========================================================
@@ -518,7 +536,7 @@ let menuInitialized = false;
 
 document.addEventListener(
     "DOMContentLoaded",
-    () => {
+    function(){
 
         waitForFirebase();
 
@@ -527,7 +545,7 @@ document.addEventListener(
 
 
 /* ==========================================================
-   FIREBASE WAIT
+   WAIT FOR FIREBASE
 ========================================================== */
 
 function waitForFirebase(){
@@ -545,9 +563,10 @@ function waitForFirebase(){
 
     let attempts = 0;
 
-    const timer =
+
+    const firebaseTimer =
         setInterval(
-            () => {
+            function(){
 
                 attempts++;
 
@@ -556,7 +575,9 @@ function waitForFirebase(){
                     typeof db !== "undefined"
                 ){
 
-                    clearInterval(timer);
+                    clearInterval(
+                        firebaseTimer
+                    );
 
                     initializeMenu();
 
@@ -569,10 +590,12 @@ function waitForFirebase(){
                     attempts >= 50
                 ){
 
-                    clearInterval(timer);
+                    clearInterval(
+                        firebaseTimer
+                    );
 
                     console.error(
-                        "PAPPRITO MENU: Firebase database unavailable."
+                        "PAPPRITO MENU: Firebase database not available."
                     );
 
                     showMenuError();
@@ -583,7 +606,7 @@ function waitForFirebase(){
             200
         );
 
-    }
+}
 
 
 /* ==========================================================
@@ -606,28 +629,37 @@ async function initializeMenu(){
 
         showMenuLoading();
 
+
         await loadMenuCategories();
+
 
         await loadMenuProducts();
 
+
         loadCart();
+
 
         initializeMenuEvents();
 
+
         updateCartUI();
+
 
         updateMenuResultCount();
 
+
         console.log(
-            "PAPPRITO MENU V8 READY"
+            "PAPPRITO MENU V8 INITIALIZED"
         );
+
 
     }catch(error){
 
         console.error(
-            "PAPPRITO MENU ERROR:",
+            "PAPPRITO MENU INITIALIZATION ERROR:",
             error
         );
+
 
         showMenuError();
 
@@ -675,7 +707,7 @@ async function loadMenuCategories(){
 
 
     snapshot.forEach(
-        child => {
+        function(child){
 
             const category =
                 child.val() || {};
@@ -724,7 +756,7 @@ async function loadMenuProducts(){
 
 
     snapshot.forEach(
-        child => {
+        function(child){
 
             const product =
                 child.val() || {};
@@ -754,10 +786,10 @@ async function loadMenuProducts(){
 
 
 /* ==========================================================
-   DEFAULT IMAGE
+   PRODUCT IMAGE
 ========================================================== */
 
-function getMenuProductImage(
+function getProductImage(
     product
 ){
 
@@ -784,12 +816,12 @@ function getMenuProductImage(
 ========================================================== */
 
 function formatMenuPrice(
-    amount
+    value
 ){
 
     return "₱" +
         Number(
-            amount || 0
+            value || 0
         ).toLocaleString(
             "en-PH",
             {
@@ -802,7 +834,7 @@ function formatMenuPrice(
 
 
 /* ==========================================================
-   SAFE HTML
+   ESCAPE HTML
 ========================================================== */
 
 function escapeHTML(
@@ -842,7 +874,7 @@ function escapeHTML(
 
 
 /* ==========================================================
-   LOADING
+   LOADING STATE
 ========================================================== */
 
 function showMenuLoading(){
@@ -882,7 +914,7 @@ function showMenuLoading(){
 
 
 /* ==========================================================
-   ERROR
+   ERROR STATE
 ========================================================== */
 
 function showMenuError(){
@@ -935,646 +967,388 @@ function showMenuError(){
 
 }
 /* ==========================================================
-   PART 3
-   PRODUCTS + SEARCH
+   PART 2
+   CATEGORY SYSTEM
 ========================================================== */
 
 
 /* ==========================================================
-   RENDER PRODUCTS
+   RENDER CATEGORIES
 ========================================================== */
 
-function renderMenuProducts(){
+function renderMenuCategories(){
 
-    const container =
+    const wrapper =
         document.getElementById(
-            "menu-products"
+            "menu-category-wrapper"
         );
 
 
-    if(!container){
+    if(!wrapper){
 
         return;
 
     }
 
 
-    let filtered =
-        getFilteredMenuProducts();
+    wrapper.innerHTML = "";
 
 
     /* ======================================================
-       SEARCH
+       ALL CATEGORY
     ====================================================== */
 
-    const search =
-        menuSearchValue
-        .trim()
-        .toLowerCase();
-
-
-    if(search){
-
-        filtered =
-            filtered.filter(
-                product => {
-
-                    const name =
-                        String(
-                            product.name || ""
-                        ).toLowerCase();
-
-
-                    const category =
-                        String(
-                            product.categoryName || ""
-                        ).toLowerCase();
-
-
-                    const description =
-                        String(
-                            product.description || ""
-                        ).toLowerCase();
-
-
-                    return (
-                        name.includes(search) ||
-                        category.includes(search) ||
-                        description.includes(search)
-                    );
-
-                }
-            );
-
-    }
-
-
-    container.innerHTML = "";
-
-
-    /* ======================================================
-       EMPTY
-    ====================================================== */
-
-    if(
-        filtered.length === 0
-    ){
-
-        showMenuEmpty(
-            search
-        );
-
-        updateMenuResultCount(
-            0
-        );
-
-        return;
-
-    }
-
-
-    hideMenuEmpty();
-
-
-    /* ======================================================
-       CARDS
-    ====================================================== */
-
-    filtered.forEach(
-        product => {
-
-            container.insertAdjacentHTML(
-                "beforeend",
-                createMenuProductCard(
-                    product
-                )
-            );
-
-        }
-    );
-
-
-    updateMenuResultCount(
-        filtered.length
-    );
-
-}
-
-
-/* ==========================================================
-   CREATE PRODUCT CARD
-========================================================== */
-
-function createMenuProductCard(
-    product
-){
-
-    const image =
-        escapeHTML(
-            getMenuProductImage(
-                product
-            )
+    const allButton =
+        document.createElement(
+            "button"
         );
 
 
-    const name =
-        escapeHTML(
-            product.name ||
-            "Unnamed Product"
-        );
+    allButton.type =
+        "button";
 
+    allButton.className =
+        "category-btn";
 
-    const category =
-        escapeHTML(
-            product.categoryName ||
-            "Menu"
-        );
-
-
-    const description =
-        escapeHTML(
-            product.description ||
-            "Freshly prepared with quality ingredients."
-        );
-
-
-    const price =
-        formatMenuPrice(
-            product.sellingPrice
-        );
-
-
-    const productId =
-        escapeHTML(
-            product.id
-        );
-
-
-    return `
-
-        <article
-            class="menu-card"
-            data-product-id="${productId}">
-
-            <button
-                type="button"
-                class="menu-image"
-                onclick="openProductModal('${productId}')"
-                aria-label="View ${name}">
-
-                <img
-                    src="${image}"
-                    alt="${name}"
-                    loading="lazy">
-
-            </button>
-
-
-            <div class="menu-card-body">
-
-                <span class="menu-category">
-
-                    ${category}
-
-                </span>
-
-
-                <h3>
-
-                    ${name}
-
-                </h3>
-
-
-                <p>
-
-                    ${description}
-
-                </p>
-
-
-                <div class="menu-footer">
-
-                    <div class="menu-price">
-
-                        ${price}
-
-                    </div>
-
-
-                    <button
-                        type="button"
-                        class="menu-order-btn"
-                        onclick="event.stopPropagation(); openProductModal('${productId}')">
-
-                        <i class="fa-solid fa-plus"></i>
-
-                        Add
-
-                    </button>
-
-                </div>
-
-            </div>
-
-        </article>
-
-    `;
-
-}
-
-
-/* ==========================================================
-   PRODUCT EVENTS
-========================================================== */
-
-function initializeProductEvents(){
-
-    const container =
-        document.getElementById(
-            "menu-products"
-        );
-
-
-    if(!container){
-
-        return;
-
-    }
-
-
-    container.addEventListener(
-        "click",
-        event => {
-
-            const card =
-                event.target.closest(
-                    ".menu-card"
-                );
-
-
-            if(!card){
-
-                return;
-
-            }
-
-
-            if(
-                event.target.closest(
-                    "button"
-                )
-            ){
-
-                return;
-
-            }
-
-
-            const productId =
-                card.dataset.productId;
-
-
-            if(productId){
-
-                openProductModal(
-                    productId
-                );
-
-            }
-
-        }
-    );
-
-}
-
-
-/* ==========================================================
-   SEARCH
-========================================================== */
-
-function initializeMenuSearch(){
-
-    const input =
-        document.getElementById(
-            "menuSearch"
-        );
-
-
-    const clearButton =
-        document.getElementById(
-            "clearMenuSearch"
-        );
-
-
-    if(input){
-
-        input.addEventListener(
-            "input",
-            () => {
-
-                menuSearchValue =
-                    input.value;
-
-
-                renderMenuProducts();
-
-
-                if(clearButton){
-
-                    clearButton.classList.toggle(
-                        "show",
-                        input.value.trim() !== ""
-                    );
-
-                }
-
-            }
-        );
-
-    }
-
-
-    if(clearButton){
-
-        clearButton.addEventListener(
-            "click",
-            () => {
-
-                if(input){
-
-                    input.value = "";
-
-                }
-
-
-                menuSearchValue =
-                    "";
-
-
-                clearButton.classList.remove(
-                    "show"
-                );
-
-
-                renderMenuProducts();
-
-
-                if(input){
-
-                    input.focus();
-
-                }
-
-            }
-        );
-
-    }
-
-}
-
-
-/* ==========================================================
-   SEARCH FUNCTION
-========================================================== */
-
-function searchMenuProducts(
-    value
-){
-
-    menuSearchValue =
-        String(
-            value || ""
-        );
-
-
-    renderMenuProducts();
-
-}
-
-
-/* ==========================================================
-   RESULT COUNT
-========================================================== */
-
-function updateMenuResultCount(
-    count = null
-){
-
-    const element =
-        document.getElementById(
-            "menu-result-count"
-        );
-
-
-    if(!element){
-
-        return;
-
-    }
-
-
-    if(count === null){
-
-        let products =
-            getFilteredMenuProducts();
-
-
-        if(menuSearchValue.trim()){
-
-            const search =
-                menuSearchValue
-                .trim()
-                .toLowerCase();
-
-
-            products =
-                products.filter(
-                    product =>
-                        String(
-                            product.name || ""
-                        )
-                        .toLowerCase()
-                        .includes(search)
-                        ||
-                        String(
-                            product.categoryName || ""
-                        )
-                        .toLowerCase()
-                        .includes(search)
-                        ||
-                        String(
-                            product.description || ""
-                        )
-                        .toLowerCase()
-                        .includes(search)
-                );
-
-        }
-
-
-        count =
-            products.length;
-
-    }
-
-
-    element.innerHTML = `
-
-        <i class="fa-solid fa-utensils"></i>
-
-        <span>
-            ${count} ${count === 1 ? "item" : "items"}
-        </span>
-
-    `;
-
-}
-
-
-/* ==========================================================
-   EMPTY STATE
-========================================================== */
-
-function showMenuEmpty(
-    isSearch = false
-){
-
-    const container =
-        document.getElementById(
-            "menu-products"
-        );
-
-
-    if(!container){
-
-        return;
-
-    }
-
-
-    const message =
-        isSearch
-        ? "Try another search."
-        : "There are currently no available items in this category.";
-
-
-    container.innerHTML = `
-
-        <div class="menu-empty">
-
-            <div class="menu-empty-icon">
-
-                <i class="fa-solid ${
-                    isSearch
-                    ? "fa-magnifying-glass"
-                    : "fa-utensils"
-                }"></i>
-
-            </div>
-
-            <h3>
-
-                ${
-                    isSearch
-                    ? "No matching products"
-                    : "No products found"
-                }
-
-            </h3>
-
-            <p>
-
-                ${message}
-
-            </p>
-
-            <button
-                type="button"
-                class="reset-menu-btn"
-                onclick="resetMenuFilters()">
-
-                <i class="fa-solid fa-rotate-left"></i>
-
-                View All
-
-            </button>
-
-        </div>
-
-    `;
-
-}
-
-
-/* ==========================================================
-   HIDE EMPTY
-========================================================== */
-
-function hideMenuEmpty(){
-
-    const empty =
-        document.getElementById(
-            "menu-empty"
-        );
-
-
-    if(empty){
-
-        empty.classList.add(
-            "hidden"
-        );
-
-    }
-
-}
-
-
-/* ==========================================================
-   RESET FILTERS
-========================================================== */
-
-function resetMenuFilters(){
-
-    selectedCategory =
+    allButton.dataset.category =
         "all";
 
+    allButton.textContent =
+        "All";
 
-    menuSearchValue =
-        "";
+
+    wrapper.appendChild(
+        allButton
+    );
 
 
-    const input =
+    /* ======================================================
+       FIREBASE CATEGORIES
+    ====================================================== */
+
+    menuCategories.forEach(
+        function(category){
+
+            const categoryName =
+                String(
+                    category.name || ""
+                ).trim();
+
+
+            if(!categoryName){
+
+                return;
+
+            }
+
+
+            const button =
+                document.createElement(
+                    "button"
+                );
+
+
+            button.type =
+                "button";
+
+            button.className =
+                "category-btn";
+
+            button.dataset.category =
+                categoryName;
+
+            button.textContent =
+                categoryName;
+
+
+            wrapper.appendChild(
+                button
+            );
+
+        }
+    );
+
+
+    updateActiveCategory();
+
+}
+
+
+/* ==========================================================
+   CATEGORY CLICK
+========================================================== */
+
+function initializeCategoryEvents(){
+
+    const wrapper =
         document.getElementById(
-            "menuSearch"
+            "menu-category-wrapper"
         );
 
 
-    if(input){
+    if(!wrapper){
 
-        input.value = "";
+        return;
 
     }
 
 
-    const clear =
-        document.getElementById(
-            "clearMenuSearch"
+    wrapper.addEventListener(
+        "click",
+        function(event){
+
+            const button =
+                event.target.closest(
+                    ".category-btn"
+                );
+
+
+            if(!button){
+
+                return;
+
+            }
+
+
+            const category =
+                button.dataset.category;
+
+
+            if(!category){
+
+                return;
+
+            }
+
+
+            selectedCategory =
+                category;
+
+
+            updateActiveCategory();
+
+
+            renderMenuProducts();
+
+
+            updateMenuResultCount();
+
+
+            scrollToProducts();
+
+        }
+    );
+
+}
+
+
+/* ==========================================================
+   ACTIVE CATEGORY
+========================================================== */
+
+function updateActiveCategory(){
+
+    const buttons =
+        document.querySelectorAll(
+            ".category-btn"
         );
 
 
-    if(clear){
+    buttons.forEach(
+        function(button){
 
-        clear.classList.remove(
-            "show"
+            button.classList.toggle(
+                "active",
+                button.dataset.category ===
+                selectedCategory
+            );
+
+        }
+    );
+
+}
+
+
+/* ==========================================================
+   FILTER CATEGORY
+========================================================== */
+
+function getCategoryProducts(){
+
+    if(
+        selectedCategory === "all"
+    ){
+
+        return [
+            ...menuProducts
+        ];
+
+    }
+
+
+    return menuProducts.filter(
+        function(product){
+
+            return String(
+                product.categoryName || ""
+            )
+            .trim()
+            .toLowerCase()
+            ===
+            String(
+                selectedCategory
+            )
+            .trim()
+            .toLowerCase();
+
+        }
+    );
+
+}
+
+
+/* ==========================================================
+   CATEGORY SCROLL LEFT
+========================================================== */
+
+function scrollCategoriesLeft(){
+
+    const wrapper =
+        document.getElementById(
+            "menu-category-wrapper"
+        );
+
+
+    if(!wrapper){
+
+        return;
+
+    }
+
+
+    wrapper.scrollBy({
+
+        left:-280,
+
+        behavior:"smooth"
+
+    });
+
+}
+
+
+/* ==========================================================
+   CATEGORY SCROLL RIGHT
+========================================================== */
+
+function scrollCategoriesRight(){
+
+    const wrapper =
+        document.getElementById(
+            "menu-category-wrapper"
+        );
+
+
+    if(!wrapper){
+
+        return;
+
+    }
+
+
+    wrapper.scrollBy({
+
+        left:280,
+
+        behavior:"smooth"
+
+    });
+
+}
+
+
+/* ==========================================================
+   CATEGORY SCROLL BUTTONS
+========================================================== */
+
+function initializeCategoryScroll(){
+
+    const leftButton =
+        document.getElementById(
+            "categoryScrollLeft"
+        );
+
+
+    const rightButton =
+        document.getElementById(
+            "categoryScrollRight"
+        );
+
+
+    if(leftButton){
+
+        leftButton.addEventListener(
+            "click",
+            scrollCategoriesLeft
         );
 
     }
 
 
-    updateActiveCategoryButton();
+    if(rightButton){
 
-    renderMenuProducts();
+        rightButton.addEventListener(
+            "click",
+            scrollCategoriesRight
+        );
+
+    }
+
+}
+
+
+/* ==========================================================
+   SCROLL TO PRODUCTS
+========================================================== */
+
+function scrollToProducts(){
+
+    const section =
+        document.getElementById(
+            "menu-items"
+        );
+
+
+    if(!section){
+
+        return;
+
+    }
+
+
+    const offset =
+        100;
+
+
+    const position =
+        section.getBoundingClientRect().top
+        +
+        window.scrollY
+        -
+        offset;
+
+
+    window.scrollTo({
+
+        top:
+            Math.max(
+                0,
+                position
+            ),
+
+        behavior:"smooth"
+
+    });
 
 }
 /* ==========================================================
@@ -1584,7 +1358,7 @@ function resetMenuFilters(){
 
 
 /* ==========================================================
-   OPEN MODAL
+   OPEN PRODUCT MODAL
 ========================================================== */
 
 function openProductModal(
@@ -1593,18 +1367,20 @@ function openProductModal(
 
     const product =
         menuProducts.find(
-            item =>
-                String(item.id) ===
-                String(productId)
+            function(item){
+
+                return String(
+                    item.id
+                ) ===
+                String(
+                    productId
+                );
+
+            }
         );
 
 
     if(!product){
-
-        console.warn(
-            "Product not found:",
-            productId
-        );
 
         return;
 
@@ -1664,7 +1440,7 @@ function openProductModal(
     if(image){
 
         image.src =
-            getMenuProductImage(
+            getProductImage(
                 product
             );
 
@@ -1715,7 +1491,7 @@ function openProductModal(
     if(quantity){
 
         quantity.textContent =
-            selectedQuantity;
+            "1";
 
     }
 
@@ -1727,6 +1503,11 @@ function openProductModal(
 
         modal.classList.add(
             "active"
+        );
+
+        modal.setAttribute(
+            "aria-hidden",
+            "false"
         );
 
     }
@@ -1757,6 +1538,11 @@ function closeProductModal(){
             "active"
         );
 
+        modal.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
     }
 
 
@@ -1776,7 +1562,7 @@ function closeProductModal(){
 
 
 /* ==========================================================
-   UPDATE MODAL TOTAL
+   MODAL TOTAL
 ========================================================== */
 
 function updateModalTotal(){
@@ -1788,15 +1574,15 @@ function updateModalTotal(){
     }
 
 
-    const quantity =
+    const totalElement =
         document.getElementById(
-            "modalQty"
+            "modalTotalPrice"
         );
 
 
-    const total =
+    const quantityElement =
         document.getElementById(
-            "modalTotal"
+            "modalQty"
         );
 
 
@@ -1807,24 +1593,24 @@ function updateModalTotal(){
         );
 
 
-    const calculatedTotal =
+    const total =
         price *
         selectedQuantity;
 
 
-    if(quantity){
+    if(quantityElement){
 
-        quantity.textContent =
+        quantityElement.textContent =
             selectedQuantity;
 
     }
 
 
-    if(total){
+    if(totalElement){
 
-        total.textContent =
+        totalElement.textContent =
             formatMenuPrice(
-                calculatedTotal
+                total
             );
 
     }
@@ -1833,7 +1619,7 @@ function updateModalTotal(){
 
 
 /* ==========================================================
-   DECREASE MODAL QTY
+   DECREASE MODAL QUANTITY
 ========================================================== */
 
 function decreaseModalQuantity(){
@@ -1860,7 +1646,7 @@ function decreaseModalQuantity(){
 
 
 /* ==========================================================
-   INCREASE MODAL QTY
+   INCREASE MODAL QUANTITY
 ========================================================== */
 
 function increaseModalQuantity(){
@@ -1874,16 +1660,17 @@ function increaseModalQuantity(){
 
     selectedQuantity++;
 
+
     updateModalTotal();
 
 }
 
 
 /* ==========================================================
-   ADD SELECTED PRODUCT
+   ADD MODAL PRODUCT
 ========================================================== */
 
-function addSelectedProductToCart(){
+function addModalProductToCart(){
 
     if(!selectedProduct){
 
@@ -1898,22 +1685,16 @@ function addSelectedProductToCart(){
     );
 
 
-    showCartNotification(
-        selectedProduct.name
+    showMenuToast(
+        selectedProduct.name +
+        " added to cart"
     );
 
 
     closeProductModal();
 
 
-    setTimeout(
-        () => {
-
-            openCart();
-
-        },
-        200
-    );
+    openCart();
 
 }
 
@@ -1922,11 +1703,17 @@ function addSelectedProductToCart(){
    MODAL EVENTS
 ========================================================== */
 
-function initializeProductModalEvents(){
+function initializeModalEvents(){
 
     const closeButton =
         document.getElementById(
             "closeProductModal"
+        );
+
+
+    const backdrop =
+        document.getElementById(
+            "productModalBackdrop"
         );
 
 
@@ -1948,15 +1735,19 @@ function initializeProductModalEvents(){
         );
 
 
-    const modal =
-        document.getElementById(
-            "productModal"
-        );
-
-
     if(closeButton){
 
         closeButton.addEventListener(
+            "click",
+            closeProductModal
+        );
+
+    }
+
+
+    if(backdrop){
+
+        backdrop.addEventListener(
             "click",
             closeProductModal
         );
@@ -1988,27 +1779,7 @@ function initializeProductModalEvents(){
 
         orderButton.addEventListener(
             "click",
-            addSelectedProductToCart
-        );
-
-    }
-
-
-    if(modal){
-
-        modal.addEventListener(
-            "click",
-            event => {
-
-                if(
-                    event.target === modal
-                ){
-
-                    closeProductModal();
-
-                }
-
-            }
+            addModalProductToCart
         );
 
     }
@@ -2017,14 +1788,14 @@ function initializeProductModalEvents(){
 
 
 /* ==========================================================
-   MODAL ESCAPE
+   MODAL KEYBOARD
 ========================================================== */
 
 function initializeModalKeyboard(){
 
     document.addEventListener(
         "keydown",
-        event => {
+        function(event){
 
             if(
                 event.key === "Escape"
@@ -2085,58 +1856,28 @@ function loadCart(){
 
 
         menuCart =
-            parsed
-            .filter(
-                item =>
-                    item &&
-                    item.id
-            )
-            .map(
-                item => ({
+            parsed.filter(
+                function(item){
 
-                    id:
-                        item.id,
-
-                    name:
-                        item.name ||
-                        "Product",
-
-                    categoryName:
-                        item.categoryName ||
-                        "Menu",
-
-                    description:
-                        item.description ||
-                        "",
-
-                    image:
-                        item.image ||
-                        "",
-
-                    sellingPrice:
+                    return (
+                        item &&
+                        item.id &&
                         Number(
-                            item.sellingPrice ||
-                            0
-                        ),
+                            item.quantity
+                        ) > 0
+                    );
 
-                    quantity:
-                        Math.max(
-                            1,
-                            Number(
-                                item.quantity ||
-                                1
-                            )
-                        )
-
-                })
+                }
             );
+
 
     }catch(error){
 
         console.error(
-            "Cart load error:",
+            "PAPPRITO CART LOAD ERROR:",
             error
         );
+
 
         menuCart = [];
 
@@ -2160,10 +1901,11 @@ function saveCart(){
             )
         );
 
+
     }catch(error){
 
         console.error(
-            "Cart save error:",
+            "PAPPRITO CART SAVE ERROR:",
             error
         );
 
@@ -2173,95 +1915,7 @@ function saveCart(){
 
 
 /* ==========================================================
-   CART QUANTITY
-========================================================== */
-
-function getCartQuantity(){
-
-    return menuCart.reduce(
-        (
-            total,
-            item
-        ) => {
-
-            return total +
-                Number(
-                    item.quantity || 0
-                );
-
-        },
-        0
-    );
-
-}
-
-
-/* ==========================================================
-   CART SUBTOTAL
-========================================================== */
-
-function getCartSubtotal(){
-
-    return menuCart.reduce(
-        (
-            total,
-            item
-        ) => {
-
-            return total +
-                (
-                    Number(
-                        item.sellingPrice || 0
-                    )
-                    *
-                    Number(
-                        item.quantity || 0
-                    )
-                );
-
-        },
-        0
-    );
-
-}
-
-
-/* ==========================================================
-   CART TOTALS
-========================================================== */
-
-function getCartTotals(){
-
-    const subtotal =
-        getCartSubtotal();
-
-
-    const delivery =
-        0;
-
-
-    return {
-
-        quantity:
-            getCartQuantity(),
-
-        subtotal:
-            subtotal,
-
-        delivery:
-            delivery,
-
-        total:
-            subtotal +
-            delivery
-
-    };
-
-}
-
-
-/* ==========================================================
-   FIND ITEM
+   FIND CART ITEM
 ========================================================== */
 
 function findCartItem(
@@ -2269,9 +1923,16 @@ function findCartItem(
 ){
 
     return menuCart.find(
-        item =>
-            String(item.id) ===
-            String(productId)
+        function(item){
+
+            return String(
+                item.id
+            ) ===
+            String(
+                productId
+            );
+
+        }
     );
 
 }
@@ -2283,7 +1944,7 @@ function findCartItem(
 
 function addProductToCart(
     product,
-    quantity = 1
+    quantity
 ){
 
     if(!product){
@@ -2293,31 +1954,28 @@ function addProductToCart(
     }
 
 
-    const id =
-        String(
-            product.id
-        );
-
-
-    const addQuantity =
+    const qty =
         Math.max(
             1,
-            Math.floor(
-                Number(quantity)
+            Number(
+                quantity || 1
             )
         );
 
 
     const existing =
         findCartItem(
-            id
+            product.id
         );
 
 
     if(existing){
 
-        existing.quantity +=
-            addQuantity;
+        existing.quantity =
+            Number(
+                existing.quantity || 0
+            ) +
+            qty;
 
     }else{
 
@@ -2349,7 +2007,7 @@ function addProductToCart(
                 ),
 
             quantity:
-                addQuantity
+                qty
 
         });
 
@@ -2358,13 +2016,14 @@ function addProductToCart(
 
     saveCart();
 
+
     updateCartUI();
 
 }
 
 
 /* ==========================================================
-   INCREASE
+   INCREASE CART ITEM
 ========================================================== */
 
 function increaseCartItem(
@@ -2392,13 +2051,14 @@ function increaseCartItem(
 
     saveCart();
 
+
     updateCartUI();
 
 }
 
 
 /* ==========================================================
-   DECREASE
+   DECREASE CART ITEM
 ========================================================== */
 
 function decreaseCartItem(
@@ -2435,7 +2095,9 @@ function decreaseCartItem(
 
     item.quantity--;
 
+
     saveCart();
+
 
     updateCartUI();
 
@@ -2443,7 +2105,7 @@ function decreaseCartItem(
 
 
 /* ==========================================================
-   REMOVE
+   REMOVE ITEM
 ========================================================== */
 
 function removeFromCart(
@@ -2452,13 +2114,21 @@ function removeFromCart(
 
     menuCart =
         menuCart.filter(
-            item =>
-                String(item.id) !==
-                String(productId)
+            function(item){
+
+                return String(
+                    item.id
+                ) !==
+                String(
+                    productId
+                );
+
+            }
         );
 
 
     saveCart();
+
 
     updateCartUI();
 
@@ -2473,7 +2143,9 @@ function clearCart(){
 
     menuCart = [];
 
+
     saveCart();
+
 
     updateCartUI();
 
@@ -2481,19 +2153,83 @@ function clearCart(){
 
 
 /* ==========================================================
-   VALIDATE CART
+   CART QUANTITY
+========================================================== */
+
+function getCartQuantity(){
+
+    return menuCart.reduce(
+        function(total,item){
+
+            return total +
+                Number(
+                    item.quantity || 0
+                );
+
+        },
+        0
+    );
+
+}
+
+
+/* ==========================================================
+   CART SUBTOTAL
+========================================================== */
+
+function getCartSubtotal(){
+
+    return menuCart.reduce(
+        function(total,item){
+
+            return total +
+                (
+                    Number(
+                        item.sellingPrice || 0
+                    )
+                    *
+                    Number(
+                        item.quantity || 0
+                    )
+                );
+
+        },
+        0
+    );
+
+}
+
+
+/* ==========================================================
+   CART TOTAL
+========================================================== */
+
+function getCartTotal(){
+
+    return getCartSubtotal();
+
+}
+
+
+/* ==========================================================
+   CART DATA CLEANUP
 ========================================================== */
 
 function validateCart(){
 
     menuCart =
         menuCart.filter(
-            item =>
-                item &&
-                item.id &&
-                Number(
-                    item.quantity || 0
-                ) > 0
+            function(item){
+
+                return (
+                    item &&
+                    item.id &&
+                    Number(
+                        item.quantity || 0
+                    ) > 0
+                );
+
+            }
         );
 
 
@@ -2510,7 +2246,7 @@ function validateCart(){
    RENDER CART
 ========================================================== */
 
-function renderCartItems(){
+function renderCart(){
 
     const container =
         document.getElementById(
@@ -2563,11 +2299,11 @@ function renderCartItems(){
 
 
     menuCart.forEach(
-        item => {
+        function(item){
 
             container.insertAdjacentHTML(
                 "beforeend",
-                createCartItemHTML(
+                createCartItem(
                     item
                 )
             );
@@ -2579,18 +2315,16 @@ function renderCartItems(){
 
 
 /* ==========================================================
-   CREATE CART ITEM
+   CART ITEM HTML
 ========================================================== */
 
-function createCartItemHTML(
+function createCartItem(
     item
 ){
 
-    const image =
+    const id =
         escapeHTML(
-            getMenuProductImage(
-                item
-            )
+            item.id
         );
 
 
@@ -2601,9 +2335,11 @@ function createCartItemHTML(
         );
 
 
-    const id =
+    const image =
         escapeHTML(
-            item.id
+            getProductImage(
+                item
+            )
         );
 
 
@@ -2622,7 +2358,7 @@ function createCartItemHTML(
         );
 
 
-    const itemTotal =
+    const total =
         price *
         quantity;
 
@@ -2694,11 +2430,11 @@ function createCartItemHTML(
                     </div>
 
 
-                    <div class="cart-item-total">
+                    <strong class="cart-item-total">
 
-                        ${formatMenuPrice(itemTotal)}
+                        ${formatMenuPrice(total)}
 
-                    </div>
+                    </strong>
 
                 </div>
 
@@ -2731,31 +2467,39 @@ function updateCartUI(){
     validateCart();
 
 
-    const totals =
-        getCartTotals();
+    const quantity =
+        getCartQuantity();
+
+
+    const subtotal =
+        getCartSubtotal();
+
+
+    const total =
+        getCartTotal();
 
 
     /* ======================================================
-       BADGES
+       CART COUNT
     ====================================================== */
 
-    document
-        .querySelectorAll(
-            ".cart-count"
-        )
-        .forEach(
-            badge => {
-
-                badge.textContent =
-                    totals.quantity;
-
-                badge.classList.toggle(
-                    "show",
-                    totals.quantity > 0
-                );
-
-            }
+    const count =
+        document.getElementById(
+            "cartCount"
         );
+
+
+    if(count){
+
+        count.textContent =
+            quantity;
+
+        count.classList.toggle(
+            "show",
+            quantity > 0
+        );
+
+    }
 
 
     /* ======================================================
@@ -2772,7 +2516,7 @@ function updateCartUI(){
 
         floatingTotal.textContent =
             formatMenuPrice(
-                totals.total
+                total
             );
 
     }
@@ -2782,17 +2526,17 @@ function updateCartUI(){
        SUBTOTAL
     ====================================================== */
 
-    const subtotal =
+    const subtotalElement =
         document.getElementById(
             "cartSubtotal"
         );
 
 
-    if(subtotal){
+    if(subtotalElement){
 
-        subtotal.textContent =
+        subtotalElement.textContent =
             formatMenuPrice(
-                totals.subtotal
+                subtotal
             );
 
     }
@@ -2802,18 +2546,16 @@ function updateCartUI(){
        DELIVERY
     ====================================================== */
 
-    const delivery =
+    const deliveryElement =
         document.getElementById(
             "cartDelivery"
         );
 
 
-    if(delivery){
+    if(deliveryElement){
 
-        delivery.textContent =
-            formatMenuPrice(
-                totals.delivery
-            );
+        deliveryElement.textContent =
+            "₱0.00";
 
     }
 
@@ -2832,59 +2574,21 @@ function updateCartUI(){
 
         grandTotal.textContent =
             formatMenuPrice(
-                totals.total
+                total
             );
 
     }
 
 
     /* ======================================================
-       CHECKOUT TOTAL
+       RENDER ITEMS
     ====================================================== */
 
-    const checkoutTotal =
-        document.getElementById(
-            "checkoutTotal"
-        );
-
-
-    if(checkoutTotal){
-
-        checkoutTotal.textContent =
-            formatMenuPrice(
-                totals.total
-            );
-
-    }
+    renderCart();
 
 
     /* ======================================================
-       ITEM COUNT TEXT
-    ====================================================== */
-
-    document
-        .querySelectorAll(
-            ".cart-total-quantity"
-        )
-        .forEach(
-            element => {
-
-                element.textContent =
-                    totals.quantity;
-
-            }
-        );
-
-
-    /* ======================================================
-       CART ITEMS
-    ====================================================== */
-
-    renderCartItems();
-
-
-    /* ======================================================
-       CHECKOUT BUTTON
+       CHECKOUT
     ====================================================== */
 
     const checkout =
@@ -2896,7 +2600,7 @@ function updateCartUI(){
     if(checkout){
 
         checkout.disabled =
-            totals.quantity === 0;
+            quantity === 0;
 
     }
 
@@ -2904,11 +2608,11 @@ function updateCartUI(){
 
 
 /* ==========================================================
-   CART NOTIFICATION
+   CART TOAST
 ========================================================== */
 
-function showCartNotification(
-    productName
+function showMenuToast(
+    message
 ){
 
     let toast =
@@ -2941,8 +2645,7 @@ function showCartNotification(
         <i class="fa-solid fa-check"></i>
 
         <span>
-            ${escapeHTML(productName)}
-            added to cart
+            ${escapeHTML(message)}
         </span>
 
     `;
@@ -2954,13 +2657,13 @@ function showCartNotification(
 
 
     clearTimeout(
-        toast._timer
+        toast.menuTimer
     );
 
 
-    toast._timer =
+    toast.menuTimer =
         setTimeout(
-            () => {
+            function(){
 
                 toast.classList.remove(
                     "show"
@@ -3121,7 +2824,7 @@ function toggleCart(){
    CART EVENTS
 ========================================================== */
 
-function initializeCartDrawerEvents(){
+function initializeCartEvents(){
 
     const viewCart =
         document.getElementById(
@@ -3141,11 +2844,17 @@ function initializeCartDrawerEvents(){
         );
 
 
+    const startOrdering =
+        document.getElementById(
+            "startOrderingBtn"
+        );
+
+
     if(viewCart){
 
         viewCart.addEventListener(
             "click",
-            event => {
+            function(event){
 
                 event.preventDefault();
 
@@ -3161,7 +2870,7 @@ function initializeCartDrawerEvents(){
 
         closeCartButton.addEventListener(
             "click",
-            event => {
+            function(event){
 
                 event.preventDefault();
 
@@ -3182,18 +2891,36 @@ function initializeCartDrawerEvents(){
 
     }
 
+
+    if(startOrdering){
+
+        startOrdering.addEventListener(
+            "click",
+            function(event){
+
+                event.preventDefault();
+
+                closeCart();
+
+                scrollToProducts();
+
+            }
+        );
+
+    }
+
 }
 
 
 /* ==========================================================
-   CART KEYBOARD
+   CART ESCAPE
 ========================================================== */
 
 function initializeCartKeyboard(){
 
     document.addEventListener(
         "keydown",
-        event => {
+        function(event){
 
             if(
                 event.key === "Escape"
@@ -3207,516 +2934,237 @@ function initializeCartKeyboard(){
     );
 
 }
+/* ==========================================================
+   PART 7
+   CART DRAWER
+========================================================== */
 
 
 /* ==========================================================
-   BODY SCROLL LOCK
+   OPEN CART
 ========================================================== */
 
-function updateBodyScrollLock(){
+function openCart(){
 
-    const modal =
-        document.getElementById(
-            "productModal"
-        );
-
-
-    const cart =
+    const drawer =
         document.getElementById(
             "cartDrawer"
         );
 
 
-    const modalOpen =
-        modal &&
-        modal.classList.contains(
+    const overlay =
+        document.getElementById(
+            "cartOverlay"
+        );
+
+
+    if(!drawer){
+
+        return;
+
+    }
+
+
+    updateCartUI();
+
+
+    drawer.classList.add(
+        "active"
+    );
+
+
+    drawer.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+
+    if(overlay){
+
+        overlay.classList.add(
+            "active"
+        );
+
+    }
+
+
+    document.body.classList.add(
+        "cart-open"
+    );
+
+}
+
+
+/* ==========================================================
+   CLOSE CART
+========================================================== */
+
+function closeCart(){
+
+    const drawer =
+        document.getElementById(
+            "cartDrawer"
+        );
+
+
+    const overlay =
+        document.getElementById(
+            "cartOverlay"
+        );
+
+
+    if(drawer){
+
+        drawer.classList.remove(
             "active"
         );
 
 
-    const cartOpen =
-        cart &&
-        cart.classList.contains(
+        drawer.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+    }
+
+
+    if(overlay){
+
+        overlay.classList.remove(
             "active"
         );
 
-
-    document.body.classList.toggle(
-        "product-modal-open",
-        !!modalOpen
-    );
+    }
 
 
-    document.body.classList.toggle(
-        "cart-open",
-        !!cartOpen
+    document.body.classList.remove(
+        "cart-open"
     );
 
 }
-/* ==========================================================
-   PART 8
-   CHECKOUT + GLOBAL EVENTS
-========================================================== */
 
 
 /* ==========================================================
-   CHECKOUT
+   TOGGLE CART
 ========================================================== */
 
-function proceedToCheckout(){
+function toggleCart(){
+
+    const drawer =
+        document.getElementById(
+            "cartDrawer"
+        );
+
+
+    if(!drawer){
+
+        return;
+
+    }
+
 
     if(
-        menuCart.length === 0
+        drawer.classList.contains(
+            "active"
+        )
     ){
 
-        showCartNotification(
-            "Your cart is empty"
-        );
+        closeCart();
 
-        return;
-
-    }
-
-
-    /*
-     * TEMPORARY CHECKOUT
-     *
-     * The actual checkout/payment system
-     * can be connected later.
-     */
-
-
-    console.log(
-        "PAPPRITO CHECKOUT:",
-        menuCart
-    );
-
-
-    showCartNotification(
-        "Checkout system coming soon"
-    );
-
-}
-
-
-/* ==========================================================
-   CHECKOUT EVENT
-========================================================== */
-
-function initializeCheckout(){
-
-    const button =
-        document.getElementById(
-            "checkoutBtn"
-        );
-
-
-    if(!button){
-
-        return;
-
-    }
-
-
-    button.addEventListener(
-        "click",
-        event => {
-
-            event.preventDefault();
-
-            proceedToCheckout();
-
-        }
-    );
-
-}
-
-
-/* ==========================================================
-   RESET BUTTON
-========================================================== */
-
-function initializeResetButton(){
-
-    const button =
-        document.getElementById(
-            "resetMenuBtn"
-        );
-
-
-    if(button){
-
-        button.addEventListener(
-            "click",
-            resetMenuFilters
-        );
-
-    }
-
-}
-
-
-/* ==========================================================
-   IMAGE FALLBACK
-========================================================== */
-
-document.addEventListener(
-    "error",
-    event => {
-
-        const target =
-            event.target;
-
-
-        if(
-            !target ||
-            target.tagName !== "IMG"
-        ){
-
-            return;
-
-        }
-
-
-        if(
-            target.dataset.fallbackApplied
-        ){
-
-            return;
-
-        }
-
-
-        target.dataset.fallbackApplied =
-            "true";
-
-
-        target.src =
-            MENU_DEFAULT_IMAGE;
-
-    },
-    true
-);
-
-
-/* ==========================================================
-   STORAGE SYNC
-========================================================== */
-
-window.addEventListener(
-    "storage",
-    event => {
-
-        if(
-            event.key !==
-            MENU_CART_STORAGE
-        ){
-
-            return;
-
-        }
-
-
-        loadCart();
-
-        updateCartUI();
-
-    }
-);
-
-
-/* ==========================================================
-   PAGE VISIBILITY
-========================================================== */
-
-document.addEventListener(
-    "visibilitychange",
-    () => {
-
-        if(
-            document.visibilityState ===
-            "visible"
-        ){
-
-            loadCart();
-
-            updateCartUI();
-
-        }
-
-    }
-);
-
-
-/* ==========================================================
-   BEFORE UNLOAD
-========================================================== */
-
-window.addEventListener(
-    "beforeunload",
-    () => {
-
-        saveCart();
-
-    }
-);
-
-
-/* ==========================================================
-   UPDATE SCROLL LOCK
-========================================================== */
-
-document.addEventListener(
-    "click",
-    () => {
-
-        setTimeout(
-            updateBodyScrollLock,
-            0
-        );
-
-    }
-);
-
-
-/* ==========================================================
-   GLOBAL CART BUTTONS
-========================================================== */
-
-document.addEventListener(
-    "click",
-    event => {
-
-        const button =
-            event.target.closest(
-                "[data-open-cart]"
-            );
-
-
-        if(!button){
-
-            return;
-
-        }
-
-
-        event.preventDefault();
+    }else{
 
         openCart();
 
     }
-);
-
-
-/* ==========================================================
-   GLOBAL CLOSE CART
-========================================================== */
-
-document.addEventListener(
-    "click",
-    event => {
-
-        const button =
-            event.target.closest(
-                "[data-close-cart]"
-            );
-
-
-        if(!button){
-
-            return;
-
-        }
-
-
-        event.preventDefault();
-
-        closeCart();
-
-    }
-);
-
-
-/* ==========================================================
-   INITIALIZE ALL EVENTS
-========================================================== */
-
-function initializeMenuEvents(){
-
-    initializeCategoryEvents();
-
-    initializeCategoryScroll();
-
-    initializeProductEvents();
-
-    initializeMenuSearch();
-
-    initializeProductModalEvents();
-
-    initializeModalKeyboard();
-
-    initializeCartDrawerEvents();
-
-    initializeCartKeyboard();
-
-    initializeCheckout();
-
-    initializeResetButton();
 
 }
 
 
 /* ==========================================================
-   REFRESH MENU
+   CART EVENTS
 ========================================================== */
 
-async function refreshMenu(){
+function initializeCartEvents(){
 
-    try{
-
-        showMenuLoading();
-
-
-        await loadMenuCategories();
-
-
-        await loadMenuProducts();
-
-
-        loadCart();
-
-
-        updateCartUI();
-
-
-        updateActiveCategoryButton();
-
-
-        updateMenuResultCount();
-
-
-    }catch(error){
-
-        console.error(
-            "Menu refresh error:",
-            error
-        );
-
-
-        showMenuError();
-
-    }
-
-}
-
-
-/* ==========================================================
-   REFRESH CART
-========================================================== */
-
-function refreshCart(){
-
-    loadCart();
-
-    updateCartUI();
-
-}
-/* ==========================================================
-   PART 8
-   CHECKOUT + GLOBAL EVENTS
-========================================================== */
-
-
-/* ==========================================================
-   CHECKOUT
-========================================================== */
-
-function proceedToCheckout(){
-
-    if(
-        menuCart.length === 0
-    ){
-
-        showCartNotification(
-            "Your cart is empty"
-        );
-
-        return;
-
-    }
-
-
-    /*
-     * TEMPORARY CHECKOUT
-     *
-     * The actual checkout/payment system
-     * can be connected later.
-     */
-
-
-    console.log(
-        "PAPPRITO CHECKOUT:",
-        menuCart
-    );
-
-
-    showCartNotification(
-        "Checkout system coming soon"
-    );
-
-}
-
-
-/* ==========================================================
-   CHECKOUT EVENT
-========================================================== */
-
-function initializeCheckout(){
-
-    const button =
+    const viewCart =
         document.getElementById(
-            "checkoutBtn"
+            "viewCartBtn"
         );
 
 
-    if(!button){
-
-        return;
-
-    }
-
-
-    button.addEventListener(
-        "click",
-        event => {
-
-            event.preventDefault();
-
-            proceedToCheckout();
-
-        }
-    );
-
-}
-
-
-/* ==========================================================
-   RESET BUTTON
-========================================================== */
-
-function initializeResetButton(){
-
-    const button =
+    const closeCartButton =
         document.getElementById(
-            "resetMenuBtn"
+            "closeCartBtn"
         );
 
 
-    if(button){
+    const overlay =
+        document.getElementById(
+            "cartOverlay"
+        );
 
-        button.addEventListener(
+
+    const startOrdering =
+        document.getElementById(
+            "startOrderingBtn"
+        );
+
+
+    if(viewCart){
+
+        viewCart.addEventListener(
             "click",
-            resetMenuFilters
+            function(event){
+
+                event.preventDefault();
+
+                openCart();
+
+            }
+        );
+
+    }
+
+
+    if(closeCartButton){
+
+        closeCartButton.addEventListener(
+            "click",
+            function(event){
+
+                event.preventDefault();
+
+                closeCart();
+
+            }
+        );
+
+    }
+
+
+    if(overlay){
+
+        overlay.addEventListener(
+            "click",
+            closeCart
+        );
+
+    }
+
+
+    if(startOrdering){
+
+        startOrdering.addEventListener(
+            "click",
+            function(event){
+
+                event.preventDefault();
+
+                closeCart();
+
+                scrollToProducts();
+
+            }
         );
 
     }
@@ -3725,267 +3173,24 @@ function initializeResetButton(){
 
 
 /* ==========================================================
-   IMAGE FALLBACK
+   CART ESCAPE
 ========================================================== */
 
-document.addEventListener(
-    "error",
-    event => {
+function initializeCartKeyboard(){
 
-        const target =
-            event.target;
+    document.addEventListener(
+        "keydown",
+        function(event){
 
+            if(
+                event.key === "Escape"
+            ){
 
-        if(
-            !target ||
-            target.tagName !== "IMG"
-        ){
+                closeCart();
 
-            return;
+            }
 
         }
-
-
-        if(
-            target.dataset.fallbackApplied
-        ){
-
-            return;
-
-        }
-
-
-        target.dataset.fallbackApplied =
-            "true";
-
-
-        target.src =
-            MENU_DEFAULT_IMAGE;
-
-    },
-    true
-);
-
-
-/* ==========================================================
-   STORAGE SYNC
-========================================================== */
-
-window.addEventListener(
-    "storage",
-    event => {
-
-        if(
-            event.key !==
-            MENU_CART_STORAGE
-        ){
-
-            return;
-
-        }
-
-
-        loadCart();
-
-        updateCartUI();
-
-    }
-);
-
-
-/* ==========================================================
-   PAGE VISIBILITY
-========================================================== */
-
-document.addEventListener(
-    "visibilitychange",
-    () => {
-
-        if(
-            document.visibilityState ===
-            "visible"
-        ){
-
-            loadCart();
-
-            updateCartUI();
-
-        }
-
-    }
-);
-
-
-/* ==========================================================
-   BEFORE UNLOAD
-========================================================== */
-
-window.addEventListener(
-    "beforeunload",
-    () => {
-
-        saveCart();
-
-    }
-);
-
-
-/* ==========================================================
-   UPDATE SCROLL LOCK
-========================================================== */
-
-document.addEventListener(
-    "click",
-    () => {
-
-        setTimeout(
-            updateBodyScrollLock,
-            0
-        );
-
-    }
-);
-
-
-/* ==========================================================
-   GLOBAL CART BUTTONS
-========================================================== */
-
-document.addEventListener(
-    "click",
-    event => {
-
-        const button =
-            event.target.closest(
-                "[data-open-cart]"
-            );
-
-
-        if(!button){
-
-            return;
-
-        }
-
-
-        event.preventDefault();
-
-        openCart();
-
-    }
-);
-
-
-/* ==========================================================
-   GLOBAL CLOSE CART
-========================================================== */
-
-document.addEventListener(
-    "click",
-    event => {
-
-        const button =
-            event.target.closest(
-                "[data-close-cart]"
-            );
-
-
-        if(!button){
-
-            return;
-
-        }
-
-
-        event.preventDefault();
-
-        closeCart();
-
-    }
-);
-
-
-/* ==========================================================
-   INITIALIZE ALL EVENTS
-========================================================== */
-
-function initializeMenuEvents(){
-
-    initializeCategoryEvents();
-
-    initializeCategoryScroll();
-
-    initializeProductEvents();
-
-    initializeMenuSearch();
-
-    initializeProductModalEvents();
-
-    initializeModalKeyboard();
-
-    initializeCartDrawerEvents();
-
-    initializeCartKeyboard();
-
-    initializeCheckout();
-
-    initializeResetButton();
-
-}
-
-
-/* ==========================================================
-   REFRESH MENU
-========================================================== */
-
-async function refreshMenu(){
-
-    try{
-
-        showMenuLoading();
-
-
-        await loadMenuCategories();
-
-
-        await loadMenuProducts();
-
-
-        loadCart();
-
-
-        updateCartUI();
-
-
-        updateActiveCategoryButton();
-
-
-        updateMenuResultCount();
-
-
-    }catch(error){
-
-        console.error(
-            "Menu refresh error:",
-            error
-        );
-
-
-        showMenuError();
-
-    }
-
-}
-
-
-/* ==========================================================
-   REFRESH CART
-========================================================== */
-
-function refreshCart(){
-
-    loadCart();
-
-    updateCartUI();
+    );
 
 }
