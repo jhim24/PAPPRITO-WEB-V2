@@ -2063,19 +2063,18 @@ img{
    PRODUCT IMAGE
 ========================================================== */
 
-.menu-image img{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-    transition:
-        transform .4s ease;
-
+.menu-image {
+    width: 100%;
+    overflow: hidden;
 }
 
+.menu-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
 
 /* ==========================================================
    IMAGE HOVER
