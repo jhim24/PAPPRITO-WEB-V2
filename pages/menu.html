@@ -1,77 +1,368 @@
 <!DOCTYPE html>
 
 <!-- ==========================================================
-     PAPPRITO WEB V3
+     PAPPRITO WEB V5
      File        : menu.html
-     Description : Restaurant Menu
-     Version     : 3.0.0
+     Description : Foodpanda-Style Restaurant Menu
+     Version     : 5.0.0
 ========================================================== -->
 
 <html lang="en">
 
 <head>
 
+    <!-- ==========================================================
+         BASIC META
+    ========================================================== -->
+
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-    <title>Our Menu | PAPPRITO Restaurant</title>
+    <meta
+        name="theme-color"
+        content="#D71920">
 
-    <!-- Global CSS -->
+    <!-- ==========================================================
+         SEO
+    ========================================================== -->
 
-    <link rel="stylesheet"
-          href="../assets/css/style.css">
+    <title>Menu | PAPPRITO Restaurant</title>
 
-    <!-- Menu CSS -->
+    <meta
+        name="description"
+        content="Browse the PAPPRITO Restaurant menu and discover delicious Filipino favorites.">
 
-    <link rel="stylesheet"
-          href="../assets/css/menu.css">
+    <meta
+        name="keywords"
+        content="PAPPRITO, Restaurant, Menu, Filipino Food, Tagaytay">
 
-    <!-- Font Awesome -->
+    <!-- ==========================================================
+         FAVICON
+    ========================================================== -->
 
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link
+        rel="icon"
+        href="../assets/images/logo/favicon.png">
+
+    <!-- ==========================================================
+         GOOGLE FONTS
+    ========================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- ==========================================================
+         FONT AWESOME
+    ========================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- ==========================================================
+         GLOBAL CSS
+    ========================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/style.css">
+
+    <!-- ==========================================================
+         NEW MENU CSS
+    ========================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/menu.css">
 
 </head>
 
+
 <body>
 
-<header id="header"></header>
+    <!-- ==========================================================
+         PAGE WRAPPER
+    ========================================================== -->
 
-<main>
+    <div id="menu-page">
 
-    <!-- ==============================================
-         MENU HERO
-    =============================================== -->
 
-   <section id="menu-hero">
+        <!-- ======================================================
+             HEADER
+        ====================================================== -->
+
+        <header id="header">
+
+            <!-- Header will be connected to the existing
+                 PAPPRITO global header structure. -->
+
+        </header>
+
+
+        <!-- ======================================================
+             MAIN CONTENT
+        ====================================================== -->
+
+        <main id="main">
+
+
+            <!-- ==================================================
+                 MENU CONTENT WILL START HERE
+            ================================================== -->
+
+<!-- ==========================================================
+     MENU HERO
+========================================================== -->
+
+<section id="menu-hero">
+
+    <div class="menu-hero-overlay"></div>
 
     <div class="menu-hero-content">
 
-        <span>Authentic Filipino Cuisine</span>
+        <!-- ==================================================
+             BRAND LABEL
+        ================================================== -->
 
-        <h1>Our Menu</h1>
+        <span class="menu-hero-label">
+
+            <i class="fa-solid fa-utensils"></i>
+
+            PAPPRITO RESTAURANT
+
+        </span>
+
+
+        <!-- ==================================================
+             TITLE
+        ================================================== -->
+
+        <h1>
+
+            Delicious Filipino Food,
+            <br>
+            Delivered with Love.
+
+        </h1>
+
+
+        <!-- ==================================================
+             DESCRIPTION
+        ================================================== -->
 
         <p>
 
-            Discover our signature dishes, family favorites,
-            and freshly prepared meals made with quality
-            ingredients and served with Filipino hospitality.
+            Explore our menu and discover your
+            favorite Filipino dishes, family meals,
+            and refreshing drinks.
 
         </p>
+
+
+        <!-- ==================================================
+             SEARCH BOX
+        ================================================== -->
+
+        <div class="menu-search">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="search"
+                id="menuSearch"
+                placeholder="Search for a dish..."
+                autocomplete="off">
+
+            <button
+                type="button"
+                id="clearMenuSearch"
+                aria-label="Clear search">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
 
     </div>
 
 </section>
 
-    <!-- ==============================================
-         MENU CATEGORY
-    =============================================== -->
 
- <section id="menu-category">
+<!-- ==========================================================
+     QUICK MENU INFO
+========================================================== -->
 
-    <div class="container">
+<section class="menu-info-bar">
+
+    <div class="menu-info-container">
+
+
+        <!-- ==================================================
+             INFO ITEM
+        ================================================== -->
+
+        <div class="menu-info-item">
+
+            <div class="menu-info-icon">
+
+                <i class="fa-solid fa-utensils"></i>
+
+            </div>
+
+            <div>
+
+                <strong>
+                    Freshly Prepared
+                </strong>
+
+                <span>
+                    Made with quality ingredients
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             INFO ITEM
+        ================================================== -->
+
+        <div class="menu-info-item">
+
+            <div class="menu-info-icon">
+
+                <i class="fa-solid fa-heart"></i>
+
+            </div>
+
+            <div>
+
+                <strong>
+                    Filipino Favorites
+                </strong>
+
+                <span>
+                    Authentic local flavors
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             INFO ITEM
+        ================================================== -->
+
+        <div class="menu-info-item">
+
+            <div class="menu-info-icon">
+
+                <i class="fa-solid fa-star"></i>
+
+            </div>
+
+            <div>
+
+                <strong>
+                    Customer Favorites
+                </strong>
+
+                <span>
+                    Dishes loved by our guests
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+<!-- ==========================================================
+     MENU CATEGORY NAVIGATION
+========================================================== -->
+
+<section id="menu-category">
+
+    <div class="menu-category-container">
+
+        <!-- ==================================================
+             CATEGORY HEADER
+        ================================================== -->
+
+        <div class="menu-category-heading">
+
+            <div>
+
+                <span class="menu-category-label">
+
+                    OUR MENU
+
+                </span>
+
+                <h2>
+
+                    What are you craving?
+
+                </h2>
+
+            </div>
+
+
+            <!-- ==================================================
+                 CATEGORY SCROLL BUTTONS
+            ================================================== -->
+
+            <div class="category-scroll-controls">
+
+                <button
+                    type="button"
+                    id="categoryScrollLeft"
+                    class="category-scroll-btn"
+                    aria-label="Scroll categories left">
+
+                    <i class="fa-solid fa-chevron-left"></i>
+
+                </button>
+
+                <button
+                    type="button"
+                    id="categoryScrollRight"
+                    class="category-scroll-btn"
+                    aria-label="Scroll categories right">
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             CATEGORY LIST
+             
+             IMPORTANT:
+             menu.js will automatically populate this element.
+        ================================================== -->
 
         <div
             id="menu-category-wrapper"
@@ -82,52 +373,438 @@
     </div>
 
 </section>
-  <!-- ==============================================
-     MENU ITEMS
-=============================================== -->
+<!-- ==========================================================
+     MENU PRODUCTS
+========================================================== -->
 
 <section id="menu-items">
 
-    <div class="container">
+    <div class="menu-products-container">
+
+
+        <!-- ==================================================
+             PRODUCT SECTION HEADER
+        ================================================== -->
+
+        <div class="menu-products-heading">
+
+            <div>
+
+                <span class="menu-products-label">
+
+                    PAPPRITO FAVORITES
+
+                </span>
+
+                <h2>
+                    Explore Our Menu
+                </h2>
+
+            </div>
+
+            <div
+                id="menu-result-count"
+                class="menu-result-count">
+
+                <i class="fa-solid fa-utensils"></i>
+
+                <span>Loading menu...</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             PRODUCT GRID
+             
+             IMPORTANT:
+             menu.js will populate this container.
+        ================================================== -->
 
         <div
             id="menu-products"
             class="menu-products">
 
+            <!-- Products loaded from Firebase -->
+
         </div>
+
+
+        <!-- ==================================================
+             EMPTY / NO RESULTS
+        ================================================== -->
+
+        <div
+            id="menu-empty"
+            class="menu-empty hidden">
+
+            <div class="menu-empty-icon">
+
+                <i class="fa-solid fa-bowl-food"></i>
+
+            </div>
+
+            <h3>
+                No dishes found
+            </h3>
+
+            <p>
+                We couldn't find a menu item matching your search.
+            </p>
+
+            <button
+                type="button"
+                id="resetMenuSearch"
+                class="reset-menu-btn">
+
+                <i class="fa-solid fa-rotate-left"></i>
+
+                View All Menu
+
+            </button>
+
+        </div>
+
 
     </div>
 
 </section>
-
-</main>
-     
 <!-- ==========================================================
-     PRODUCT DETAILS MODAL
+     FLOATING CART
 ========================================================== -->
 
-<div id="productModal" class="product-modal">
+<div
+    id="floatingCart"
+    class="floating-cart">
 
-    <div class="product-modal-content">
+    <div class="floating-cart-inner">
+
+
+        <!-- ==================================================
+             CART SUMMARY
+        ================================================== -->
+
+        <div class="floating-cart-summary">
+
+            <div class="floating-cart-icon">
+
+                <i class="fa-solid fa-bag-shopping"></i>
+
+                <span
+                    id="cartCount"
+                    class="cart-count">
+
+                    0
+
+                </span>
+
+            </div>
+
+
+            <div class="floating-cart-info">
+
+                <span class="floating-cart-label">
+
+                    Your Order
+
+                </span>
+
+                <strong
+                    id="cartTotal">
+
+                    ₱0.00
+
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             VIEW CART BUTTON
+        ================================================== -->
 
         <button
-            class="modal-close"
-            id="closeProductModal">
+            type="button"
+            id="viewCartBtn"
+            class="view-cart-btn">
+
+            <span>
+                View Cart
+            </span>
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </button>
+
+    </div>
+
+</div>
+<!-- ==========================================================
+     CART DRAWER OVERLAY
+========================================================== -->
+
+<div
+    id="cartOverlay"
+    class="cart-overlay">
+</div>
+
+
+<!-- ==========================================================
+     CART DRAWER
+========================================================== -->
+
+<aside
+    id="cartDrawer"
+    class="cart-drawer"
+    aria-hidden="true">
+
+
+    <!-- ======================================================
+         CART HEADER
+    ====================================================== -->
+
+    <div class="cart-drawer-header">
+
+        <div>
+
+            <span class="cart-drawer-label">
+
+                YOUR ORDER
+
+            </span>
+
+            <h2>
+
+                Shopping Cart
+
+            </h2>
+
+        </div>
+
+
+        <button
+            type="button"
+            id="closeCartBtn"
+            class="cart-close-btn"
+            aria-label="Close shopping cart">
 
             <i class="fa-solid fa-xmark"></i>
 
         </button>
 
+    </div>
+
+
+    <!-- ======================================================
+         CART ITEMS
+         
+         JavaScript will populate this container.
+    ====================================================== -->
+
+    <div
+        id="cartItems"
+        class="cart-items">
+
+        <!-- Cart items will appear here -->
+
+    </div>
+
+
+    <!-- ======================================================
+         EMPTY CART
+    ====================================================== -->
+
+    <div
+        id="cartEmpty"
+        class="cart-empty">
+
+        <div class="cart-empty-icon">
+
+            <i class="fa-solid fa-bag-shopping"></i>
+
+        </div>
+
+        <h3>
+
+            Your cart is empty
+
+        </h3>
+
+        <p>
+
+            Add your favorite PAPPRITO dishes
+            to start your order.
+
+        </p>
+
+        <button
+            type="button"
+            id="startOrderingBtn"
+            class="start-ordering-btn">
+
+            <i class="fa-solid fa-utensils"></i>
+
+            Start Ordering
+
+        </button>
+
+    </div>
+
+
+    <!-- ======================================================
+         CART SUMMARY
+    ====================================================== -->
+
+    <div
+        id="cartSummary"
+        class="cart-summary">
+
+
+        <div class="cart-summary-row">
+
+            <span>
+                Subtotal
+            </span>
+
+            <strong
+                id="cartSubtotal">
+
+                ₱0.00
+
+            </strong>
+
+        </div>
+
+
+        <div class="cart-summary-row">
+
+            <span>
+                Delivery Fee
+            </span>
+
+            <strong
+                id="cartDelivery">
+
+                ₱0.00
+
+            </strong>
+
+        </div>
+
+
+        <div class="cart-summary-divider">
+        </div>
+
+
+        <div class="cart-summary-total">
+
+            <span>
+                Total
+            </span>
+
+            <strong
+                id="cartGrandTotal">
+
+                ₱0.00
+
+            </strong>
+
+        </div>
+
+
+        <!-- ==================================================
+             CHECKOUT BUTTON
+        ================================================== -->
+
+        <button
+            type="button"
+            id="checkoutBtn"
+            class="checkout-btn">
+
+            <span>
+
+                Proceed to Checkout
+
+            </span>
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </button>
+
+    </div>
+
+</aside>
+<!-- ==========================================================
+     PRODUCT DETAILS MODAL
+========================================================== -->
+
+<div
+    id="productModal"
+    class="product-modal"
+    aria-hidden="true">
+
+
+    <!-- ======================================================
+         MODAL BACKDROP
+    ====================================================== -->
+
+    <div
+        class="product-modal-backdrop"
+        id="productModalBackdrop">
+    </div>
+
+
+    <!-- ======================================================
+         MODAL CONTENT
+    ====================================================== -->
+
+    <div
+        class="product-modal-content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalName">
+
+
+        <!-- ==================================================
+             CLOSE BUTTON
+        ================================================== -->
+
+        <button
+            type="button"
+            id="closeProductModal"
+            class="modal-close"
+            aria-label="Close product details">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <!-- ==================================================
+             PRODUCT IMAGE
+        ================================================== -->
+
         <div class="product-modal-image">
 
             <img
                 id="modalImage"
-                src=""
+                src="../assets/images/no-product.png"
                 alt="Product">
 
         </div>
 
+
+        <!-- ==================================================
+             PRODUCT INFORMATION
+        ================================================== -->
+
         <div class="product-modal-info">
+
+
+            <!-- CATEGORY -->
 
             <span
                 id="modalCategory"
@@ -135,47 +812,157 @@
 
             </span>
 
-            <h2 id="modalName"></h2>
 
-            <p id="modalDescription"></p>
+            <!-- PRODUCT NAME -->
 
-            <h3 id="modalPrice"></h3>
+            <h2
+                id="modalName">
+
+            </h2>
+
+
+            <!-- DESCRIPTION -->
+
+            <p
+                id="modalDescription">
+
+            </p>
+
+
+            <!-- PRICE -->
+
+            <div class="modal-price-row">
+
+                <strong
+                    id="modalPrice"
+                    class="modal-price">
+
+                    ₱0.00
+
+                </strong>
+
+            </div>
+
+
+            <!-- ==================================================
+                 QUANTITY
+            ================================================== -->
+
+            <div class="modal-quantity">
+
+                <span class="quantity-label">
+
+                    Quantity
+
+                </span>
+
+                <div class="quantity-control">
+
+                    <button
+                        type="button"
+                        id="modalQtyMinus"
+                        class="quantity-btn"
+                        aria-label="Decrease quantity">
+
+                        <i class="fa-solid fa-minus"></i>
+
+                    </button>
+
+                    <span
+                        id="modalQty"
+                        class="quantity-value">
+
+                        1
+
+                    </span>
+
+                    <button
+                        type="button"
+                        id="modalQtyPlus"
+                        class="quantity-btn"
+                        aria-label="Increase quantity">
+
+                        <i class="fa-solid fa-plus"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 ADD TO CART
+            ================================================== -->
 
             <button
+                type="button"
                 id="modalOrderBtn"
-                class="menu-order-btn">
+                class="modal-add-cart-btn">
 
-                Order Now
+                <span>
+
+                    Add to Cart
+
+                </span>
+
+                <strong
+                    id="modalTotalPrice">
+
+                    ₱0.00
+
+                </strong>
 
             </button>
+
 
         </div>
 
     </div>
 
 </div>
-     
+<!-- ==========================================================
+     MENU PAGE FOOTER
+========================================================== -->
+
 <footer id="footer"></footer>
 
-<!-- ==========================================
+
+<!-- ==========================================================
      FIREBASE SDK
-========================================== -->
+========================================================== -->
 
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
 
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
 
-<!-- ==========================================
+
+<!-- ==========================================================
      FIREBASE CONFIG
-========================================== -->
+========================================================== -->
 
 <script src="../firebase/firebase-config.js"></script>
 
-<!-- ==========================================
-     MENU MODULE
-========================================== -->
+
+<!-- ==========================================================
+     MENU JAVASCRIPT
+========================================================== -->
 
 <script src="../assets/js/menu.js"></script>
+
+
+<!-- ==========================================================
+     GLOBAL JAVASCRIPT
+========================================================== -->
+
+<script src="../assets/js/main.js"></script>
+
+
+<!-- ==========================================================
+     MENU PAGE
+     END
+========================================================== -->
+
 </body>
 
 </html>
