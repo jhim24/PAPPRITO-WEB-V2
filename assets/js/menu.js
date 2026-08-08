@@ -1566,32 +1566,27 @@ function updateCartUI(){
     const quantity =
         getCartQuantity();
 
-
     const subtotal =
         getCartSubtotal();
 
 
     /* ======================================================
-       CART BADGES
+       CART COUNT
     ====================================================== */
 
     document
-        .querySelectorAll(
-            ".cart-count"
-        )
-        .forEach(
-            badge => {
+        .querySelectorAll(".cart-count")
+        .forEach(badge => {
 
-                badge.textContent =
-                    quantity;
+            badge.textContent =
+                quantity;
 
-                badge.classList.toggle(
-                    "show",
-                    quantity > 0
-                );
+            badge.classList.toggle(
+                "show",
+                quantity > 0
+            );
 
-            }
-        );
+        });
 
 
     /* ======================================================
@@ -1599,17 +1594,13 @@ function updateCartUI(){
     ====================================================== */
 
     document
-        .querySelectorAll(
-            ".cart-total-quantity"
-        )
-        .forEach(
-            element => {
+        .querySelectorAll(".cart-total-quantity")
+        .forEach(element => {
 
-                element.textContent =
-                    quantity;
+            element.textContent =
+                quantity;
 
-            }
-        );
+        });
 
 
     /* ======================================================
@@ -1617,45 +1608,97 @@ function updateCartUI(){
     ====================================================== */
 
     document
-        .querySelectorAll(
-            ".cart-subtotal"
-        )
-        .forEach(
-            element => {
+        .querySelectorAll(".cart-subtotal")
+        .forEach(element => {
 
-                element.textContent =
-                    formatMenuPrice(
-                        subtotal
-                    );
+            element.textContent =
+                formatMenuPrice(subtotal);
 
-            }
-        );
+        });
 
+
+    /* ======================================================
+       FLOATING CART TOTAL
+    ====================================================== */
+
+    const cartTotal =
+        document.getElementById("cartTotal");
+
+    if(cartTotal){
+
+        cartTotal.textContent =
+            formatMenuPrice(subtotal);
+
+    }
+
+
+    /* ======================================================
+       CART SUMMARY
+    ====================================================== */
+
+    const cartSubtotal =
+        document.getElementById("cartSubtotal");
+
+    if(cartSubtotal){
+
+        cartSubtotal.textContent =
+            formatMenuPrice(subtotal);
+
+    }
+
+
+    /* ======================================================
+       DELIVERY
+    ====================================================== */
+
+    const cartDelivery =
+        document.getElementById("cartDelivery");
+
+    if(cartDelivery){
+
+        cartDelivery.textContent =
+            formatMenuPrice(0);
+
+    }
+
+
+    /* ======================================================
+       GRAND TOTAL
+    ====================================================== */
+
+    const cartGrandTotal =
+        document.getElementById("cartGrandTotal");
+
+    if(cartGrandTotal){
+
+        cartGrandTotal.textContent =
+            formatMenuPrice(subtotal);
+
+    }
+
+
+    /* ======================================================
+       CHECKOUT TOTAL
+    ====================================================== */
+
+    const checkoutTotal =
+        document.getElementById("checkoutTotal");
+
+    if(checkoutTotal){
+
+        checkoutTotal.textContent =
+            formatMenuPrice(subtotal);
+
+    }
+
+
+    /* ======================================================
+       RENDER ITEMS
+    ====================================================== */
 
     renderCartItems();
 
 }
-
-
-/* ==========================================================
-   RENDER CART ITEMS
-========================================================== */
-
-function renderCartItems(){
-
-    const container =
-        document.getElementById("cartItems");
-
-    const emptyCart =
-        document.getElementById("cartEmpty");
-
-
-    if(!container){
-
-        return;
-
-    }
-
 
     /* ======================================================
        EMPTY CART
