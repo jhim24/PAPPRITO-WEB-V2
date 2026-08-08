@@ -958,15 +958,10 @@ function closeProductModal(){
 function updateModalQuantity(){
 
     const quantity =
-        document.getElementById(
-            "modalQuantity"
-        );
-
+        document.getElementById("modalQty");
 
     const total =
-        document.getElementById(
-            "modalTotal"
-        );
+        document.getElementById("modalTotal");
 
 
     if(quantity){
@@ -977,10 +972,7 @@ function updateModalQuantity(){
     }
 
 
-    if(
-        total &&
-        selectedProduct
-    ){
+    if(total && selectedProduct){
 
         const price =
             Number(
@@ -991,15 +983,12 @@ function updateModalQuantity(){
         total.textContent =
             "₱" +
             (
-                price *
-                selectedQuantity
+                price * selectedQuantity
             ).toFixed(2);
 
     }
 
 }
-
-
 /* ==========================================================
    INCREASE QUANTITY
 ========================================================== */
@@ -1156,11 +1145,10 @@ document.addEventListener(
            QUANTITY MINUS
         ================================================== */
 
-        const minusButton =
-            document.getElementById(
-                "modalQuantityMinus"
-            );
-
+      const minusButton =
+    document.getElementById(
+        "modalQtyMinus"
+    );
 
         if(minusButton){
 
@@ -1176,11 +1164,10 @@ document.addEventListener(
            QUANTITY PLUS
         ================================================== */
 
-        const plusButton =
-            document.getElementById(
-                "modalQuantityPlus"
-            );
-
+      const plusButton =
+    document.getElementById(
+        "modalQtyPlus"
+    );
 
         if(plusButton){
 
@@ -1196,11 +1183,10 @@ document.addEventListener(
            ADD TO CART BUTTON
         ================================================== */
 
-        const addButton =
-            document.getElementById(
-                "modalAddToCart"
-            );
-
+      const addButton =
+    document.getElementById(
+        "modalOrderBtn"
+    );
 
         if(addButton){
 
@@ -1658,9 +1644,10 @@ function updateCartUI(){
 function renderCartItems(){
 
     const container =
-        document.getElementById(
-            "cartItems"
-        );
+        document.getElementById("cartItems");
+
+    const emptyCart =
+        document.getElementById("cartEmpty");
 
 
     if(!container){
@@ -1670,46 +1657,19 @@ function renderCartItems(){
     }
 
 
-    container.innerHTML = "";
-
-
     /* ======================================================
        EMPTY CART
     ====================================================== */
 
     if(menuCart.length === 0){
 
-        container.innerHTML = `
+        container.innerHTML = "";
 
-            <div class="cart-empty">
+        if(emptyCart){
 
-                <div class="cart-empty-icon">
+            emptyCart.style.display = "flex";
 
-                    <i class="fa-solid fa-cart-shopping"></i>
-
-                </div>
-
-                <h3>
-                    Your cart is empty
-                </h3>
-
-                <p>
-                    Add your favorite dishes
-                    to get started.
-                </p>
-
-                <button
-                    type="button"
-                    class="cart-empty-btn"
-                    onclick="closeCart()">
-
-                    Browse Menu
-
-                </button>
-
-            </div>
-
-        `;
+        }
 
         return;
 
@@ -1717,24 +1677,29 @@ function renderCartItems(){
 
 
     /* ======================================================
-       CART ITEMS
+       CART HAS ITEMS
     ====================================================== */
 
-    menuCart.forEach(
-        item => {
+    if(emptyCart){
 
-            container.insertAdjacentHTML(
-                "beforeend",
-                createCartItemHTML(
-                    item
-                )
-            );
+        emptyCart.style.display = "none";
 
-        }
-    );
+    }
+
+
+    container.innerHTML = "";
+
+
+    menuCart.forEach(item => {
+
+        container.insertAdjacentHTML(
+            "beforeend",
+            createCartItemHTML(item)
+        );
+
+    });
 
 }
-
 
 /* ==========================================================
    CREATE CART ITEM HTML
@@ -2088,10 +2053,10 @@ document.addEventListener(
            CART BUTTON
         ================================================= */
 
-        const cartButton =
-            document.getElementById(
-                "cartButton"
-            );
+      const cartButton =
+    document.getElementById(
+        "viewCartBtn"
+    );
 
 
         if(cartButton){
@@ -2108,10 +2073,10 @@ document.addEventListener(
            CART CLOSE BUTTON
         ================================================= */
 
-        const cartClose =
-            document.getElementById(
-                "cartClose"
-            );
+     const cartClose =
+    document.getElementById(
+        "closeCartBtn"
+    );
 
 
         if(cartClose){
