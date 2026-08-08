@@ -131,26 +131,28 @@ function waitForFirebase(){
 
 async function initializeMenu(){
 
-    if(menuInitialized){
-
-        return;
-
-    }
-
-
-    menuInitialized = true;
-
-
     try{
 
         showMenuLoading();
 
 
-        await loadMenuCategories();
-
+        /* ==============================================
+           LOAD PRODUCTS FIRST
+        ============================================== */
 
         await loadMenuProducts();
 
+
+        /* ==============================================
+           LOAD CATEGORIES
+        ============================================== */
+
+        await loadMenuCategories();
+
+
+        /* ==============================================
+           CART
+        ============================================== */
 
         loadCart();
 
@@ -165,14 +167,26 @@ async function initializeMenu(){
 
 
         console.log(
-            "PAPPRITO MENU V8 INITIALIZED"
+            "PAPPRITO MENU READY"
+        );
+
+
+        console.log(
+            "Products:",
+            menuProducts.length
+        );
+
+
+        console.log(
+            "Categories:",
+            menuCategories.length
         );
 
 
     }catch(error){
 
         console.error(
-            "PAPPRITO MENU INITIALIZATION ERROR:",
+            "PAPPRITO MENU ERROR:",
             error
         );
 
@@ -182,8 +196,6 @@ async function initializeMenu(){
     }
 
 }
-
-
 /* ==========================================================
    DATABASE CHECK
 ========================================================== */
@@ -202,7 +214,6 @@ function checkDatabase(){
 
 }
 
-
 /* ==========================================================
    LOAD CATEGORIES
 ========================================================== */
@@ -211,47 +222,69 @@ async function loadMenuCategories(){
 
     checkDatabase();
 
+    try{
 
-    const snapshot =
-        await db
-        .ref("categories")
-        .orderByChild("displayOrder")
-        .once("value");
-
-
-    menuCategories = [];
+        const snapshot =
+            await db
+            .ref("categories")
+            .once("value");
 
 
-    snapshot.forEach(
-        function(child){
-
-            const category =
-                child.val() || {};
+        menuCategories = [];
 
 
-            category.id =
-                child.key;
+        snapshot.forEach(
+            child => {
+
+                const category =
+                    child.val() || {};
 
 
-            if(
-                category.status === "Active"
-            ){
+                category.id =
+                    child.key;
 
-                menuCategories.push(
-                    category
-                );
+
+                if(
+                    String(
+                        category.status || ""
+                    ).toLowerCase()
+                    ===
+                    "active"
+                ){
+
+                    menuCategories.push(
+                        category
+                    );
+
+                }
 
             }
-
-        }
-    );
+        );
 
 
-    renderMenuCategories();
+        renderMenuCategories();
+
+
+    }catch(error){
+
+        console.error(
+            "CATEGORY LOAD ERROR:",
+            error
+        );
+
+
+        /*
+           Categories are optional.
+           Do NOT stop the products from loading.
+        */
+
+        menuCategories = [];
+
+        renderMenuCategories();
+
+    }
 
 }
-
-
 /* ==========================================================
    LOAD PRODUCTS
 ========================================================== */
@@ -264,15 +297,30 @@ async function loadMenuProducts(){
     const snapshot =
         await db
         .ref("products")
-        .orderByChild("name")
         .once("value");
 
 
     menuProducts = [];
 
 
+    if(
+        !snapshot.exists()
+    ){
+
+        console.warn(
+            "PAPPRITO MENU: No products found in Firebase."
+        );
+
+
+        renderMenuProducts();
+
+        return;
+
+    }
+
+
     snapshot.forEach(
-        function(child){
+        child => {
 
             const product =
                 child.val() || {};
@@ -282,8 +330,37 @@ async function loadMenuProducts(){
                 child.key;
 
 
+            /*
+               Product Master currently uses:
+               category
+
+               Older menu records may use:
+               categoryName
+            */
+
+            product.categoryName =
+                product.categoryName
+                ||
+                product.category
+                ||
+                "";
+
+
+            /*
+               Accept Active regardless
+               of capitalization.
+            */
+
+            const status =
+                String(
+                    product.status || ""
+                )
+                .trim()
+                .toLowerCase();
+
+
             if(
-                product.status === "Active"
+                status === "active"
             ){
 
                 menuProducts.push(
@@ -296,10 +373,15 @@ async function loadMenuProducts(){
     );
 
 
+    console.log(
+        "PAPPRITO PRODUCTS LOADED:",
+        menuProducts.length
+    );
+
+
     renderMenuProducts();
 
 }
-
 
 /* ==========================================================
    PRODUCT IMAGE
