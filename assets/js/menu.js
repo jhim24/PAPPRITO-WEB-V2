@@ -866,11 +866,11 @@ function createMenuProductCard(
             class="menu-card"
             data-product-id="${productId}">
 
-            <button
-                type="button"
-                class="menu-card-image"
-                onclick="openProductModal('${productId}')"
-                aria-label="View ${name}">
+          <button
+    type="button"
+    class="menu-image"
+    onclick="openProductModal('${productId}')"
+    aria-label="View ${name}">
 
                 <img
                     src="${escapeHTML(image)}"
@@ -1404,10 +1404,9 @@ function openProductModal(productId){
             "active"
         );
 
-        document.body.classList.add(
-            "modal-open"
-        );
-
+       document.body.classList.remove(
+    "product-modal-open"
+);
     }
 
 }
@@ -1434,10 +1433,9 @@ function closeProductModal(){
     }
 
 
-    document.body.classList.remove(
-        "modal-open"
-    );
-
+   document.body.classList.add(
+    "product-modal-open"
+);
 
     selectedProduct =
         null;
@@ -1470,7 +1468,7 @@ function updateModalTotal(){
 
     const total =
         document.getElementById(
-            "modalTotal"
+           "modalTotalPrice"
         );
 
 
@@ -2572,7 +2570,7 @@ function createCartItemHTML(
                  PRODUCT INFORMATION
             =========================================== -->
 
-            <div class="cart-item-info">
+          <div class="cart-item-body">
 
                 <div class="cart-item-name">
 
@@ -2595,33 +2593,32 @@ function createCartItemHTML(
                 <div class="cart-item-controls">
 
 
-                    <button
-                        type="button"
-                        class="cart-qty-btn"
-                        onclick="decreaseCartItem('${productId}')"
-                        aria-label="Decrease quantity">
+                   <button
+    type="button"
+    class="cart-quantity-btn"
+    onclick="decreaseCartItem('${productId}')"
+    aria-label="Decrease quantity">
 
-                        <i class="fa-solid fa-minus"></i>
+    <i class="fa-solid fa-minus"></i>
 
-                    </button>
+</button>
 
-
-                    <span class="cart-item-quantity">
+                   <span class="cart-item-qty">
 
                         ${quantity}
 
                     </span>
 
 
-                    <button
-                        type="button"
-                        class="cart-qty-btn"
-                        onclick="increaseCartItem('${productId}')"
-                        aria-label="Increase quantity">
+                 <button
+    type="button"
+    class="cart-quantity-btn"
+    onclick="increaseCartItem('${productId}')"
+    aria-label="Increase quantity">
 
-                        <i class="fa-solid fa-plus"></i>
+    <i class="fa-solid fa-plus"></i>
 
-                    </button>
+</button>
 
 
                 </div>
