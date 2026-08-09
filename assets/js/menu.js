@@ -1564,7 +1564,7 @@ function openProductModal(
 
 
     selectedQuantity =
-        1;
+    0;
 
 
     const modal =
@@ -1729,8 +1729,8 @@ function closeProductModal(){
         null;
 
 
-    selectedQuantity =
-        1;
+  selectedQuantity =
+    0;
 
 }
 
@@ -1806,7 +1806,7 @@ function decreaseModalQuantity(){
 
 
     if(
-        selectedQuantity > 1
+        selectedQuantity > 0
     ){
 
         selectedQuantity--;
@@ -1817,8 +1817,6 @@ function decreaseModalQuantity(){
     updateModalTotal();
 
 }
-
-
 /* ==========================================================
    PLUS
 ========================================================== */
