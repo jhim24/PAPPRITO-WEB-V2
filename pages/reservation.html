@@ -1,39 +1,125 @@
 <!DOCTYPE html>
 
 <!-- ==========================================================
-     PAPPRITO WEB V3
+     PAPPRITO WEB V5
      File        : reservation.html
      Description : Table Reservation
-     Version     : 3.0.0
+     Version     : 5.0.0
 ========================================================== -->
 
 <html lang="en">
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-<title>Reservation | PAPPRITO Restaurant</title>
+    <meta
+        name="theme-color"
+        content="#D71920">
 
-<link rel="stylesheet" href="../assets/css/style.css">
-<link rel="stylesheet" href="../assets/css/global.css">
-<link rel="stylesheet" href="../assets/css/reservation.css">
+    <title>Reservation | PAPPRITO Restaurant</title>
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <meta
+        name="description"
+        content="Reserve your table at PAPPRITO Restaurant.">
+
+    <meta
+        name="keywords"
+        content="PAPPRITO, Restaurant, Reservation, Tagaytay, Filipino Food">
+
+    <link
+        rel="icon"
+        href="../assets/images/logo/favicon.png">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/style.css">
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/global.css">
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/reservation.css">
 
 </head>
 
+
 <body>
 
-<header id="header"></header>
+
+<!-- ==========================================================
+     HEADER
+========================================================== -->
+
+<header id="header">
+
+    <div class="reservation-header">
+
+        <a
+            href="../index.html"
+            class="reservation-back-home">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            <span>Back to Home</span>
+
+        </a>
+
+        <a
+            href="../index.html"
+            class="reservation-logo">
+
+            <img
+                src="../assets/images/logo/logo.png"
+                alt="PAPPRITO Restaurant">
+
+            <div>
+
+                <strong>PAPPRITO</strong>
+
+                <small>Restaurant</small>
+
+            </div>
+
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- ==========================================================
+     MAIN
+========================================================== -->
 
 <main>
 
+
 <!-- ==========================================================
-     HERO
+     RESERVATION HERO
 ========================================================== -->
 
 <section id="reservation-hero">
@@ -42,9 +128,17 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
         <div class="hero-content">
 
-            <span>BOOK YOUR TABLE</span>
+            <span>
 
-            <h1>RESERVATION</h1>
+                BOOK YOUR TABLE
+
+            </span>
+
+            <h1>
+
+                RESERVATION
+
+            </h1>
 
             <p>
 
@@ -56,7 +150,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
             <div class="hero-buttons">
 
-                <a href="../index.html" class="btn-home">
+                <a
+                    href="../index.html"
+                    class="btn-home">
 
                     <i class="fa-solid fa-house"></i>
 
@@ -72,6 +168,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 </section>
 
+
 <!-- ==========================================================
      RESERVATION FORM
 ========================================================== -->
@@ -80,113 +177,425 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
     <div class="container">
 
+
+        <!-- ==================================================
+             SECTION TITLE
+        ================================================== -->
+
         <div class="section-title">
 
             <span>PAPPRITO RESTAURANT</span>
 
-            <h2>Reserve Your Table</h2>
+            <h2>
+
+                Reserve Your Table
+
+            </h2>
 
             <p>
 
-                Fill out the reservation form below and our team will
-                confirm your booking as soon as possible.
+                Fill out the reservation form below and our team
+                will contact you to confirm your booking.
 
             </p>
 
         </div>
 
+
+        <!-- ==================================================
+             RESERVATION GRID
+        ================================================== -->
+
         <div class="reservation-grid">
 
-            <!-- ==========================================
-                 RESERVATION FORM
-            =========================================== -->
+
+            <!-- ==================================================
+                 FORM CARD
+            ================================================== -->
 
             <div class="reservation-card">
 
-                <form id="bookingForm">
+
+                <!-- ==================================================
+                     BOOKING FORM
+                ================================================== -->
+
+                <form
+                    id="bookingForm"
+                    class="booking-form">
+
+
+                    <!-- ==========================================
+                         FULL NAME
+                    =========================================== -->
 
                     <div class="form-group">
 
-                        <label>Full Name</label>
+                        <label for="fullname">
+
+                            Full Name
+
+                            <span>*</span>
+
+                        </label>
 
                         <input
                             type="text"
                             id="fullname"
+                            name="fullname"
                             placeholder="Enter your full name"
+                            autocomplete="name"
                             required>
 
                     </div>
 
+
+                    <!-- ==========================================
+                         MOBILE
+                    =========================================== -->
+
                     <div class="form-group">
 
-                        <label>Mobile Number</label>
+                        <label for="mobile">
+
+                            Mobile Number
+
+                            <span>*</span>
+
+                        </label>
 
                         <input
                             type="tel"
                             id="mobile"
+                            name="mobile"
                             placeholder="+63 912 345 6789"
+                            autocomplete="tel"
                             required>
 
                     </div>
 
+
+                    <!-- ==========================================
+                         EMAIL
+                    =========================================== -->
+
                     <div class="form-group">
 
-                        <label>Email Address</label>
+                        <label for="email">
+
+                            Email Address
+
+                            <small>Optional</small>
+
+                        </label>
 
                         <input
                             type="email"
                             id="email"
-                            placeholder="example@email.com">
+                            name="email"
+                            placeholder="example@email.com"
+                            autocomplete="email">
 
                     </div>
 
+
+                    <!-- ==========================================
+                         BRANCH
+                    =========================================== -->
+
                     <div class="form-group">
 
-                        <label>Select Branch</label>
+                        <label for="branch">
 
-                        <select id="branch" required>
+                            Select Branch
 
-                            <option value="">Choose Branch</option>
+                            <span>*</span>
 
-                            <option>
-                                PAPPRITO Rotunda Main
+                        </label>
+
+                        <select
+                            id="branch"
+                            name="branch"
+                            required>
+
+                            <option value="">
+
+                                Choose Branch
+
                             </option>
 
-                            <option>
+                            <option value="PAPPRITO Rotunda Main">
+
+                                PAPPRITO Rotunda Main
+
+                            </option>
+
+                            <option value="PAPPRITO Mahogany">
+
                                 PAPPRITO Mahogany
+
                             </option>
 
                         </select>
 
                     </div>
 
+
+                    <!-- ==========================================
+                         DATE + TIME
+                    =========================================== -->
+
                     <div class="form-row">
+
 
                         <div class="form-group">
 
-                            <label>Date</label>
+                            <label for="date">
+
+                                Date
+
+                                <span>*</span>
+
+                            </label>
 
                             <input
                                 type="date"
                                 id="date"
+                                name="date"
                                 required>
 
                         </div>
 
+
                         <div class="form-group">
 
-                            <label>Time</label>
+                            <label for="time">
+
+                                Time
+
+                                <span>*</span>
+
+                            </label>
 
                             <input
                                 type="time"
                                 id="time"
+                                name="time"
                                 required>
 
-                                   <!-- ==========================================
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- ==========================================
+                         NUMBER OF GUESTS
+                    =========================================== -->
+
+                    <div class="form-group">
+
+                        <label for="guests">
+
+                            Number of Guests
+
+                            <span>*</span>
+
+                        </label>
+
+                        <select
+                            id="guests"
+                            name="guests"
+                            required>
+
+                            <option value="">
+
+                                Select number of guests
+
+                            </option>
+
+                            <option value="1">
+
+                                1 Guest
+
+                            </option>
+
+                            <option value="2">
+
+                                2 Guests
+
+                            </option>
+
+                            <option value="3">
+
+                                3 Guests
+
+                            </option>
+
+                            <option value="4">
+
+                                4 Guests
+
+                            </option>
+
+                            <option value="5">
+
+                                5 Guests
+
+                            </option>
+
+                            <option value="6">
+
+                                6 Guests
+
+                            </option>
+
+                            <option value="7">
+
+                                7 Guests
+
+                            </option>
+
+                            <option value="8">
+
+                                8 Guests
+
+                            </option>
+
+                            <option value="9">
+
+                                9 Guests
+
+                            </option>
+
+                            <option value="10">
+
+                                10 Guests
+
+                            </option>
+
+                            <option value="11">
+
+                                11 Guests
+
+                            </option>
+
+                            <option value="12">
+
+                                12 Guests
+
+                            </option>
+
+                            <option value="13+">
+
+                                13+ Guests
+
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- ==========================================
+                         SPECIAL REQUEST
+                    =========================================== -->
+
+                    <div class="form-group">
+
+                        <label for="message">
+
+                            Special Request
+
+                            <small>Optional</small>
+
+                        </label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="5"
+                            placeholder="Birthday, anniversary, preferred table, special occasion, or other requests..."></textarea>
+
+                    </div>
+
+
+                    <!-- ==========================================
+                         CONFIRMATION CHECKBOX
+                    =========================================== -->
+
+                    <div class="reservation-check">
+
+                        <label>
+
+                            <input
+                                type="checkbox"
+                                id="reservationAgree"
+                                name="reservationAgree"
+                                required>
+
+                            <span>
+
+                                I confirm that the information provided
+                                is correct and understand that my
+                                reservation is subject to confirmation
+                                by PAPPRITO Restaurant.
+
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+                    <!-- ==========================================
+                         SEND RESERVATION
+                    =========================================== -->
+
+                    <button
+                        type="submit"
+                        id="sendReservationBtn"
+                        class="send-reservation-btn">
+
+                        <i class="fa-solid fa-paper-plane"></i>
+
+                        <span>
+
+                            Send Reservation
+
+                        </span>
+
+                    </button>
+
+
+                    <!-- ==========================================
+                         STATUS MESSAGE
+                    =========================================== -->
+
+                    <div
+                        id="reservationStatus"
+                        class="reservation-status"
+                        role="status"
+                        aria-live="polite">
+
+                    </div>
+
+
+                </form>
+
+            </div>
+
+
+            <!-- ==================================================
                  RESTAURANT INFORMATION
-            =========================================== -->
+            ================================================== -->
 
             <div class="reservation-info">
+
+
+                <!-- ==============================================
+                     RESTAURANT INFO
+                =============================================== -->
 
                 <div class="info-card">
 
@@ -206,63 +615,96 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
                     </p>
 
+
                     <ul class="info-list">
+
 
                         <li>
 
                             <i class="fa-solid fa-location-dot"></i>
 
-                            Tagaytay City, Cavite, Philippines
+                            <span>
+
+                                Tagaytay City, Cavite, Philippines
+
+                            </span>
 
                         </li>
+
 
                         <li>
 
                             <i class="fa-solid fa-phone"></i>
 
-                            +63 912 345 6789
+                            <span>
+
+                                +63 912 345 6789
+
+                            </span>
 
                         </li>
+
 
                         <li>
 
                             <i class="fa-solid fa-envelope"></i>
 
-                            info@papprito.com
+                            <span>
+
+                                info@papprito.com
+
+                            </span>
 
                         </li>
+
 
                         <li>
 
                             <i class="fa-solid fa-clock"></i>
 
-                            Daily • 9:00 AM – 10:00 PM
+                            <span>
+
+                                Daily • 9:00 AM – 10:00 PM
+
+                            </span>
 
                         </li>
+
 
                         <li>
 
                             <i class="fa-solid fa-car"></i>
 
-                            Free Parking Available
+                            <span>
+
+                                Free Parking Available
+
+                            </span>
 
                         </li>
+
 
                         <li>
 
                             <i class="fa-solid fa-wifi"></i>
 
-                            Free Wi-Fi
+                            <span>
+
+                                Free Wi-Fi
+
+                            </span>
 
                         </li>
+
 
                     </ul>
 
                 </div>
 
-                <!-- ======================================
+
+                <!-- ==============================================
                      BRANCHES
-                ======================================= -->
+                =============================================== -->
 
                 <div class="info-card">
 
@@ -273,6 +715,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
                         Our Branches
 
                     </h3>
+
 
                     <div class="branch-item">
 
@@ -291,6 +734,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
                     </div>
 
+
                     <div class="branch-item">
 
                         <h4>
@@ -308,15 +752,44 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
                     </div>
 
+
                 </div>
 
+
+                <!-- ==============================================
+                     RESERVATION REMINDER
+                =============================================== -->
+
+                <div class="info-card reservation-reminder">
+
+                    <h3>
+
+                        <i class="fa-solid fa-circle-info"></i>
+
+                        Reservation Reminder
+
+                    </h3>
+
+                    <p>
+
+                        Your reservation is not considered confirmed
+                        until our team contacts you or confirms your
+                        request.
+
+                    </p>
+
+                </div>
+
+
             </div>
+
 
         </div>
 
     </div>
 
 </section>
+
 
 <!-- ==========================================================
      GOOGLE MAP
@@ -326,11 +799,16 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
     <div class="container">
 
+
         <div class="section-title">
 
             <span>LOCATION</span>
 
-            <h2>Find Us Easily</h2>
+            <h2>
+
+                Find Us Easily
+
+            </h2>
 
             <p>
 
@@ -340,6 +818,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
             </p>
 
         </div>
+
 
         <div class="map-wrapper">
 
@@ -355,33 +834,43 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
         </div>
 
+
     </div>
 
 </section>
+
+
 <!-- ==========================================================
-     FREQUENTLY ASKED QUESTIONS
+     FAQ
 ========================================================== -->
 
 <section id="reservation-faq">
 
     <div class="container">
 
+
         <div class="section-title">
 
             <span>HELP CENTER</span>
 
-            <h2>Reservation Guidelines</h2>
+            <h2>
+
+                Reservation Guidelines
+
+            </h2>
 
             <p>
 
-                Please review our reservation policies before booking
-                your table.
+                Please review our reservation policies before
+                booking your table.
 
             </p>
 
         </div>
 
+
         <div class="faq-grid">
+
 
             <div class="faq-card">
 
@@ -395,12 +884,14 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
                 <p>
 
-                    Complete the reservation form. Our staff will
-                    contact you to confirm your booking.
+                    Complete the reservation form and click
+                    <strong>Send Reservation</strong>.
+                    Our staff will contact you to confirm your booking.
 
                 </p>
 
             </div>
+
 
             <div class="faq-card">
 
@@ -421,6 +912,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
             </div>
 
+
             <div class="faq-card">
 
                 <h3>
@@ -440,6 +932,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
             </div>
 
+
             <div class="faq-card">
 
                 <h3>
@@ -453,11 +946,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
                 <p>
 
                     Absolutely! Birthdays, anniversaries, meetings,
-                    and family gatherings are always welcome.
+                    and family gatherings are welcome.
 
                 </p>
 
             </div>
+
 
         </div>
 
@@ -465,8 +959,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 </section>
 
+
 <!-- ==========================================================
-     RESERVATION FOOTER
+     FOOTER CTA
 ========================================================== -->
 
 <footer id="reservation-footer">
@@ -488,6 +983,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
             </p>
 
+
             <a
                 href="../index.html"
                 class="btn-home">
@@ -504,11 +1000,18 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 </footer>
 
+
 </main>
+
+
+<!-- ==========================================================
+     JAVASCRIPT
+========================================================== -->
 
 <script src="../assets/js/main.js"></script>
 
 <script src="../assets/js/reservation.js"></script>
+
 
 </body>
 
