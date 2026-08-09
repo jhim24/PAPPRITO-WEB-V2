@@ -10,7 +10,7 @@ let menuProducts = [];
 let selectedCategory = "all";
 
 let selectedProduct = null;
-let selectedQuantity = 1;
+let selectedQuantity = 0;
 
 let menuCart = [];
 let menuSearchValue = "";
