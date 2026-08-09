@@ -1830,7 +1830,6 @@ img{
 /* ==========================================================
    END PART 2
 ========================================================== */
-
 /* ==========================================================
    PAPPRITO WEBSITE V8
    MENU SYSTEM
@@ -2032,7 +2031,9 @@ img{
 
 /* ==========================================================
    PRODUCT IMAGE WRAPPER
-   FULL IMAGE / NO CROP / NO DISTORTION
+   FULL CARD WIDTH
+   NATURAL IMAGE HEIGHT
+   NO CROP
 ========================================================== */
 
 .menu-image{
@@ -2041,28 +2042,28 @@ img{
 
     width:100%;
 
-    height:220px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
+    height:auto;
 
     overflow:hidden;
 
-    background:#F8F8F8;
+    background:
+        #F8F8F8;
 
     padding:0;
 
     margin:0;
+
+    line-height:0;
 
 }
 
 
 /* ==========================================================
    PRODUCT IMAGE
-   FIT IMAGE WITHOUT CUTTING
+   FULL IMAGE
+   NATURAL ASPECT RATIO
+   NO CROP
+   NO DISTORTION
 ========================================================== */
 
 .menu-image img{
@@ -2071,37 +2072,61 @@ img{
 
     width:100%;
 
-    height:100%;
+    height:auto;
 
     max-width:100%;
 
-    max-height:100%;
-
-    object-fit:contain;
-
-    object-position:center center;
-
-    padding:0;
+    max-height:none;
 
     margin:0;
 
-    /*
-       IMPORTANT:
-       contain = buong image visible
-       walang crop
-       walang distortion
-    */
+    padding:0;
+
+    object-fit:initial;
+
+    object-position:center center;
+
+    transform:none;
 
 }
 
 
 /* ==========================================================
-   NO IMAGE CROPPING ON HOVER
+   FINAL HIGH-SPECIFICITY IMAGE FIX
+   THIS OVERRIDES OLD FIXED-HEIGHT RULES
 ========================================================== */
 
-.menu-card:hover .menu-image img{
+.menu-items-section
+.menu-card
+.menu-image
+img{
 
-    transform:none;
+    width:100% !important;
+
+    height:auto !important;
+
+    max-width:100% !important;
+
+    max-height:none !important;
+
+    object-fit:initial !important;
+
+    object-position:center center !important;
+
+    transform:none !important;
+
+}
+
+
+/* ==========================================================
+   NO IMAGE ZOOM
+========================================================== */
+
+.menu-card:hover
+.menu-image
+img{
+
+    transform:none !important;
 
 }
 
@@ -2468,51 +2493,92 @@ img{
 
     font-size:30px;
 
+    animation:
+        menuLoadingSpin 1s linear infinite;
+
 }
 
 
-.menu-loading span{
+.menu-loading h3{
+
+    margin:5px 0 0;
+
+    color:
+        var(--menu-dark);
+
+    font-size:17px;
+
+}
+
+
+.menu-loading p{
+
+    color:
+        var(--menu-gray);
 
     font-size:12px;
-
-    font-weight:600;
 
 }
 
 
 /* ==========================================================
-   EMPTY STATE
+   LOADING ANIMATION
+========================================================== */
+
+@keyframes menuLoadingSpin{
+
+    from{
+
+        transform:
+            rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* ==========================================================
+   EMPTY MENU
 ========================================================== */
 
 .menu-empty{
 
-    grid-column:
-        1 / -1;
+    width:100%;
 
-    min-height:300px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    flex-direction:column;
-
-    gap:10px;
-
-    padding:40px;
+    padding:
+        65px 20px;
 
     text-align:center;
 
 }
 
 
+.menu-empty.hidden{
+
+    display:none;
+
+}
+
+
+/* ==========================================================
+   EMPTY ICON
+========================================================== */
+
 .menu-empty-icon{
 
-    width:60px;
+    width:70px;
 
-    height:60px;
+    height:70px;
+
+    margin:
+        0 auto 16px;
 
     display:flex;
 
@@ -2528,53 +2594,60 @@ img{
     color:
         var(--menu-red);
 
-    font-size:24px;
+    font-size:25px;
 
 }
 
 
+/* ==========================================================
+   EMPTY TITLE
+========================================================== */
+
 .menu-empty h3{
 
-    margin:0;
+    margin-bottom:7px;
 
     color:
         var(--menu-black);
 
-    font-size:18px;
+    font-size:20px;
 
     font-weight:700;
 
 }
 
 
+/* ==========================================================
+   EMPTY DESCRIPTION
+========================================================== */
+
 .menu-empty p{
 
     max-width:400px;
 
-    margin:0;
+    margin:
+        0 auto 18px;
 
     color:
         var(--menu-gray);
 
-    font-size:12px;
+    font-size:13px;
 
-    line-height:1.6;
+    line-height:1.7;
 
 }
 
 
 /* ==========================================================
-   RESET MENU BUTTON
+   RESET SEARCH BUTTON
 ========================================================== */
 
 .reset-menu-btn{
 
-    min-height:40px;
-
-    margin-top:5px;
+    min-height:42px;
 
     padding:
-        0 16px;
+        0 17px;
 
     display:inline-flex;
 
@@ -2590,10 +2663,10 @@ img{
     border-radius:9px;
 
     background:
-        var(--menu-white);
+        var(--menu-red);
 
     color:
-        var(--menu-red);
+        var(--menu-white);
 
     font-size:12px;
 
@@ -2608,10 +2681,10 @@ img{
 .reset-menu-btn:hover{
 
     background:
-        var(--menu-red);
+        var(--menu-red-dark);
 
-    color:
-        var(--menu-white);
+    border-color:
+        var(--menu-red-dark);
 
 }
 
@@ -2620,26 +2693,96 @@ img{
    TABLET
 ========================================================== */
 
-@media (max-width:992px){
+@media (max-width:1100px){
+
+    .menu-products{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+    }
+
+
+    /*
+     * IMPORTANT:
+     * NO FIXED IMAGE HEIGHT HERE.
+     * Image follows its natural aspect ratio.
+     */
+
+    .menu-image{
+
+        height:auto;
+
+    }
+
+
+    .menu-items-section
+    .menu-card
+    .menu-image
+    img{
+
+        width:100% !important;
+
+        height:auto !important;
+
+        max-width:100% !important;
+
+        max-height:none !important;
+
+        object-fit:initial !important;
+
+    }
+
+}
+
+
+/* ==========================================================
+   TABLET / SMALL
+========================================================== */
+
+@media (max-width:768px){
 
     .menu-items-section{
 
         padding:
-            32px 0 100px;
+            28px 0 115px;
 
     }
 
 
     .menu-products-heading{
 
-        min-height:70px;
+        min-height:0;
+
+        align-items:flex-start;
+
+        margin-bottom:16px;
 
     }
 
 
     .menu-products-heading h2{
 
-        font-size:24px;
+        font-size:22px;
+
+    }
+
+
+    .menu-products-label{
+
+        font-size:9px;
+
+        letter-spacing:1.2px;
+
+    }
+
+
+    .menu-result-count{
+
+        padding:
+            7px 9px;
+
+        font-size:10px;
 
     }
 
@@ -2649,14 +2792,41 @@ img{
         grid-template-columns:
             repeat(2,minmax(0,1fr));
 
-        gap:14px;
+        gap:12px;
 
     }
 
 
+    /* ======================================================
+       MOBILE PRODUCT IMAGE
+       NATURAL HEIGHT
+    ====================================================== */
+
     .menu-image{
 
-        height:200px;
+        width:100%;
+
+        height:auto;
+
+    }
+
+
+    .menu-items-section
+    .menu-card
+    .menu-image
+    img{
+
+        width:100% !important;
+
+        height:auto !important;
+
+        max-width:100% !important;
+
+        max-height:none !important;
+
+        object-fit:initial !important;
+
+        object-position:center center !important;
 
     }
 
@@ -2664,14 +2834,14 @@ img{
     .menu-card-body{
 
         padding:
-            15px;
+            13px 12px 12px;
 
     }
 
 
     .menu-card-body h3{
 
-        font-size:16px;
+        font-size:15px;
 
     }
 
@@ -2679,28 +2849,28 @@ img{
     .menu-card-body p{
 
         margin:
-            7px 0 12px;
+            6px 0 11px;
 
-        font-size:11px;
+        font-size:10px;
 
-        line-height:1.55;
+        line-height:1.5;
 
     }
 
 
     .menu-price{
 
-        font-size:16px;
+        font-size:15px;
 
     }
 
 
     .menu-order-btn{
 
-        min-height:38px;
+        min-height:36px;
 
         padding:
-            0 13px;
+            0 12px;
 
         font-size:11px;
 
@@ -2743,9 +2913,38 @@ img{
     }
 
 
+    /* ======================================================
+       SINGLE COLUMN PRODUCT IMAGE
+       FULL WIDTH / NATURAL HEIGHT
+    ====================================================== */
+
     .menu-image{
 
-        height:210px;
+        width:100%;
+
+        height:auto;
+
+    }
+
+
+    .menu-items-section
+    .menu-card
+    .menu-image
+    img{
+
+        width:100% !important;
+
+        height:auto !important;
+
+        max-width:100% !important;
+
+        max-height:none !important;
+
+        object-fit:initial !important;
+
+        object-position:center center !important;
+
+        transform:none !important;
 
     }
 
@@ -2810,7 +3009,27 @@ img{
 
     .menu-image{
 
-        height:190px;
+        width:100%;
+
+        height:auto;
+
+    }
+
+
+    .menu-items-section
+    .menu-card
+    .menu-image
+    img{
+
+        width:100% !important;
+
+        height:auto !important;
+
+        max-width:100% !important;
+
+        max-height:none !important;
+
+        object-fit:initial !important;
 
     }
 
