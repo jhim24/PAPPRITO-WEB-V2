@@ -1276,3 +1276,903 @@ body.customization-open{
     }
 
 }
+/* ==========================================================
+   PAPPRITO WEB V5
+   PRODUCT CUSTOMIZATION
+   PART : 2
+   STATES / VALIDATION / ANIMATION
+========================================================== */
+
+
+/* ==========================================================
+   PANEL SCROLLBAR
+========================================================== */
+
+.product-customization-panel{
+
+    scrollbar-width:thin;
+
+    scrollbar-color:
+        #D2D5D9
+        transparent;
+
+}
+
+
+.product-customization-panel::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+
+.product-customization-panel::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+
+.product-customization-panel::-webkit-scrollbar-thumb{
+
+    background:#D2D5D9;
+
+    border-radius:20px;
+
+}
+
+
+.product-customization-panel::-webkit-scrollbar-thumb:hover{
+
+    background:#AEB3B8;
+
+}
+
+
+/* ==========================================================
+   DRAG HANDLE
+========================================================== */
+
+.customization-drag-handle{
+
+    position:absolute;
+
+    top:7px;
+
+    left:50%;
+
+    width:42px;
+
+    height:4px;
+
+    border-radius:10px;
+
+    background:#D4D6D8;
+
+    transform:
+        translateX(-50%);
+
+    pointer-events:none;
+
+}
+
+
+/* ==========================================================
+   REQUIRED GROUP ERROR
+========================================================== */
+
+.customization-group.required-error{
+
+    background:
+        rgba(215,25,32,.025);
+
+}
+
+
+.customization-group.required-error
+.customization-group-title{
+
+    color:#B9131B;
+
+}
+
+
+.customization-group.required-error
+.customization-group-header{
+
+    animation:
+        customizationShake
+        .35s
+        ease;
+
+}
+
+
+/* ==========================================================
+   ERROR MESSAGE
+========================================================== */
+
+.customization-error{
+
+    display:none;
+
+    align-items:center;
+
+    gap:7px;
+
+    margin-top:10px;
+
+    padding:
+        9px 11px;
+
+    border-radius:8px;
+
+    background:#FEF2F2;
+
+    color:#B42318;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    line-height:1.4;
+
+}
+
+
+.customization-error.show{
+
+    display:flex;
+
+}
+
+
+.customization-error i{
+
+    flex-shrink:0;
+
+    font-size:12px;
+
+}
+
+
+/* ==========================================================
+   SUCCESS MESSAGE
+========================================================== */
+
+.customization-success{
+
+    display:none;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin:
+        10px 16px 0;
+
+    padding:
+        10px 12px;
+
+    border-radius:9px;
+
+    background:#ECFDF3;
+
+    color:#067647;
+
+    font-size:12px;
+
+    font-weight:700;
+
+}
+
+
+.customization-success.show{
+
+    display:flex;
+
+}
+
+
+/* ==========================================================
+   OPTION FOCUS
+========================================================== */
+
+.customization-option:focus-within{
+
+    outline:
+        2px solid
+        rgba(215,25,32,.18);
+
+    outline-offset:
+        3px;
+
+    border-radius:8px;
+
+}
+
+
+/* ==========================================================
+   DISABLED OPTION
+========================================================== */
+
+.customization-option.disabled{
+
+    opacity:.45;
+
+    cursor:not-allowed;
+
+    pointer-events:none;
+
+}
+
+
+/* ==========================================================
+   DISABLED INPUT
+========================================================== */
+
+.customization-option input:disabled
++ .customization-option-left{
+
+    opacity:.5;
+
+}
+
+
+/* ==========================================================
+   POPULAR BADGE
+========================================================== */
+
+.customization-popular-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:4px;
+
+    margin-left:6px;
+
+    padding:
+        3px 7px;
+
+    border-radius:20px;
+
+    background:#FFF1ED;
+
+    color:#F04438;
+
+    font-size:9px;
+
+    font-weight:800;
+
+    vertical-align:middle;
+
+}
+
+
+.customization-popular-badge i{
+
+    font-size:8px;
+
+}
+
+
+/* ==========================================================
+   RECOMMENDED SECTION
+========================================================== */
+
+.customization-recommended{
+
+    margin:
+        0 16px 18px;
+
+    padding:
+        16px;
+
+    border:
+        1px solid #F1E1BD;
+
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFF9E9,
+            #FFF4D8
+        );
+
+}
+
+
+.customization-recommended-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    margin-bottom:4px;
+
+    color:#34373C;
+
+    font-size:17px;
+
+    font-weight:800;
+
+}
+
+
+.customization-recommended-title i{
+
+    color:#2B9A7A;
+
+    font-size:15px;
+
+}
+
+
+.customization-recommended-subtitle{
+
+    margin:0 0 12px;
+
+    color:#777B80;
+
+    font-size:12px;
+
+    line-height:1.5;
+
+}
+
+
+/* ==========================================================
+   RECOMMENDED OPTION
+========================================================== */
+
+.customization-recommended-option{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:10px;
+
+    min-height:78px;
+
+    padding:
+        13px;
+
+    border:
+        1px solid #D7D9DC;
+
+    border-radius:15px;
+
+    background:#FFFFFF;
+
+    cursor:pointer;
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease,
+        transform .2s ease;
+
+}
+
+
+.customization-recommended-option:hover{
+
+    border-color:#C7C9CC;
+
+    box-shadow:
+        0 5px 15px
+        rgba(0,0,0,.06);
+
+}
+
+
+.customization-recommended-option.selected{
+
+    border-color:#D71920;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(215,25,32,.08);
+
+}
+
+
+/* ==========================================================
+   RECOMMENDED TEXT
+========================================================== */
+
+.customization-recommended-info{
+
+    min-width:0;
+
+}
+
+
+.customization-recommended-label{
+
+    display:block;
+
+    margin-bottom:4px;
+
+    color:#30343B;
+
+    font-size:14px;
+
+    font-weight:800;
+
+}
+
+
+.customization-recommended-name{
+
+    display:block;
+
+    color:#666B72;
+
+    font-size:12px;
+
+    line-height:1.4;
+
+}
+
+
+.customization-recommended-price{
+
+    display:block;
+
+    margin-top:5px;
+
+    color:#30343B;
+
+    font-size:13px;
+
+    font-weight:700;
+
+}
+
+
+/* ==========================================================
+   RECOMMENDED RADIO
+========================================================== */
+
+.customization-recommended-radio{
+
+    width:25px;
+
+    height:25px;
+
+    flex-shrink:0;
+
+    border:
+        2px solid #858A8F;
+
+    border-radius:50%;
+
+    background:#FFFFFF;
+
+}
+
+
+.customization-recommended-option.selected
+.customization-recommended-radio{
+
+    border:
+        7px solid #D71920;
+
+    box-shadow:
+        0 0 0 1px #D71920;
+
+}
+
+
+/* ==========================================================
+   OPTION GROUP DIVIDER
+========================================================== */
+
+.customization-section-divider{
+
+    height:8px;
+
+    background:#F5F6F8;
+
+}
+
+
+/* ==========================================================
+   PRICE UPDATE ANIMATION
+========================================================== */
+
+.customization-add-total.price-updated{
+
+    animation:
+        pricePop
+        .25s
+        ease;
+
+}
+
+
+/* ==========================================================
+   QUANTITY BUTTON DISABLED
+========================================================== */
+
+.customization-quantity-btn:disabled{
+
+    opacity:.45;
+
+    cursor:not-allowed;
+
+    background:#F5F5F5;
+
+    border-color:#E2E2E2;
+
+}
+
+
+.customization-quantity-btn:disabled:hover{
+
+    color:#30343B;
+
+    border-color:#E2E2E2;
+
+}
+
+
+/* ==========================================================
+   CART BUTTON LOADING
+========================================================== */
+
+.customization-add-btn.loading{
+
+    pointer-events:none;
+
+    background:#B9131B;
+
+}
+
+
+.customization-add-btn.loading i{
+
+    animation:
+        customizationSpin
+        .8s
+        linear
+        infinite;
+
+}
+
+
+/* ==========================================================
+   CART BUTTON SUCCESS
+========================================================== */
+
+.customization-add-btn.added{
+
+    background:#16803A;
+
+}
+
+
+.customization-add-btn.added i{
+
+    animation:
+        customizationCheck
+        .25s
+        ease;
+
+}
+
+
+/* ==========================================================
+   EMPTY OPTION MESSAGE
+========================================================== */
+
+.customization-no-options{
+
+    padding:
+        20px 0;
+
+    text-align:center;
+
+    color:#858A8F;
+
+    font-size:13px;
+
+}
+
+
+/* ==========================================================
+   PRICE LABEL
+========================================================== */
+
+.customization-price-free{
+
+    color:#34383F;
+
+}
+
+
+.customization-price-extra{
+
+    color:#34383F;
+
+}
+
+
+.customization-price-extra::before{
+
+    content:"+ ";
+
+}
+
+
+/* ==========================================================
+   MOBILE TOUCH TARGET
+========================================================== */
+
+@media (max-width:768px){
+
+    .customization-option{
+
+        min-height:70px;
+
+        padding:
+            11px 2px;
+
+    }
+
+
+    .customization-option-left{
+
+        gap:9px;
+
+    }
+
+
+    .customization-recommended{
+
+        margin:
+            0 14px 16px;
+
+        padding:
+            14px;
+
+    }
+
+
+    .customization-error{
+
+        font-size:11px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width:480px){
+
+    .customization-drag-handle{
+
+        top:5px;
+
+        width:36px;
+
+    }
+
+
+    .customization-recommended{
+
+        border-radius:15px;
+
+    }
+
+
+    .customization-recommended-title{
+
+        font-size:16px;
+
+    }
+
+
+    .customization-recommended-option{
+
+        min-height:72px;
+
+        padding:11px;
+
+    }
+
+
+    .customization-recommended-label{
+
+        font-size:13px;
+
+    }
+
+
+    .customization-recommended-name{
+
+        font-size:11px;
+
+    }
+
+
+    .customization-option-popular{
+
+        font-size:11px;
+
+    }
+
+
+    .customization-error{
+
+        margin-top:8px;
+
+        padding:
+            8px 10px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   ANIMATIONS
+========================================================== */
+
+@keyframes customizationShake{
+
+    0%{
+
+        transform:
+            translateX(0);
+
+    }
+
+    25%{
+
+        transform:
+            translateX(-4px);
+
+    }
+
+    50%{
+
+        transform:
+            translateX(4px);
+
+    }
+
+    75%{
+
+        transform:
+            translateX(-3px);
+
+    }
+
+    100%{
+
+        transform:
+            translateX(0);
+
+    }
+
+}
+
+
+/* ==========================================================
+   PRICE POP
+========================================================== */
+
+@keyframes pricePop{
+
+    0%{
+
+        transform:
+            scale(1);
+
+    }
+
+    50%{
+
+        transform:
+            scale(1.08);
+
+    }
+
+    100%{
+
+        transform:
+            scale(1);
+
+    }
+
+}
+
+
+/* ==========================================================
+   SPINNER
+========================================================== */
+
+@keyframes customizationSpin{
+
+    from{
+
+        transform:
+            rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* ==========================================================
+   CHECK ANIMATION
+========================================================== */
+
+@keyframes customizationCheck{
+
+    0%{
+
+        transform:
+            scale(.6);
+
+    }
+
+    70%{
+
+        transform:
+            scale(1.15);
+
+    }
+
+    100%{
+
+        transform:
+            scale(1);
+
+    }
+
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+    .product-customization-overlay,
+    .product-customization-panel,
+    .customization-option,
+    .customization-recommended-option,
+    .customization-add-total,
+    .customization-add-btn{
+
+        transition:none;
+
+        animation:none;
+
+    }
+
+}
