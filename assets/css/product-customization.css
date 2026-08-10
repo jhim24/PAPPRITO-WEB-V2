@@ -1,0 +1,1278 @@
+/* ==========================================================
+   PAPPRITO WEB V5
+   PRODUCT CUSTOMIZATION
+   File : product-customization.css
+   PART : 1
+========================================================== */
+
+
+/* ==========================================================
+   CUSTOMIZATION OVERLAY
+========================================================== */
+
+.product-customization-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:9998;
+
+    display:none;
+
+    align-items:flex-end;
+
+    justify-content:center;
+
+    background:
+        rgba(0,0,0,.55);
+
+    backdrop-filter:
+        blur(3px);
+
+    -webkit-backdrop-filter:
+        blur(3px);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:
+        opacity .25s ease,
+        visibility .25s ease;
+
+}
+
+
+/* ==========================================================
+   ACTIVE OVERLAY
+========================================================== */
+
+.product-customization-overlay.active{
+
+    display:flex;
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+
+/* ==========================================================
+   CUSTOMIZATION PANEL
+========================================================== */
+
+.product-customization-panel{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:720px;
+
+    max-height:
+        94vh;
+
+    overflow-y:auto;
+
+    background:#FFFFFF;
+
+    border-radius:
+        24px 24px 0 0;
+
+    box-shadow:
+        0 -10px 40px
+        rgba(0,0,0,.20);
+
+    transform:
+        translateY(100%);
+
+    transition:
+        transform .30s ease;
+
+    overscroll-behavior:
+        contain;
+
+}
+
+
+/* ==========================================================
+   ACTIVE PANEL
+========================================================== */
+
+.product-customization-overlay.active
+.product-customization-panel{
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* ==========================================================
+   CUSTOMIZATION HEADER
+========================================================== */
+
+.customization-header{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:5;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    min-height:60px;
+
+    padding:
+        12px 18px;
+
+    background:#FFFFFF;
+
+    border-bottom:
+        1px solid #EEEEEE;
+
+}
+
+
+/* ==========================================================
+   HEADER TITLE
+========================================================== */
+
+.customization-header-title{
+
+    min-width:0;
+
+    color:#222222;
+
+    font-size:18px;
+
+    font-weight:800;
+
+    line-height:1.2;
+
+}
+
+
+/* ==========================================================
+   CLOSE BUTTON
+========================================================== */
+
+.customization-close{
+
+    width:40px;
+
+    height:40px;
+
+    flex-shrink:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:0;
+
+    border-radius:50%;
+
+    background:#F3F4F6;
+
+    color:#222222;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    transition:
+        background .2s ease,
+        color .2s ease,
+        transform .2s ease;
+
+}
+
+
+.customization-close:hover{
+
+    background:#E5E7EB;
+
+    transform:
+        rotate(90deg);
+
+}
+
+
+.customization-close:active{
+
+    transform:
+        scale(.94);
+
+}
+
+
+/* ==========================================================
+   PRODUCT SUMMARY
+========================================================== */
+
+.customization-product{
+
+    padding:
+        18px 20px 20px;
+
+}
+
+
+/* ==========================================================
+   PRODUCT IMAGE
+========================================================== */
+
+.customization-product-image{
+
+    width:100%;
+
+    height:260px;
+
+    overflow:hidden;
+
+    border-radius:16px;
+
+    background:#F3F4F6;
+
+}
+
+
+.customization-product-image img{
+
+    display:block;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+    object-position:center;
+
+}
+
+
+/* ==========================================================
+   PRODUCT INFORMATION
+========================================================== */
+
+.customization-product-info{
+
+    padding-top:18px;
+
+}
+
+
+.customization-product-category{
+
+    display:block;
+
+    margin-bottom:5px;
+
+    color:#D71920;
+
+    font-size:11px;
+
+    font-weight:800;
+
+    letter-spacing:1.5px;
+
+    text-transform:uppercase;
+
+}
+
+
+.customization-product-name{
+
+    margin:0 0 7px;
+
+    color:#202938;
+
+    font-size:25px;
+
+    font-weight:800;
+
+    line-height:1.2;
+
+}
+
+
+.customization-product-description{
+
+    margin:0 0 10px;
+
+    color:#6B7280;
+
+    font-size:14px;
+
+    line-height:1.55;
+
+}
+
+
+.customization-product-price{
+
+    color:#202938;
+
+    font-size:19px;
+
+    font-weight:800;
+
+}
+
+
+/* ==========================================================
+   CUSTOMIZATION CONTENT
+========================================================== */
+
+.customization-content{
+
+    border-top:
+        8px solid #F5F6F8;
+
+}
+
+
+/* ==========================================================
+   CUSTOMIZATION GROUP
+========================================================== */
+
+.customization-group{
+
+    padding:
+        22px 20px;
+
+    border-bottom:
+        1px solid #EEEEEE;
+
+}
+
+
+/* ==========================================================
+   GROUP HEADER
+========================================================== */
+
+.customization-group-header{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    margin-bottom:5px;
+
+}
+
+
+.customization-group-title{
+
+    margin:0;
+
+    color:#292D35;
+
+    font-size:19px;
+
+    font-weight:800;
+
+    line-height:1.3;
+
+}
+
+
+.customization-group-subtitle{
+
+    margin:4px 0 0;
+
+    color:#7A7F87;
+
+    font-size:13px;
+
+    line-height:1.4;
+
+}
+
+
+/* ==========================================================
+   REQUIRED / OPTIONAL BADGE
+========================================================== */
+
+.customization-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-shrink:0;
+
+    min-height:32px;
+
+    padding:
+        0 12px;
+
+    border-radius:20px;
+
+    background:#111820;
+
+    color:#FFFFFF;
+
+    font-size:11px;
+
+    font-weight:800;
+
+}
+
+
+.customization-badge.optional{
+
+    background:#EEF0F2;
+
+    color:#73777D;
+
+}
+
+
+/* ==========================================================
+   OPTIONS LIST
+========================================================== */
+
+.customization-options{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:2px;
+
+    margin-top:15px;
+
+}
+
+
+/* ==========================================================
+   CUSTOMIZATION OPTION
+========================================================== */
+
+.customization-option{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    min-height:68px;
+
+    padding:
+        10px 0;
+
+    cursor:pointer;
+
+}
+
+
+/* ==========================================================
+   OPTION LEFT
+========================================================== */
+
+.customization-option-left{
+
+    min-width:0;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+
+/* ==========================================================
+   OPTION TEXT
+========================================================== */
+
+.customization-option-info{
+
+    min-width:0;
+
+}
+
+
+.customization-option-name{
+
+    display:block;
+
+    color:#30343B;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    line-height:1.35;
+
+}
+
+
+.customization-option-popular{
+
+    display:block;
+
+    margin-top:3px;
+
+    color:#555B63;
+
+    font-size:12px;
+
+}
+
+
+.customization-option-popular i{
+
+    color:#FF4B23;
+
+    margin-right:4px;
+
+}
+
+
+/* ==========================================================
+   OPTION PRICE
+========================================================== */
+
+.customization-option-right{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:flex-end;
+
+    gap:10px;
+
+    flex-shrink:0;
+
+}
+
+
+.customization-option-price{
+
+    color:#34383F;
+
+    font-size:14px;
+
+    font-weight:500;
+
+    white-space:nowrap;
+
+}
+
+
+/* ==========================================================
+   OPTION INPUT
+========================================================== */
+
+.customization-option input{
+
+    position:absolute;
+
+    width:1px;
+
+    height:1px;
+
+    opacity:0;
+
+    pointer-events:none;
+
+}
+
+
+/* ==========================================================
+   CUSTOM RADIO
+========================================================== */
+
+.customization-radio{
+
+    width:24px;
+
+    height:24px;
+
+    flex-shrink:0;
+
+    border:
+        2px solid #858A8F;
+
+    border-radius:50%;
+
+    background:#FFFFFF;
+
+    transition:
+        border-color .2s ease,
+        background .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+.customization-option input:checked
++ .customization-option-left
+.customization-radio{
+
+    border:
+        7px solid #D71920;
+
+    box-shadow:
+        0 0 0 1px #D71920;
+
+}
+
+
+/* ==========================================================
+   CHECKBOX
+========================================================== */
+
+.customization-checkbox{
+
+    width:24px;
+
+    height:24px;
+
+    flex-shrink:0;
+
+    border:
+        2px solid #858A8F;
+
+    border-radius:6px;
+
+    background:#FFFFFF;
+
+    transition:
+        border-color .2s ease,
+        background .2s ease;
+
+}
+
+
+.customization-option input:checked
++ .customization-option-left
+.customization-checkbox{
+
+    border-color:#D71920;
+
+    background:#D71920;
+
+}
+
+
+/* ==========================================================
+   CHECKMARK
+========================================================== */
+
+.customization-option input:checked
++ .customization-option-left
+.customization-checkbox::after{
+
+    content:"✓";
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:100%;
+
+    height:100%;
+
+    color:#FFFFFF;
+
+    font-size:14px;
+
+    font-weight:800;
+
+}
+
+
+/* ==========================================================
+   HOVER
+========================================================== */
+
+.customization-option:hover
+.customization-option-name{
+
+    color:#D71920;
+
+}
+
+
+/* ==========================================================
+   SELECTED OPTION
+========================================================== */
+
+.customization-option.selected{
+
+    background:
+        rgba(215,25,32,.025);
+
+}
+
+
+/* ==========================================================
+   VIEW MORE
+========================================================== */
+
+.customization-view-more{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    width:100%;
+
+    margin-top:8px;
+
+    padding:
+        12px 0;
+
+    border:0;
+
+    background:transparent;
+
+    color:#30343B;
+
+    font-family:inherit;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+}
+
+
+.customization-view-more i{
+
+    font-size:14px;
+
+    transition:
+        transform .2s ease;
+
+}
+
+
+.customization-view-more.expanded i{
+
+    transform:
+        rotate(180deg);
+
+}
+
+
+/* ==========================================================
+   HIDDEN OPTIONS
+========================================================== */
+
+.customization-option.hidden-option{
+
+    display:none;
+
+}
+
+
+/* ==========================================================
+   BOTTOM CART BAR
+========================================================== */
+
+.customization-cart-bar{
+
+    position:sticky;
+
+    bottom:0;
+
+    z-index:10;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    min-height:78px;
+
+    padding:
+        12px 20px;
+
+    background:#FFFFFF;
+
+    border-top:
+        1px solid #E5E7EB;
+
+    box-shadow:
+        0 -5px 20px
+        rgba(0,0,0,.08);
+
+}
+
+
+/* ==========================================================
+   QUANTITY
+========================================================== */
+
+.customization-quantity{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    flex-shrink:0;
+
+}
+
+
+.customization-quantity-btn{
+
+    width:42px;
+
+    height:42px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:
+        1px solid #D9DDE1;
+
+    border-radius:50%;
+
+    background:#FFFFFF;
+
+    color:#30343B;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+}
+
+
+.customization-quantity-btn:hover{
+
+    border-color:#D71920;
+
+    color:#D71920;
+
+}
+
+
+.customization-quantity-value{
+
+    min-width:20px;
+
+    text-align:center;
+
+    color:#30343B;
+
+    font-size:17px;
+
+    font-weight:700;
+
+}
+
+
+/* ==========================================================
+   ADD TO CART BUTTON
+========================================================== */
+
+.customization-add-btn{
+
+    flex:1;
+
+    min-height:50px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    border:0;
+
+    border-radius:12px;
+
+    background:#D71920;
+
+    color:#FFFFFF;
+
+    font-family:inherit;
+
+    font-size:15px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    transition:
+        background .2s ease,
+        transform .2s ease;
+
+}
+
+
+.customization-add-btn:hover{
+
+    background:#B9131B;
+
+}
+
+
+.customization-add-btn:active{
+
+    transform:
+        scale(.98);
+
+}
+
+
+.customization-add-btn:disabled{
+
+    background:#D1D3D5;
+
+    color:#A9ADB1;
+
+    cursor:not-allowed;
+
+    transform:none;
+
+}
+
+
+/* ==========================================================
+   PRICE INSIDE BUTTON
+========================================================== */
+
+.customization-add-total{
+
+    font-weight:800;
+
+}
+
+
+/* ==========================================================
+   BODY LOCK
+========================================================== */
+
+body.customization-open{
+
+    overflow:hidden;
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width:768px){
+
+    .product-customization-panel{
+
+        max-width:100%;
+
+        max-height:96vh;
+
+        border-radius:
+            20px 20px 0 0;
+
+    }
+
+
+    .customization-product{
+
+        padding:
+            15px 16px 18px;
+
+    }
+
+
+    .customization-product-image{
+
+        height:230px;
+
+        border-radius:14px;
+
+    }
+
+
+    .customization-product-name{
+
+        font-size:23px;
+
+    }
+
+
+    .customization-group{
+
+        padding:
+            20px 16px;
+
+    }
+
+
+    .customization-group-title{
+
+        font-size:18px;
+
+    }
+
+
+    .customization-cart-bar{
+
+        padding:
+            10px 14px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width:480px){
+
+    .customization-header{
+
+        min-height:56px;
+
+        padding:
+            8px 14px;
+
+    }
+
+
+    .customization-header-title{
+
+        font-size:17px;
+
+    }
+
+
+    .customization-close{
+
+        width:38px;
+
+        height:38px;
+
+    }
+
+
+    .customization-product-image{
+
+        height:210px;
+
+    }
+
+
+    .customization-product-name{
+
+        font-size:21px;
+
+    }
+
+
+    .customization-product-description{
+
+        font-size:13px;
+
+    }
+
+
+    .customization-group{
+
+        padding:
+            18px 14px;
+
+    }
+
+
+    .customization-group-header{
+
+        gap:8px;
+
+    }
+
+
+    .customization-group-title{
+
+        font-size:17px;
+
+    }
+
+
+    .customization-badge{
+
+        min-height:29px;
+
+        padding:
+            0 10px;
+
+        font-size:10px;
+
+    }
+
+
+    .customization-option{
+
+        min-height:64px;
+
+    }
+
+
+    .customization-option-name{
+
+        font-size:13px;
+
+    }
+
+
+    .customization-option-price{
+
+        font-size:13px;
+
+    }
+
+
+    .customization-radio,
+    .customization-checkbox{
+
+        width:22px;
+
+        height:22px;
+
+    }
+
+
+    .customization-cart-bar{
+
+        gap:10px;
+
+        min-height:72px;
+
+        padding:
+            9px 12px;
+
+    }
+
+
+    .customization-quantity{
+
+        gap:7px;
+
+    }
+
+
+    .customization-quantity-btn{
+
+        width:38px;
+
+        height:38px;
+
+    }
+
+
+    .customization-quantity-value{
+
+        min-width:17px;
+
+    }
+
+
+    .customization-add-btn{
+
+        min-height:48px;
+
+        font-size:13px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   VERY SMALL MOBILE
+========================================================== */
+
+@media (max-width:360px){
+
+    .customization-product-image{
+
+        height:190px;
+
+    }
+
+
+    .customization-cart-bar{
+
+        gap:7px;
+
+        padding:
+            8px 9px;
+
+    }
+
+
+    .customization-quantity{
+
+        gap:4px;
+
+    }
+
+
+    .customization-quantity-btn{
+
+        width:35px;
+
+        height:35px;
+
+    }
+
+
+    .customization-add-btn{
+
+        font-size:12px;
+
+    }
+
+}
