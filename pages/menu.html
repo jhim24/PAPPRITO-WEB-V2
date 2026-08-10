@@ -938,6 +938,464 @@ class="menu-category-section">
     </div>
 
 </div>
+
+    <!-- ==========================================================
+     PRODUCT CUSTOMIZATION MODAL
+     PAPPRITO WEB V5
+========================================================== -->
+
+<div
+    id="productCustomization"
+    class="product-customization-overlay"
+    aria-hidden="true">
+
+    <!-- ======================================================
+         CUSTOMIZATION PANEL
+    ====================================================== -->
+
+    <div
+        class="product-customization-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="customizationProductName">
+
+        <!-- ==================================================
+             DRAG HANDLE
+        ================================================== -->
+
+        <div class="customization-drag-handle"></div>
+
+
+        <!-- ==================================================
+             HEADER
+        ================================================== -->
+
+        <div class="customization-header">
+
+            <div
+                id="customizationHeaderTitle"
+                class="customization-header-title">
+
+                Customize
+
+            </div>
+
+            <button
+                type="button"
+                id="customizationClose"
+                class="customization-close"
+                aria-label="Close customization">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- ==================================================
+             PRODUCT SUMMARY
+        ================================================== -->
+
+        <div class="customization-product">
+
+            <!-- PRODUCT IMAGE -->
+
+            <div class="customization-product-image">
+
+                <img
+                    id="customizationProductImage"
+                    src="../assets/images/no-product.png"
+                    alt="Product">
+
+            </div>
+
+
+            <!-- PRODUCT INFORMATION -->
+
+            <div class="customization-product-info">
+
+                <span
+                    id="customizationProductCategory"
+                    class="customization-product-category">
+
+                </span>
+
+
+                <h2
+                    id="customizationProductName"
+                    class="customization-product-name">
+
+                </h2>
+
+
+                <p
+                    id="customizationProductDescription"
+                    class="customization-product-description">
+
+                </p>
+
+
+                <strong
+                    id="customizationProductPrice"
+                    class="customization-product-price">
+
+                    ₱0.00
+
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             CUSTOMIZATION CONTENT
+        ================================================== -->
+
+        <div class="customization-content">
+
+
+            <!-- ==================================================
+                 RECOMMENDED QUICK CHOICE
+            ================================================== -->
+
+            <div
+                id="customizationRecommended"
+                class="customization-recommended"
+                style="display:none;">
+
+                <div class="customization-recommended-title">
+
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                    Recommended for you
+
+                </div>
+
+
+                <p class="customization-recommended-subtitle">
+
+                    You can edit your choices from the list.
+
+                </p>
+
+
+                <label
+                    id="customizationRecommendedOption"
+                    class="customization-recommended-option">
+
+                    <div class="customization-recommended-info">
+
+                        <span class="customization-recommended-label">
+
+                            Recommended
+
+                        </span>
+
+                        <span
+                            id="customizationRecommendedName"
+                            class="customization-recommended-name">
+
+                        </span>
+
+                        <span
+                            id="customizationRecommendedPrice"
+                            class="customization-recommended-price">
+
+                        </span>
+
+                    </div>
+
+
+                    <span
+                        id="customizationRecommendedRadio"
+                        class="customization-recommended-radio">
+
+                    </span>
+
+                    <input
+                        type="radio"
+                        id="customizationRecommendedInput"
+                        name="recommendedChoice"
+                        value="">
+
+                </label>
+
+            </div>
+
+
+            <!-- ==================================================
+                 CHOICE OF DRINK
+            ================================================== -->
+
+            <section
+                id="drinkCustomizationGroup"
+                class="customization-group">
+
+                <div class="customization-group-header">
+
+                    <div>
+
+                        <h3 class="customization-group-title">
+
+                            Choice of Drink
+
+                        </h3>
+
+                        <p class="customization-group-subtitle">
+
+                            Select one
+
+                        </p>
+
+                    </div>
+
+
+                    <span class="customization-badge">
+
+                        Required
+
+                    </span>
+
+                </div>
+
+
+                <!-- DRINK ERROR -->
+
+                <div
+                    id="drinkCustomizationError"
+                    class="customization-error">
+
+                    <i class="fa-solid fa-circle-exclamation"></i>
+
+                    <span>
+                        Please select a drink.
+                    </span>
+
+                </div>
+
+
+                <!-- DRINK OPTIONS -->
+
+                <div
+                    id="drinkCustomizationOptions"
+                    class="customization-options">
+
+                    <!-- JavaScript will load drink options here -->
+
+                </div>
+
+
+                <!-- VIEW MORE -->
+
+                <button
+                    type="button"
+                    id="drinkViewMore"
+                    class="customization-view-more"
+                    style="display:none;">
+
+                    <span>
+                        View more
+                    </span>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+            </section>
+
+
+            <!-- ==================================================
+                 DIVIDER
+            ================================================== -->
+
+            <div class="customization-section-divider"></div>
+
+
+            <!-- ==================================================
+                 ADD-ON SIDES
+            ================================================== -->
+
+            <section
+                id="addonCustomizationGroup"
+                class="customization-group">
+
+                <div class="customization-group-header">
+
+                    <div>
+
+                        <h3 class="customization-group-title">
+
+                            Add-On Sides
+
+                            <span
+                                id="addonSelectionLimit"
+                                style="font-size:13px;color:#777;">
+
+                            </span>
+
+                        </h3>
+
+                        <p class="customization-group-subtitle">
+
+                            Select up to 6
+
+                        </p>
+
+                    </div>
+
+
+                    <span
+                        class="customization-badge optional">
+
+                        Optional
+
+                    </span>
+
+                </div>
+
+
+                <!-- ADDON ERROR -->
+
+                <div
+                    id="addonCustomizationError"
+                    class="customization-error">
+
+                    <i class="fa-solid fa-circle-exclamation"></i>
+
+                    <span>
+                        You can select up to 6 add-ons.
+                    </span>
+
+                </div>
+
+
+                <!-- ADDON OPTIONS -->
+
+                <div
+                    id="addonCustomizationOptions"
+                    class="customization-options">
+
+                    <!-- JavaScript will load add-ons here -->
+
+                </div>
+
+
+                <!-- VIEW MORE -->
+
+                <button
+                    type="button"
+                    id="addonViewMore"
+                    class="customization-view-more"
+                    style="display:none;">
+
+                    <span>
+                        View more
+                    </span>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+            </section>
+
+
+            <!-- ==================================================
+                 SUCCESS MESSAGE
+            ================================================== -->
+
+            <div
+                id="customizationSuccess"
+                class="customization-success">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                <span>
+                    Added to cart successfully.
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- ==================================================
+             BOTTOM CART BAR
+        ================================================== -->
+
+        <div class="customization-cart-bar">
+
+
+            <!-- ==================================================
+                 QUANTITY
+            ================================================== -->
+
+            <div class="customization-quantity">
+
+                <button
+                    type="button"
+                    id="customizationQtyMinus"
+                    class="customization-quantity-btn"
+                    aria-label="Decrease quantity">
+
+                    <i class="fa-solid fa-minus"></i>
+
+                </button>
+
+
+                <span
+                    id="customizationQty"
+                    class="customization-quantity-value">
+
+                    1
+
+                </span>
+
+
+                <button
+                    type="button"
+                    id="customizationQtyPlus"
+                    class="customization-quantity-btn"
+                    aria-label="Increase quantity">
+
+                    <i class="fa-solid fa-plus"></i>
+
+                </button>
+
+            </div>
+
+
+            <!-- ==================================================
+                 ADD TO CART
+            ================================================== -->
+
+            <button
+                type="button"
+                id="customizationAddBtn"
+                class="customization-add-btn"
+                disabled>
+
+                <span>
+                    Add to cart
+                </span>
+
+                <strong
+                    id="customizationAddTotal"
+                    class="customization-add-total">
+
+                    ₱0.00
+
+                </strong>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>         
 <!-- ==========================================================
      MENU PAGE FOOTER
 ========================================================== -->
