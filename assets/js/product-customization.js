@@ -2465,6 +2465,432 @@ window.openProductCustomization =
    END PART 5
 ========================================================== */
 
+/* ==========================================================
+   PAPPRITO WEB V5
+   PRODUCT CUSTOMIZATION MODULE
+   PART : 7
+   PRODUCT CARD CONNECTION
+========================================================== */
 
+
+/* ==========================================================
+   CHECK IF PRODUCT HAS CUSTOMIZATION
+========================================================== */
+
+function productHasCustomization(product){
+
+    if(!product){
+
+        return false;
+
+    }
+
+
+    const customization =
+        product.customizations ||
+        product.customization ||
+        product.options;
+
+
+    if(!customization){
+
+        return false;
+
+    }
+
+
+    const drinks =
+        customization.drinks ||
+        customization.drink;
+
+
+    const addons =
+        customization.addOns ||
+        customization.addons ||
+        customization.sides;
+
+
+    const hasDrinks =
+        Array.isArray(drinks)
+            ? drinks.length > 0
+            : drinks &&
+              Object.keys(drinks).length > 0;
+
+
+    const hasAddons =
+        Array.isArray(addons)
+            ? addons.length > 0
+            : addons &&
+              Object.keys(addons).length > 0;
+
+
+    return (
+        hasDrinks ||
+        hasAddons
+    );
+
+}
+
+
+/* ==========================================================
+   OPEN PRODUCT
+========================================================== */
+
+function handleProductSelection(product){
+
+    if(!product){
+
+        console.warn(
+            "Product data is missing."
+        );
+
+        return;
+
+    }
+
+
+    /*
+       If the product has customization,
+       open the customization panel.
+    */
+
+    if(
+        productHasCustomization(
+            product
+        )
+    ){
+
+        window.openProductCustomization(
+            product
+        );
+
+        return;
+
+    }
+
+
+    /*
+       If the product has no customization,
+       keep the existing menu/cart behavior.
+    */
+
+    if(
+        typeof window.addToCart ===
+        "function"
+    ){
+
+        window.addToCart(
+            product
+        );
+
+        return;
+
+    }
+
+
+    if(
+        typeof window.addProductToCart ===
+        "function"
+    ){
+
+        window.addProductToCart(
+            product
+        );
+
+        return;
+
+    }
+
+
+    console.warn(
+        "Existing cart function was not found.",
+        product
+    );
+
+}
+
+
+/* ==========================================================
+   GLOBAL PRODUCT SELECTION
+========================================================== */
+
+window.handleProductSelection =
+    handleProductSelection;
+
+
+/* ==========================================================
+   GLOBAL CUSTOMIZATION CHECK
+========================================================== */
+
+window.productHasCustomization =
+    productHasCustomization;
+
+
+/* ==========================================================
+   PRODUCT CARD HELPER
+========================================================== */
+
+function connectProductCard(
+    card,
+    product
+){
+
+    if(
+        !card ||
+        !product
+    ){
+
+        return;
+
+    }
+
+
+    /*
+       Store the product object on the card.
+    */
+
+    card.__pappritoProduct =
+        product;
+
+
+    /*
+       Mark card as customizable.
+    */
+
+    if(
+        productHasCustomization(
+            product
+        )
+    ){
+
+        card.dataset.hasCustomization =
+            "true";
+
+    }else{
+
+        card.dataset.hasCustomization =
+            "false";
+
+    }
+
+
+    /*
+       Find common product buttons.
+    */
+
+    const buttons =
+        card.querySelectorAll(
+            `
+            .add-to-cart,
+            .add-cart-btn,
+            .product-add-btn,
+            .menu-add-btn,
+            [data-add-cart],
+            [data-action="add-cart"]
+            `
+        );
+
+
+    buttons.forEach(
+        function(button){
+
+            /*
+               Prevent duplicate listeners.
+            */
+
+            if(
+                button.dataset.customizationConnected ===
+                "true"
+            ){
+
+                return;
+
+            }
+
+
+            button.dataset.customizationConnected =
+                "true";
+
+
+            button.addEventListener(
+                "click",
+                function(event){
+
+                    /*
+                       Only intercept products
+                       that actually have options.
+                    */
+
+                    if(
+                        !productHasCustomization(
+                            product
+                        )
+                    ){
+
+                        return;
+
+                    }
+
+
+                    event.preventDefault();
+
+                    event.stopPropagation();
+
+
+                    handleProductSelection(
+                        product
+                    );
+
+                },
+                true
+            );
+
+        }
+    );
+
+}
+
+
+/* ==========================================================
+   CONNECT ALL PRODUCT CARDS
+========================================================== */
+
+function connectAllProductCards(){
+
+    const cards =
+        document.querySelectorAll(
+            `
+            .product-card,
+            .menu-product-card,
+            .menu-card,
+            [data-product-card]
+            `
+        );
+
+
+    cards.forEach(
+        function(card){
+
+            /*
+               If menu.js placed the product
+               object on the card, use it.
+            */
+
+            if(
+                card.__pappritoProduct
+            ){
+
+                connectProductCard(
+                    card,
+                    card.__pappritoProduct
+                );
+
+            }
+
+        }
+    );
+
+}
+
+
+/* ==========================================================
+   OBSERVE NEW PRODUCT CARDS
+========================================================== */
+
+function observeProductCards(){
+
+    const container =
+        document.getElementById(
+            "menu-products"
+        );
+
+
+    if(!container){
+
+        return;
+
+    }
+
+
+    const observer =
+        new MutationObserver(
+            function(){
+
+                connectAllProductCards();
+
+            }
+        );
+
+
+    observer.observe(
+        container,
+        {
+            childList:true,
+            subtree:true
+        }
+    );
+
+}
+
+
+/* ==========================================================
+   INITIALIZE CARD CONNECTION
+========================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        setTimeout(
+            function(){
+
+                connectAllProductCards();
+
+                observeProductCards();
+
+            },
+            300
+        );
+
+    }
+);
+
+
+/* ==========================================================
+   MANUAL CARD CONNECTION API
+========================================================== */
+
+window.connectProductCard =
+    connectProductCard;
+
+
+window.connectAllProductCards =
+    connectAllProductCards;
+
+
+/* ==========================================================
+   OPTIONAL DIRECT BUTTON API
+========================================================== */
+
+window.openProductForCustomization =
+    function(product){
+
+        if(!product){
+
+            return;
+
+        }
+
+
+        handleProductSelection(
+            product
+        );
+
+    };
+
+
+/* ==========================================================
+   END PART 7
+========================================================== */
 
 
