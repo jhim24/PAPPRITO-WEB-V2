@@ -2893,4 +2893,1199 @@ window.openProductForCustomization =
    END PART 7
 ========================================================== */
 
+/* ==========================================================
+   PAPPRITO WEB V5
+   PRODUCT CUSTOMIZATION MODULE
+   PART : 8
+   CART INTEGRATION
+========================================================== */
 
+
+/* ==========================================================
+   BUILD CUSTOMIZED CART ITEM
+========================================================== */
+
+function buildCustomizedCartItem(){
+
+    if(!customizationProduct){
+
+        return null;
+
+    }
+
+
+    const basePrice =
+        getProductPrice(
+            customizationProduct
+        );
+
+
+    const drink =
+        selectedDrink
+            ? {
+                id:
+                    selectedDrink.id || null,
+
+                name:
+                    selectedDrink.name || "",
+
+                price:
+                    Number(
+                        selectedDrink.price
+                    ) || 0
+            }
+            : null;
+
+
+    const addons =
+        selectedAddons.map(
+            function(addon){
+
+                return {
+
+                    id:
+                        addon.id || null,
+
+                    name:
+                        addon.name || "",
+
+                    price:
+                        Number(
+                            addon.price
+                        ) || 0
+
+                };
+
+            }
+        );
+
+
+    const drinkPrice =
+        drink
+            ? drink.price
+            : 0;
+
+
+    const addonPrice =
+        addons.reduce(
+            function(total, addon){
+
+                return (
+                    total +
+                    addon.price
+                );
+
+            },
+            0
+        );
+
+
+    const unitPrice =
+        basePrice +
+        drinkPrice +
+        addonPrice;
+
+
+    const totalPrice =
+        unitPrice *
+        customizationQuantity;
+
+
+    return {
+
+        /* ==============================================
+           PRODUCT
+        =============================================== */
+
+        productId:
+            customizationProduct.id ||
+            customizationProduct.productId ||
+            customizationProduct.key ||
+            null,
+
+        name:
+            getProductName(
+                customizationProduct
+            ),
+
+        image:
+            getProductImage(
+                customizationProduct
+            ),
+
+        category:
+            getProductCategory(
+                customizationProduct
+            ),
+
+        description:
+            getProductDescription(
+                customizationProduct
+            ),
+
+
+        /* ==============================================
+           PRICING
+        =============================================== */
+
+        basePrice:
+            basePrice,
+
+        unitPrice:
+            unitPrice,
+
+        price:
+            unitPrice,
+
+        total:
+            totalPrice,
+
+
+        /* ==============================================
+           QUANTITY
+        =============================================== */
+
+        quantity:
+            customizationQuantity,
+
+
+        /* ==============================================
+           CUSTOMIZATION
+        =============================================== */
+
+        customization: {
+
+            drink:
+                drink,
+
+            addons:
+                addons
+
+        },
+
+
+        /* ==============================================
+           ADD-ON SUMMARY
+        =============================================== */
+
+        selectedDrink:
+            drink,
+
+        selectedAddons:
+            addons,
+
+
+        /* ==============================================
+           TIMESTAMP
+        =============================================== */
+
+        addedAt:
+            new Date().toISOString()
+
+    };
+
+}
+
+
+/* ==========================================================
+   ADD CUSTOMIZED PRODUCT TO CART
+========================================================== */
+
+function addCustomizedProductToCart(){
+
+    if(!customizationProduct){
+
+        return;
+
+    }
+
+
+    /* ==============================================
+       REQUIRED DRINK VALIDATION
+    =============================================== */
+
+    if(
+        !selectedDrink
+    ){
+
+        showDrinkError();
+
+        const drinkGroup =
+            document.getElementById(
+                "drinkCustomizationGroup"
+            );
+
+
+        if(drinkGroup){
+
+            drinkGroup.scrollIntoView({
+                behavior:"smooth",
+                block:"center"
+            });
+
+        }
+
+        return;
+
+    }
+
+
+    /* ==============================================
+       BUILD CART ITEM
+    =============================================== */
+
+    const cartItem =
+        buildCustomizedCartItem();
+
+
+    if(!cartItem){
+
+        return;
+
+    }
+
+
+    /* ==============================================
+       SEND TO EXISTING CART
+    =============================================== */
+
+    let added = false;
+
+
+    /*
+       Existing global cart functions
+       are checked first.
+    */
+
+    if(
+        typeof window.addCustomizedItemToCart ===
+        "function"
+    ){
+
+        window.addCustomizedItemToCart(
+            cartItem
+        );
+
+        added = true;
+
+    }
+
+
+    else if(
+        typeof window.addToCart ===
+        "function"
+    ){
+
+        /*
+           Existing cart function receives
+           the complete customized object.
+        */
+
+        window.addToCart(
+            cartItem
+        );
+
+        added = true;
+
+    }
+
+
+    else if(
+        typeof window.addProductToCart ===
+        "function"
+    ){
+
+        window.addProductToCart(
+            cartItem
+        );
+
+        added = true;
+
+    }
+
+
+    else{
+
+        /*
+           Temporary fallback.
+           This keeps the customized cart item
+           available even if the existing cart
+           function has not been connected yet.
+        */
+
+        saveCustomizedCartFallback(
+            cartItem
+        );
+
+        added = true;
+
+    }
+
+
+    if(!added){
+
+        return;
+
+    }
+
+
+    /* ==============================================
+       SUCCESS UI
+    =============================================== */
+
+    showCustomizationSuccess();
+
+
+    /* ==============================================
+       BUTTON STATE
+    =============================================== */
+
+    setCustomizationButtonSuccess();
+
+
+    /* ==============================================
+       CLOSE AFTER SHORT DELAY
+    =============================================== */
+
+    setTimeout(
+        function(){
+
+            closeProductCustomization();
+
+        },
+        650
+    );
+
+}
+
+
+/* ==========================================================
+   CUSTOMIZED CART FALLBACK
+========================================================== */
+
+function saveCustomizedCartFallback(
+    cartItem
+){
+
+    const storageKey =
+        "pappritoCart";
+
+
+    let cart = [];
+
+
+    try{
+
+        const saved =
+            localStorage.getItem(
+                storageKey
+            );
+
+
+        if(saved){
+
+            const parsed =
+                JSON.parse(
+                    saved
+                );
+
+
+            if(
+                Array.isArray(parsed)
+            ){
+
+                cart =
+                    parsed;
+
+            }
+
+        }
+
+    }catch(error){
+
+        console.warn(
+            "Unable to read PAPPRITO cart.",
+            error
+        );
+
+    }
+
+
+    /*
+       Create a unique cart line.
+    */
+
+    cartItem.cartItemId =
+        createCustomizedCartId(
+            cartItem
+        );
+
+
+    cart.push(
+        cartItem
+    );
+
+
+    try{
+
+        localStorage.setItem(
+            storageKey,
+            JSON.stringify(cart)
+        );
+
+    }catch(error){
+
+        console.error(
+            "Unable to save PAPPRITO cart.",
+            error
+        );
+
+    }
+
+}
+
+
+/* ==========================================================
+   CREATE CART ITEM ID
+========================================================== */
+
+function createCustomizedCartId(
+    item
+){
+
+    const productId =
+        item.productId ||
+        "product";
+
+
+    const drinkId =
+        item.selectedDrink
+            ? item.selectedDrink.id
+            : "nodrink";
+
+
+    const addonIds =
+        item.selectedAddons
+            .map(
+                function(addon){
+
+                    return addon.id;
+
+                }
+            )
+            .sort()
+            .join("-") ||
+        "noaddons";
+
+
+    return (
+
+        productId +
+        "-" +
+        drinkId +
+        "-" +
+        addonIds +
+        "-" +
+        Date.now()
+
+    );
+
+}
+
+
+/* ==========================================================
+   SUCCESS MESSAGE
+========================================================== */
+
+function showCustomizationSuccess(){
+
+    const success =
+        document.getElementById(
+            "customizationSuccess"
+        );
+
+
+    if(!success){
+
+        return;
+
+    }
+
+
+    success.classList.add(
+        "show"
+    );
+
+}
+
+
+/* ==========================================================
+   SUCCESS BUTTON STATE
+========================================================== */
+
+function setCustomizationButtonSuccess(){
+
+    const button =
+        document.getElementById(
+            "customizationAddBtn"
+        );
+
+
+    if(!button){
+
+        return;
+
+    }
+
+
+    button.classList.remove(
+        "loading"
+    );
+
+
+    button.classList.add(
+        "added"
+    );
+
+
+    button.disabled =
+        true;
+
+
+    button.innerHTML = `
+
+        <i class="fa-solid fa-check"></i>
+
+        <span>
+            Added to cart
+        </span>
+
+    `;
+
+}
+
+
+/* ==========================================================
+   RESET ADD BUTTON
+========================================================== */
+
+function resetCustomizationAddButton(){
+
+    const button =
+        document.getElementById(
+            "customizationAddBtn"
+        );
+
+
+    if(!button){
+
+        return;
+
+    }
+
+
+    button.classList.remove(
+        "loading",
+        "added"
+    );
+
+
+    button.innerHTML = `
+
+        <span>
+            Add to cart
+        </span>
+
+        <strong
+            id="customizationAddTotal"
+            class="customization-add-total">
+
+            ₱0.00
+
+        </strong>
+
+    `;
+
+
+    /*
+       Recalculate because innerHTML
+       recreated the total element.
+    */
+
+    updateCustomizationTotal();
+
+}
+
+
+/* ==========================================================
+   PATCH OPEN FOR BUTTON RESET
+========================================================== */
+
+const previousCustomizationOpen =
+    window.openProductCustomization;
+
+
+window.openProductCustomization =
+    function(product){
+
+        if(
+            typeof previousCustomizationOpen ===
+            "function"
+        ){
+
+            previousCustomizationOpen(
+                product
+            );
+
+        }
+
+
+        setTimeout(
+            function(){
+
+                resetCustomizationAddButton();
+
+                clearCustomizationErrors();
+
+                updateCustomizationQuantity();
+
+                updateCustomizationTotal();
+
+            },
+            60
+        );
+
+    };
+
+
+/* ==========================================================
+   GLOBAL CART FUNCTION
+========================================================== */
+
+window.addCustomizedProductToCart =
+    addCustomizedProductToCart;
+
+
+/* ==========================================================
+   GET CURRENT CUSTOMIZATION
+========================================================== */
+
+window.getCurrentCustomization =
+    function(){
+
+        return {
+
+            product:
+                customizationProduct,
+
+            quantity:
+                customizationQuantity,
+
+            drink:
+                selectedDrink,
+
+            addons:
+                selectedAddons
+
+        };
+
+    };
+
+
+/* ==========================================================
+   END PART 8
+========================================================== */
+
+/* ==========================================================
+   PAPPRITO WEB V5
+   PRODUCT CUSTOMIZATION MODULE
+   PART : 9
+   FIREBASE CUSTOMIZATION SUPPORT
+========================================================== */
+
+
+/* ==========================================================
+   FIREBASE CUSTOMIZATION PATH
+========================================================== */
+
+const CUSTOMIZATION_FIREBASE_PATH =
+    "productCustomizations";
+
+
+/* ==========================================================
+   GET FIREBASE DATABASE
+========================================================== */
+
+function getCustomizationDatabase(){
+
+    if(
+        typeof firebase === "undefined"
+    ){
+
+        console.warn(
+            "Firebase SDK is not loaded."
+        );
+
+        return null;
+
+    }
+
+
+    if(
+        typeof firebase.database !==
+        "function"
+    ){
+
+        console.warn(
+            "Firebase Realtime Database is not available."
+        );
+
+        return null;
+
+    }
+
+
+    try{
+
+        return firebase.database();
+
+    }catch(error){
+
+        console.error(
+            "Unable to initialize Firebase Database.",
+            error
+        );
+
+        return null;
+
+    }
+
+}
+
+
+/* ==========================================================
+   LOAD CUSTOMIZATION FROM FIREBASE
+========================================================== */
+
+async function loadFirebaseCustomization(
+    product
+){
+
+    if(!product){
+
+        return null;
+
+    }
+
+
+    const database =
+        getCustomizationDatabase();
+
+
+    if(!database){
+
+        return null;
+
+    }
+
+
+    const productId =
+        product.id ||
+        product.productId ||
+        product.key;
+
+
+    if(!productId){
+
+        console.warn(
+            "Product ID is required for customization."
+        );
+
+        return null;
+
+    }
+
+
+    try{
+
+        /*
+           Primary path:
+
+           productCustomizations/{productId}
+        */
+
+        const snapshot =
+            await database
+                .ref(
+                    CUSTOMIZATION_FIREBASE_PATH +
+                    "/" +
+                    productId
+                )
+                .once("value");
+
+
+        if(
+            snapshot.exists()
+        ){
+
+            return snapshot.val();
+
+        }
+
+
+        /*
+           If no separate customization
+           record exists, use the data
+           already stored inside the product.
+        */
+
+        return (
+            product.customizations ||
+            null
+        );
+
+    }catch(error){
+
+        console.error(
+            "Failed to load product customization.",
+            error
+        );
+
+        return null;
+
+    }
+
+}
+
+
+/* ==========================================================
+   MERGE FIREBASE CUSTOMIZATION
+========================================================== */
+
+async function prepareProductCustomization(
+    product
+){
+
+    if(!product){
+
+        return product;
+
+    }
+
+
+    const firebaseData =
+        await loadFirebaseCustomization(
+            product
+        );
+
+
+    if(!firebaseData){
+
+        return product;
+
+    }
+
+
+    return {
+
+        ...product,
+
+        customizations:
+            firebaseData
+
+    };
+
+}
+
+
+/* ==========================================================
+   OPEN PRODUCT WITH FIREBASE DATA
+========================================================== */
+
+async function openProductWithCustomization(
+    product
+){
+
+    if(!product){
+
+        return;
+
+    }
+
+
+    /*
+       Load customization data first.
+    */
+
+    const preparedProduct =
+        await prepareProductCustomization(
+            product
+        );
+
+
+    /*
+       Then open the existing modal.
+    */
+
+    if(
+        typeof window.openProductCustomization ===
+        "function"
+    ){
+
+        window.openProductCustomization(
+            preparedProduct
+        );
+
+    }
+
+}
+
+
+/* ==========================================================
+   LOAD CUSTOMIZATION OPTIONS
+========================================================== */
+
+async function refreshProductCustomizationOptions(){
+
+    if(!customizationProduct){
+
+        return;
+
+    }
+
+
+    const preparedProduct =
+        await prepareProductCustomization(
+            customizationProduct
+        );
+
+
+    customizationProduct =
+        preparedProduct;
+
+
+    renderDrinkOptions();
+
+    renderAddonOptions();
+
+    updateCustomizationTotal();
+
+}
+
+
+/* ==========================================================
+   FIREBASE AVAILABILITY CHECK
+========================================================== */
+
+function customizationFirebaseAvailable(){
+
+    const database =
+        getCustomizationDatabase();
+
+
+    return Boolean(
+        database
+    );
+
+}
+
+
+/* ==========================================================
+   SAVE CUSTOMIZATION
+   ADMIN / ERP USE
+========================================================== */
+
+async function saveProductCustomization(
+    productId,
+    customizationData
+){
+
+    if(!productId){
+
+        throw new Error(
+            "Product ID is required."
+        );
+
+    }
+
+
+    if(!customizationData){
+
+        throw new Error(
+            "Customization data is required."
+        );
+
+    }
+
+
+    const database =
+        getCustomizationDatabase();
+
+
+    if(!database){
+
+        throw new Error(
+            "Firebase Database is not available."
+        );
+
+    }
+
+
+    const path =
+        CUSTOMIZATION_FIREBASE_PATH +
+        "/" +
+        productId;
+
+
+    await database
+        .ref(path)
+        .set(
+            customizationData
+        );
+
+
+    return true;
+
+}
+
+
+/* ==========================================================
+   DELETE CUSTOMIZATION
+   ADMIN / ERP USE
+========================================================== */
+
+async function deleteProductCustomization(
+    productId
+){
+
+    if(!productId){
+
+        throw new Error(
+            "Product ID is required."
+        );
+
+    }
+
+
+    const database =
+        getCustomizationDatabase();
+
+
+    if(!database){
+
+        throw new Error(
+            "Firebase Database is not available."
+        );
+
+    }
+
+
+    await database
+        .ref(
+            CUSTOMIZATION_FIREBASE_PATH +
+            "/" +
+            productId
+        )
+        .remove();
+
+
+    return true;
+
+}
+
+
+/* ==========================================================
+   GET CUSTOMIZATION DIRECTLY
+========================================================== */
+
+async function getProductCustomization(
+    productId
+){
+
+    if(!productId){
+
+        return null;
+
+    }
+
+
+    const database =
+        getCustomizationDatabase();
+
+
+    if(!database){
+
+        return null;
+
+    }
+
+
+    try{
+
+        const snapshot =
+            await database
+                .ref(
+                    CUSTOMIZATION_FIREBASE_PATH +
+                    "/" +
+                    productId
+                )
+                .once("value");
+
+
+        return snapshot.exists()
+            ? snapshot.val()
+            : null;
+
+    }catch(error){
+
+        console.error(
+            "Unable to get customization.",
+            error
+        );
+
+        return null;
+
+    }
+
+}
+
+
+/* ==========================================================
+   GLOBAL API
+========================================================== */
+
+window.loadFirebaseCustomization =
+    loadFirebaseCustomization;
+
+
+window.prepareProductCustomization =
+    prepareProductCustomization;
+
+
+window.openProductWithCustomization =
+    openProductWithCustomization;
+
+
+window.refreshProductCustomizationOptions =
+    refreshProductCustomizationOptions;
+
+
+window.customizationFirebaseAvailable =
+    customizationFirebaseAvailable;
+
+
+window.saveProductCustomization =
+    saveProductCustomization;
+
+
+window.deleteProductCustomization =
+    deleteProductCustomization;
+
+
+window.getProductCustomization =
+    getProductCustomization;
+
+
+/* ==========================================================
+   END PART 9
+========================================================== */
