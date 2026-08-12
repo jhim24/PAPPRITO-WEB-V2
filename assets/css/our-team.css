@@ -1,16 +1,19 @@
 /* ==========================================================
-   PAPPRITO WEB V3
-   File : our-team.css
-   Description : Our Team Page
-   Version : 3.0.0
+   PAPPRITO WEB V5
+   File        : our-team.css
+   Description : PAPPRITO Management Team
 ========================================================== */
+
+
 /* ==========================================================
-   OUR TEAM HERO
+   HERO
 ========================================================== */
 
 #team-hero{
 
     position:relative;
+
+    min-height:520px;
 
     display:flex;
 
@@ -18,15 +21,22 @@
 
     justify-content:center;
 
-    min-height:500px;
+    padding:100px 20px;
 
-    padding:120px 0;
+    background:
+        linear-gradient(
+            rgba(0,0,0,.68),
+            rgba(0,0,0,.68)
+        ),
+        url("../images/team/team-banner.jpg")
+        center/cover no-repeat;
 
-    background:url("../images/team/team-banner.jpg") center center/cover no-repeat;
+    color:#fff;
 
-    overflow:hidden;
+    text-align:center;
 
 }
+
 
 .team-hero-overlay{
 
@@ -34,9 +44,15 @@
 
     inset:0;
 
-    background:rgba(0,0,0,.60);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(215,25,32,.40),
+            rgba(0,0,0,.55)
+        );
 
 }
+
 
 .team-hero-content{
 
@@ -44,27 +60,24 @@
 
     z-index:2;
 
-    max-width:800px;
+    max-width:850px;
 
     margin:auto;
 
-    text-align:center;
-
-    color:#fff;
-
 }
+
 
 .team-hero-content .hero-subtitle{
 
     display:inline-block;
 
-    margin-bottom:20px;
+    margin-bottom:15px;
 
-    color:#FFD54A;
+    color:#ffcc00;
 
-    font-size:15px;
+    font-size:.9rem;
 
-    font-weight:700;
+    font-weight:800;
 
     letter-spacing:3px;
 
@@ -72,410 +85,182 @@
 
 }
 
+
 .team-hero-content h1{
 
-    font-size:60px;
+    margin:0 0 20px;
+
+    color:#fff;
+
+    font-size:clamp(
+        2.5rem,
+        6vw,
+        4.5rem
+    );
 
     font-weight:800;
 
-    margin-bottom:20px;
+    line-height:1.1;
 
 }
+
 
 .team-hero-content p{
 
-    font-size:18px;
+    max-width:760px;
+
+    margin:0 auto 30px;
+
+    color:rgba(255,255,255,.9);
+
+    font-size:1rem;
 
     line-height:1.8;
 
-    color:#f5f5f5;
+}
+
+
+.team-hero-buttons{
+
+    display:flex;
+
+    justify-content:center;
 
 }
+
+
+.btn-home{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:14px 28px;
+
+    border-radius:50px;
+
+    background:#D71920;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    transition:.3s ease;
+
+}
+
+
+.btn-home:hover{
+
+    background:#b9131b;
+
+    transform:translateY(-3px);
+
+}
+
+
 /* ==========================================================
-   OUR TEAM HERO RESPONSIVE
+   MANAGEMENT
 ========================================================== */
 
-@media (max-width:768px){
+#management-team{
 
-    #team-hero{
+    padding:90px 20px;
 
-        min-height:350px;
-
-        padding:90px 20px;
-
-    }
-
-    .team-hero-content h1{
-
-        font-size:38px;
-
-    }
-
-    .team-hero-content p{
-
-        font-size:15px;
-
-        line-height:1.7;
-
-    }
-
-    .team-hero-content .hero-subtitle{
-
-        font-size:13px;
-
-        letter-spacing:2px;
-
-    }
+    background:#f7f8fa;
 
 }
-/* ==========================================================
-   MEET OUR TEAM
-========================================================== */
 
-#meet-team{
 
-    padding:100px 0;
+#management-team .container{
 
-    background:#ffffff;
+    max-width:1150px;
+
+    margin:auto;
 
 }
+
 
 /* ==========================================================
    SECTION HEADING
 ========================================================== */
 
-#meet-team .section-heading{
-
-    max-width:800px;
-
-    margin:0 auto 60px;
-
-    text-align:center;
-
-}
-
-#meet-team .section-heading span{
-
-    display:block;
-
-    color:#D71920;
-
-    font-size:15px;
-
-    font-weight:700;
-
-    letter-spacing:3px;
-
-    text-transform:uppercase;
-
-    margin-bottom:15px;
-
-}
-
-#meet-team .section-heading h2{
-
-    display:inline-block;
-
-    position:relative;
-
-    font-size:42px;
-
-    font-weight:700;
-
-    color:#222;
-
-    padding-bottom:15px;
-
-    margin-bottom:20px;
-
-}
-
-#meet-team .section-heading h2::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:50%;
-
-    bottom:0;
-
-    transform:translateX(-50%);
-
-    width:90px;
-
-    height:4px;
-
-    background:#D71920;
-
-    border-radius:50px;
-
-}
-
-#meet-team .section-heading p{
-
-    max-width:700px;
-
-    margin:auto;
-
-    font-size:17px;
-
-    line-height:1.8;
-
-    color:#666;
-
-}
-
-/* ==========================================================
-   TEAM GRID
-========================================================== */
-
-.team-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:30px;
-
-}
-
-/* ==========================================================
-   TEAM CARD
-========================================================== */
-
-.team-card{
-
-    background:#fff;
-
-    border-radius:18px;
-
-    overflow:hidden;
-
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-
-    transition:.35s ease;
-
-}
-
-.team-card:hover{
-
-    transform:translateY(-8px);
-
-    box-shadow:0 18px 40px rgba(0,0,0,.15);
-
-}
-
-.team-card img{
-
-    width:100%;
-
-    aspect-ratio:1/1;
-
-    object-fit:cover;
-
-    display:block;
-
-    transition:.4s;
-
-}
-
-.team-card:hover img{
-
-    transform:scale(1.08);
-
-}
-
-.team-content{
-
-    padding:22px;
-
-    text-align:center;
-
-}
-
-.team-content h3{
-
-    font-size:22px;
-
-    color:#222;
-
-    margin-bottom:10px;
-
-    font-weight:700;
-
-}
-
-.team-content p{
-
-    font-size:15px;
-
-    color:#666;
-
-    line-height:1.7;
-
-}
-/* ==========================================================
-   TEAM RESPONSIVE
-========================================================== */
-
-@media (max-width:992px){
-
-    .team-grid{
-
-        grid-template-columns:repeat(2,1fr);
-
-        gap:25px;
-
-    }
-
-}
-
-@media (max-width:768px){
-
-    #meet-team{
-
-        padding:70px 20px;
-
-    }
-
-    #meet-team .section-heading h2{
-
-        font-size:32px;
-
-    }
-
-    #meet-team .section-heading p{
-
-        font-size:15px;
-
-    }
-
-    .team-grid{
-
-        grid-template-columns:1fr;
-
-        gap:25px;
-
-    }
-
-   .team-card{
-
-    width:100%;
-
-    margin:0;
-
-}
-
-}
-
-/* ==========================================================
-   MANAGEMENT TEAM
-========================================================== */
-
-#management-team{
-
-    padding:100px 0;
-
-    background:#f8f9fb;
-
-}
-
 #management-team .section-heading{
 
     max-width:800px;
 
-    margin:0 auto 60px;
+    margin:0 auto 55px;
 
     text-align:center;
 
 }
+
 
 #management-team .section-heading span{
 
     display:block;
 
+    margin-bottom:10px;
+
     color:#D71920;
 
-    font-size:15px;
+    font-size:.85rem;
 
-    font-weight:700;
+    font-weight:800;
 
     letter-spacing:3px;
 
-    text-transform:uppercase;
-
-    margin-bottom:15px;
-
 }
+
 
 #management-team .section-heading h2{
 
-    display:inline-block;
+    margin:0 0 15px;
 
-    position:relative;
+    color:#111827;
 
-    font-size:42px;
+    font-size:clamp(
+        2rem,
+        4vw,
+        3rem
+    );
 
-    font-weight:700;
-
-    color:#222;
-
-    margin-bottom:20px;
-
-    padding-bottom:15px;
+    font-weight:800;
 
 }
 
-#management-team .section-heading h2::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:50%;
-
-    bottom:0;
-
-    transform:translateX(-50%);
-
-    width:90px;
-
-    height:4px;
-
-    background:#D71920;
-
-    border-radius:50px;
-
-}
 
 #management-team .section-heading p{
 
-    max-width:700px;
-
     margin:auto;
 
-    font-size:17px;
-
-    color:#666;
+    color:#6b7280;
 
     line-height:1.8;
 
 }
 
+
 /* ==========================================================
-   MANAGEMENT GRID
+   MANAGEMENT LIST
 ========================================================== */
 
-.management-grid{
+.management-list{
 
-    display:grid;
+    display:flex;
 
-    grid-template-columns:repeat(2,1fr);
+    flex-direction:column;
 
-    gap:40px;
+    gap:30px;
 
 }
+
 
 /* ==========================================================
    MANAGEMENT CARD
@@ -483,107 +268,311 @@
 
 .management-card{
 
-    background:#fff;
+    display:grid;
 
-    border-radius:22px;
-
-    overflow:hidden;
-
-    box-shadow:0 12px 35px rgba(0,0,0,.08);
-
-    transition:.35s ease;
-
-}
-
-.management-card:hover{
-
-    transform:translateY(-10px);
-
-    box-shadow:0 20px 45px rgba(0,0,0,.15);
-
-}
-
-.management-card img{
+    grid-template-columns:
+        330px
+        minmax(0,1fr);
 
     width:100%;
 
-    height:340px;
+    min-height:330px;
 
-    object-fit:cover;
+    overflow:hidden;
+
+    background:#fff;
+
+    border:1px solid #e8e8e8;
+
+    border-radius:24px;
+
+    box-shadow:
+        0 12px 35px
+        rgba(0,0,0,.07);
+
+    transition:.3s ease;
+
+}
+
+
+.management-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 20px 45px
+        rgba(0,0,0,.12);
+
+}
+
+
+/* ==========================================================
+   IMAGE LEFT
+========================================================== */
+
+.management-image{
+
+    width:330px;
+
+    height:100%;
+
+    min-height:330px;
+
+    overflow:hidden;
+
+    background:#eee;
+
+}
+
+
+.management-image img{
+
+    width:100%;
+
+    height:100%;
 
     display:block;
 
-    transition:.4s;
+    object-fit:cover;
+
+    object-position:center;
 
 }
 
-.management-card:hover img{
 
-    transform:scale(1.05);
-
-}
+/* ==========================================================
+   CONTENT RIGHT
+========================================================== */
 
 .management-content{
 
-    padding:30px;
+    min-width:0;
 
-    text-align:center;
+    padding:45px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    text-align:left;
 
 }
 
-.management-content h3{
 
-    font-size:28px;
-
-    color:#222;
+.management-number{
 
     margin-bottom:8px;
+
+    color:#D71920;
+
+    font-size:.8rem;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+}
+
+
+.management-content h3{
+
+    margin:0 0 8px;
+
+    color:#111827;
+
+    font-size:clamp(
+        1.5rem,
+        3vw,
+        2.1rem
+    );
+
+    font-weight:800;
+
+    line-height:1.2;
+
+}
+
+
+.management-content h4{
+
+    margin:0;
+
+    color:#D71920;
+
+    font-size:.95rem;
+
+    font-weight:800;
+
+    letter-spacing:1.5px;
+
+    line-height:1.4;
+
+}
+
+
+.management-line{
+
+    width:60px;
+
+    height:4px;
+
+    margin:18px 0;
+
+    border-radius:10px;
+
+    background:#D71920;
+
+}
+
+
+.management-content p{
+
+    max-width:650px;
+
+    margin:0 0 20px;
+
+    color:#626b78;
+
+    font-size:.95rem;
+
+    line-height:1.85;
+
+}
+
+
+.management-role{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    padding:9px 15px;
+
+    border-radius:30px;
+
+    background:#fff1f2;
+
+    color:#D71920;
+
+    font-size:.8rem;
 
     font-weight:700;
 
 }
 
-.management-content h4{
+
+/* ==========================================================
+   VALUES
+========================================================== */
+
+#team-values{
+
+    padding:90px 20px;
+
+    background:#fff;
+
+}
+
+
+#team-values .container{
+
+    max-width:1150px;
+
+    margin:auto;
+
+}
+
+
+#team-values .section-heading{
+
+    max-width:750px;
+
+    margin:0 auto 50px;
+
+    text-align:center;
+
+}
+
+
+#team-values .section-heading span{
 
     color:#D71920;
 
-    font-size:17px;
+    font-size:.85rem;
 
-    margin-bottom:18px;
+    font-weight:800;
 
-    font-weight:600;
+    letter-spacing:3px;
 
 }
 
-.management-content p{
 
-    color:#666;
+#team-values .section-heading h2{
+
+    margin:12px 0;
+
+    color:#111827;
+
+    font-size:2.4rem;
+
+    font-weight:800;
+
+}
+
+
+#team-values .section-heading p{
+
+    color:#6b7280;
 
     line-height:1.8;
 
-    margin-bottom:25px;
+}
+
+
+.values-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:25px;
 
 }
 
-/* ==========================================================
-   SOCIAL ICONS
-========================================================== */
 
-.team-social{
+.value-card{
 
-    display:flex;
+    padding:35px 25px;
 
-    justify-content:center;
+    border:1px solid #eee;
 
-    gap:12px;
+    border-radius:20px;
+
+    background:#fff;
+
+    text-align:center;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.05);
 
 }
 
-.team-social a{
 
-    width:42px;
+.value-icon{
 
-    height:42px;
+    width:65px;
+
+    height:65px;
+
+    margin:0 auto 18px;
 
     display:flex;
 
@@ -593,102 +582,544 @@
 
     border-radius:50%;
 
-    background:#D71920;
+    background:#fff1f2;
+
+    color:#D71920;
+
+    font-size:1.5rem;
+
+}
+
+
+.value-card h3{
+
+    margin-bottom:10px;
+
+    color:#111827;
+
+}
+
+
+.value-card p{
+
+    margin:0;
+
+    color:#6b7280;
+
+    font-size:.9rem;
+
+    line-height:1.7;
+
+}
+
+
+/* ==========================================================
+   CTA
+========================================================== */
+
+#team-cta{
+
+    padding:90px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111827,
+            #1f2937
+        );
 
     color:#fff;
 
+    text-align:center;
+
+}
+
+
+.team-cta-content{
+
+    max-width:800px;
+
+    margin:auto;
+
+}
+
+
+.team-cta-content > span{
+
+    color:#ffcc00;
+
+    font-size:.85rem;
+
+    font-weight:800;
+
+    letter-spacing:3px;
+
+}
+
+
+.team-cta-content h2{
+
+    margin:15px 0;
+
+    font-size:clamp(
+        2rem,
+        5vw,
+        3.2rem
+    );
+
+    font-weight:800;
+
+}
+
+
+.team-cta-content p{
+
+    max-width:650px;
+
+    margin:0 auto 30px;
+
+    color:#d1d5db;
+
+    line-height:1.8;
+
+}
+
+
+.team-cta-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+
+.team-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:14px 25px;
+
+    border-radius:50px;
+
     text-decoration:none;
+
+    font-weight:700;
 
     transition:.3s ease;
 
 }
 
-.team-social a:hover{
 
-    background:#111;
+.team-btn:hover{
 
-    transform:translateY(-4px);
+    transform:translateY(-3px);
 
 }
+
+
+.team-btn-primary{
+
+    background:#D71920;
+
+    color:#fff;
+
+}
+
+
+.team-btn-secondary{
+
+    background:#fff;
+
+    color:#111827;
+
+}
+
+
 /* ==========================================================
-   MANAGEMENT TEAM RESPONSIVE
+   TABLET
 ========================================================== */
 
-@media (max-width:992px){
+@media (max-width:900px){
 
-    .management-grid{
+    .management-card{
 
-        grid-template-columns:repeat(2,1fr);
-
-        gap:30px;
-
-    }
-
-    .management-card img{
-
-        height:280px;
+        grid-template-columns:
+            250px
+            minmax(0,1fr);
 
     }
 
-}
 
-@media (max-width:768px){
+    .management-image{
 
-    #management-team{
+        width:250px;
 
-        padding:70px 20px;
-
-    }
-
-    #management-team .section-heading h2{
-
-        font-size:32px;
+        min-height:300px;
 
     }
 
-    #management-team .section-heading p{
-
-        font-size:15px;
-
-    }
-
-    .management-grid{
-
-        grid-template-columns:1fr;
-
-        gap:25px;
-
-    }
-
-   .management-card{
-
-    width:100%;
-
-    margin:0;
-
-}
-
-    .management-card img{
-
-        height:260px;
-
-    }
 
     .management-content{
 
-        padding:25px;
+        padding:30px;
 
     }
+
+
+    .values-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+   IMPORTANT:
+   IMAGE LEFT + CONTENT RIGHT
+========================================================== */
+
+@media (max-width:768px){
+
+    #team-hero{
+
+        min-height:450px;
+
+        padding:80px 18px;
+
+    }
+
+
+    .team-hero-content h1{
+
+        font-size:2.35rem;
+
+    }
+
+
+    .team-hero-content p{
+
+        font-size:.9rem;
+
+        line-height:1.7;
+
+    }
+
+
+    /* ==============================================
+       CARD
+    =============================================== */
+
+    .management-card{
+
+        display:grid !important;
+
+        grid-template-columns:
+            110px
+            minmax(0,1fr) !important;
+
+        gap:0;
+
+        min-height:220px;
+
+        align-items:stretch;
+
+    }
+
+
+    /* ==============================================
+       IMAGE LEFT
+    =============================================== */
+
+    .management-image{
+
+        grid-column:1 !important;
+
+        grid-row:1 !important;
+
+        width:110px !important;
+
+        height:100% !important;
+
+        min-height:220px;
+
+    }
+
+
+    .management-image img{
+
+        width:100% !important;
+
+        height:100% !important;
+
+        object-fit:cover !important;
+
+    }
+
+
+    /* ==============================================
+       CONTENT RIGHT
+    =============================================== */
+
+    .management-content{
+
+        grid-column:2 !important;
+
+        grid-row:1 !important;
+
+        min-width:0;
+
+        padding:20px 16px !important;
+
+        justify-content:center;
+
+        align-items:flex-start;
+
+        text-align:left !important;
+
+    }
+
+
+    .management-number{
+
+        font-size:.62rem;
+
+        margin-bottom:5px;
+
+    }
+
 
     .management-content h3{
 
-        font-size:24px;
+        font-size:.98rem;
+
+        line-height:1.2;
+
+        margin-bottom:5px;
 
     }
 
+
     .management-content h4{
 
-        font-size:16px;
+        font-size:.62rem;
+
+        line-height:1.35;
+
+        letter-spacing:.6px;
+
+    }
+
+
+    .management-line{
+
+        width:35px;
+
+        height:3px;
+
+        margin:9px 0;
+
+    }
+
+
+    .management-content p{
+
+        font-size:.67rem;
+
+        line-height:1.55;
+
+        margin-bottom:10px;
+
+    }
+
+
+    .management-role{
+
+        padding:6px 9px;
+
+        font-size:.58rem;
+
+        gap:5px;
+
+    }
+
+
+    #management-team{
+
+        padding:65px 15px;
+
+    }
+
+
+    #management-team .section-heading{
+
+        margin-bottom:35px;
+
+    }
+
+
+    #management-team .section-heading h2{
+
+        font-size:1.8rem;
+
+    }
+
+
+    #management-team .section-heading p{
+
+        font-size:.85rem;
+
+    }
+
+
+    #team-values{
+
+        padding:65px 15px;
+
+    }
+
+
+    #team-values .section-heading h2{
+
+        font-size:1.9rem;
+
+    }
+
+
+    #team-cta{
+
+        padding:65px 15px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+   STILL LEFT + RIGHT
+========================================================== */
+
+@media (max-width:400px){
+
+    .management-card{
+
+        grid-template-columns:
+            90px
+            minmax(0,1fr) !important;
+
+    }
+
+
+    .management-image{
+
+        width:90px !important;
+
+        min-height:210px;
+
+    }
+
+
+    .management-content{
+
+        padding:16px 12px !important;
+
+    }
+
+
+    .management-content h3{
+
+        font-size:.84rem;
+
+    }
+
+
+    .management-content h4{
+
+        font-size:.56rem;
+
+    }
+
+
+    .management-content p{
+
+        font-size:.6rem;
+
+        line-height:1.45;
+
+    }
+
+
+    .management-role{
+
+        font-size:.52rem;
+
+    }
+
+}
+
+
+/* ==========================================================
+   EXTRA SMALL
+========================================================== */
+
+@media (max-width:340px){
+
+    .management-card{
+
+        grid-template-columns:
+            78px
+            minmax(0,1fr) !important;
+
+    }
+
+
+    .management-image{
+
+        width:78px !important;
+
+        min-height:200px;
+
+    }
+
+
+    .management-content{
+
+        padding:13px 10px !important;
+
+    }
+
+
+    .management-content h3{
+
+        font-size:.76rem;
+
+    }
+
+
+    .management-content h4{
+
+        font-size:.5rem;
+
+    }
+
+
+    .management-content p{
+
+        font-size:.55rem;
 
     }
 
