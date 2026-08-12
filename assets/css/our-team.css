@@ -278,7 +278,6 @@
 
     min-height:330px;
 
-    /* EDGE-TO-EDGE IMAGE */
     padding:0;
 
     margin:0;
@@ -313,7 +312,6 @@
 
 /* ==========================================================
    IMAGE LEFT
-   EDGE-TO-EDGE
 ========================================================== */
 
 .management-image{
@@ -802,8 +800,8 @@
 
 /* ==========================================================
    MOBILE
+   CARD IS EDGE-TO-EDGE WITH SCREEN
    IMAGE LEFT + CONTENT RIGHT
-   EDGE-TO-EDGE
 ========================================================== */
 
 @media (max-width:768px){
@@ -833,9 +831,69 @@
     }
 
 
-    /* ==============================================
-       CARD — NO IMAGE MARGIN
-    =============================================== */
+    /* ======================================================
+       MANAGEMENT SECTION
+       REMOVE SIDE SPACE
+    ====================================================== */
+
+    #management-team{
+
+        padding-top:65px;
+
+        padding-bottom:65px;
+
+        padding-left:0;
+
+        padding-right:0;
+
+    }
+
+
+    #management-team .container{
+
+        width:100%;
+
+        max-width:none;
+
+        margin:0;
+
+        padding:0;
+
+    }
+
+
+    /* ======================================================
+       SECTION HEADING
+       KEEP SMALL SIDE SPACE
+    ====================================================== */
+
+    #management-team .section-heading{
+
+        padding-left:15px;
+
+        padding-right:15px;
+
+        margin-bottom:35px;
+
+    }
+
+
+    /* ======================================================
+       MANAGEMENT LIST
+    ====================================================== */
+
+    .management-list{
+
+        width:100%;
+
+        gap:20px;
+
+    }
+
+
+    /* ======================================================
+       CARD — EDGE TO EDGE SCREEN
+    ====================================================== */
 
     .management-card{
 
@@ -844,6 +902,10 @@
         grid-template-columns:
             105px
             minmax(0,1fr) !important;
+
+        width:100% !important;
+
+        max-width:none;
 
         gap:0 !important;
 
@@ -855,14 +917,18 @@
 
         overflow:hidden;
 
-        border-radius:14px;
+        border-left:0;
+
+        border-right:0;
+
+        border-radius:0;
 
     }
 
 
-    /* ==============================================
-       IMAGE — EDGE TO EDGE LEFT
-    =============================================== */
+    /* ======================================================
+       IMAGE LEFT
+    ====================================================== */
 
     .management-image{
 
@@ -904,9 +970,9 @@
     }
 
 
-    /* ==============================================
+    /* ======================================================
        CONTENT RIGHT
-    =============================================== */
+    ====================================================== */
 
     .management-content{
 
@@ -991,34 +1057,6 @@
     }
 
 
-    #management-team{
-
-        padding:65px 15px;
-
-    }
-
-
-    #management-team .section-heading{
-
-        margin-bottom:35px;
-
-    }
-
-
-    #management-team .section-heading h2{
-
-        font-size:1.8rem;
-
-    }
-
-
-    #management-team .section-heading p{
-
-        font-size:.85rem;
-
-    }
-
-
     #team-values{
 
         padding:65px 15px;
@@ -1044,18 +1082,28 @@
 
 /* ==========================================================
    SMALL MOBILE
-   EDGE-TO-EDGE
+   CARD STILL EDGE-TO-EDGE
 ========================================================== */
 
 @media (max-width:400px){
 
     .management-card{
 
+        width:100% !important;
+
         grid-template-columns:
             90px
             minmax(0,1fr) !important;
 
         padding:0 !important;
+
+        margin:0;
+
+        border-left:0;
+
+        border-right:0;
+
+        border-radius:0;
 
     }
 
@@ -1137,11 +1185,21 @@
 
     .management-card{
 
+        width:100% !important;
+
         grid-template-columns:
             78px
             minmax(0,1fr) !important;
 
         padding:0 !important;
+
+        margin:0;
+
+        border-left:0;
+
+        border-right:0;
+
+        border-radius:0;
 
     }
 
