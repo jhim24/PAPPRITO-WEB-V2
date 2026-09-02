@@ -270,31 +270,37 @@
 
     /* ======================================================
        SECTION ITSELF
-       NO LEFT/RIGHT SPACE
+       TRUE FULL WIDTH
     ====================================================== */
 
     #facebook-section{
 
-        width:100%;
+        width:100vw !important;
 
-        margin:0;
+        max-width:100vw !important;
+
+        margin-left:calc(50% - 50vw) !important;
+
+        margin-right:calc(50% - 50vw) !important;
 
         padding-top:65px;
 
         padding-bottom:65px;
 
-        padding-left:0;
+        padding-left:0 !important;
 
-        padding-right:0;
+        padding-right:0 !important;
 
         box-sizing:border-box;
+
+        overflow:hidden;
 
     }
 
 
     /* ======================================================
-       HEADING
-       KEEP HEADING READABLE
+       SECTION CONTAINER
+       HEADING ONLY
     ====================================================== */
 
     #facebook-section > .container{
@@ -314,11 +320,28 @@
     }
 
 
+    /* ======================================================
+       HEADING
+    ====================================================== */
+
     #facebook-section .section-heading{
 
         width:100%;
 
-        margin-bottom:35px;
+        max-width:none;
+
+        margin:0 auto 35px;
+
+        text-align:center;
+
+    }
+
+
+    #facebook-section .section-heading span{
+
+        font-size:.75rem;
+
+        letter-spacing:2px;
 
     }
 
@@ -327,6 +350,8 @@
 
         font-size:1.9rem;
 
+        line-height:1.25;
+
     }
 
 
@@ -334,39 +359,47 @@
 
         font-size:.85rem;
 
+        line-height:1.7;
+
     }
 
 
     /* ======================================================
        FACEBOOK WRAPPER
-       NO SIDE SPACE
+       FULL SCREEN
     ====================================================== */
 
     .facebook-wrapper{
 
-        width:100%;
+        width:100vw !important;
 
-        max-width:none;
+        max-width:100vw !important;
 
-        margin:0;
+        margin-left:calc(50% - 50vw) !important;
 
-        padding:0;
+        margin-right:calc(50% - 50vw) !important;
+
+        padding:0 !important;
 
         box-sizing:border-box;
+
+        overflow:hidden;
+
+        background:#fff;
 
     }
 
 
     /* ======================================================
        FACEBOOK CARD
-       FULL SCREEN WIDTH
+       EDGE-TO-EDGE
     ====================================================== */
 
     .facebook-card{
 
-        width:100%;
+        width:100vw !important;
 
-        max-width:none;
+        max-width:100vw !important;
 
         min-height:650px;
 
@@ -374,9 +407,15 @@
 
         padding:15px;
 
+        background:#fff;
+
         border-left:0;
 
         border-right:0;
+
+        border-top:1px solid #e8e8e8;
+
+        border-bottom:1px solid #e8e8e8;
 
         border-radius:0;
 
@@ -386,11 +425,15 @@
 
         overflow:hidden;
 
+        display:flex;
+
+        justify-content:center;
+
     }
 
 
     /* ======================================================
-       FACEBOOK EMBED
+       FACEBOOK PAGE
     ====================================================== */
 
     .facebook-card .fb-page{
@@ -404,7 +447,13 @@
     }
 
 
+    /* ======================================================
+       FACEBOOK WIDGET
+    ====================================================== */
+
     .facebook-card .fb_iframe_widget{
+
+        display:block !important;
 
         width:100% !important;
 
@@ -417,6 +466,8 @@
 
     .facebook-card .fb_iframe_widget span{
 
+        display:block !important;
+
         width:100% !important;
 
         max-width:none !important;
@@ -426,13 +477,21 @@
     }
 
 
+    /* ======================================================
+       FACEBOOK IFRAME
+    ====================================================== */
+
     .facebook-card iframe{
+
+        display:block !important;
 
         width:100% !important;
 
         max-width:none !important;
 
         margin:0;
+
+        padding:0;
 
         border:0 !important;
 
@@ -443,27 +502,39 @@
 
 /* ==========================================================
    SMALL MOBILE
-   FULL EDGE-TO-EDGE
+   TRUE EDGE-TO-EDGE
 ========================================================== */
 
 @media (max-width:480px){
 
     #facebook-section{
 
-        width:100%;
+        width:100vw !important;
+
+        max-width:100vw !important;
+
+        margin-left:calc(50% - 50vw) !important;
+
+        margin-right:calc(50% - 50vw) !important;
 
         padding-top:55px;
 
         padding-bottom:55px;
 
-        padding-left:0;
+        padding-left:0 !important;
 
-        padding-right:0;
+        padding-right:0 !important;
 
     }
 
 
     #facebook-section > .container{
+
+        width:100%;
+
+        max-width:none;
+
+        margin:0;
 
         padding-left:15px;
 
@@ -474,7 +545,9 @@
 
     #facebook-section .section-heading{
 
-        margin-bottom:30px;
+        width:100%;
+
+        margin:0 auto 30px;
 
     }
 
@@ -505,23 +578,33 @@
 
 
     /* ======================================================
-       FACEBOOK CARD — EDGE TO EDGE
+       FACEBOOK WRAPPER
     ====================================================== */
 
     .facebook-wrapper{
 
-        width:100%;
+        width:100vw !important;
 
-        margin:0;
+        max-width:100vw !important;
 
-        padding:0;
+        margin-left:calc(50% - 50vw) !important;
+
+        margin-right:calc(50% - 50vw) !important;
+
+        padding:0 !important;
 
     }
 
 
+    /* ======================================================
+       FACEBOOK CARD
+    ====================================================== */
+
     .facebook-card{
 
-        width:100%;
+        width:100vw !important;
+
+        max-width:100vw !important;
 
         min-height:620px;
 
@@ -537,12 +620,20 @@
 
         box-shadow:none;
 
+        overflow:hidden;
+
     }
 
+
+    /* ======================================================
+       FACEBOOK PAGE
+    ====================================================== */
 
     .facebook-card .fb-page{
 
         width:100% !important;
+
+        max-width:none !important;
 
     }
 
@@ -551,6 +642,8 @@
 
         width:100% !important;
 
+        max-width:none !important;
+
     }
 
 
@@ -558,12 +651,20 @@
 
         width:100% !important;
 
+        max-width:none !important;
+
     }
 
 
     .facebook-card iframe{
 
         width:100% !important;
+
+        max-width:none !important;
+
+        margin:0 !important;
+
+        padding:0 !important;
 
     }
 
@@ -577,6 +678,14 @@
 @media (max-width:340px){
 
     #facebook-section{
+
+        width:100vw !important;
+
+        max-width:100vw !important;
+
+        margin-left:calc(50% - 50vw) !important;
+
+        margin-right:calc(50% - 50vw) !important;
 
         padding-top:50px;
 
@@ -593,6 +702,10 @@
 
 
     .facebook-card{
+
+        width:100vw !important;
+
+        max-width:100vw !important;
 
         min-height:600px;
 
