@@ -1,7 +1,7 @@
 /* ==========================================================
-   PAPPRITO WEB V5
+   PAPPRITO WEB V3
    File        : facebook.css
-   Description : Facebook Embed Section
+   Description : Facebook Section
 ========================================================== */
 
 
@@ -13,9 +13,32 @@
 
     width:100%;
 
+    margin:0;
+
     padding:90px 20px;
 
     background:#f8f9fb;
+
+    box-sizing:border-box;
+
+}
+
+
+/* ==========================================================
+   SECTION CONTAINER
+========================================================== */
+
+#facebook-section > .container{
+
+    width:100%;
+
+    max-width:1150px;
+
+    margin:0 auto;
+
+    padding:0;
+
+    box-sizing:border-box;
 
 }
 
@@ -23,15 +46,6 @@
 /* ==========================================================
    SECTION HEADING
 ========================================================== */
-
-#facebook-section .container{
-
-    max-width:1150px;
-
-    margin:0 auto;
-
-}
-
 
 #facebook-section .section-heading{
 
@@ -107,6 +121,10 @@
 
     margin:0 auto;
 
+    padding:0;
+
+    box-sizing:border-box;
+
 }
 
 
@@ -119,6 +137,8 @@
     width:100%;
 
     min-height:650px;
+
+    margin:0;
 
     padding:30px;
 
@@ -134,6 +154,8 @@
 
     overflow:hidden;
 
+    box-sizing:border-box;
+
     display:flex;
 
     justify-content:center;
@@ -142,37 +164,22 @@
 
 
 /* ==========================================================
-   FACEBOOK EMBED CONTAINER
+   FACEBOOK PAGE
 ========================================================== */
 
 .facebook-card .fb-page{
-
-    width:100%;
-
-    max-width:100%;
-
-}
-
-
-/* ==========================================================
-   FACEBOOK IFRAME
-========================================================== */
-
-.facebook-card iframe{
-
-    display:block;
 
     width:100% !important;
 
     max-width:100% !important;
 
-    border:0 !important;
+    margin:0 auto;
 
 }
 
 
 /* ==========================================================
-   FACEBOOK PLUGIN RESPONSIVE
+   FACEBOOK WIDGET
 ========================================================== */
 
 .facebook-card .fb_iframe_widget{
@@ -180,6 +187,8 @@
     display:block !important;
 
     width:100% !important;
+
+    max-width:100% !important;
 
 }
 
@@ -195,15 +204,21 @@
 }
 
 
-.facebook-card .fb_iframe_widget iframe{
+.facebook-card iframe{
+
+    display:block !important;
 
     width:100% !important;
+
+    max-width:100% !important;
+
+    border:0 !important;
 
 }
 
 
 /* ==========================================================
-   FACEBOOK BLOCKQUOTE
+   BLOCKQUOTE
 ========================================================== */
 
 .facebook-card blockquote{
@@ -248,12 +263,21 @@
 
 /* ==========================================================
    MOBILE
-   EDGE-TO-EDGE
+   FACEBOOK SECTION EDGE-TO-EDGE
 ========================================================== */
 
 @media (max-width:768px){
 
+    /* ======================================================
+       SECTION ITSELF
+       NO LEFT/RIGHT SPACE
+    ====================================================== */
+
     #facebook-section{
+
+        width:100%;
+
+        margin:0;
 
         padding-top:65px;
 
@@ -263,11 +287,14 @@
 
         padding-right:0;
 
+        box-sizing:border-box;
+
     }
 
 
     /* ======================================================
-       KEEP HEADING WITH SMALL SIDE SPACE
+       HEADING
+       KEEP HEADING READABLE
     ====================================================== */
 
     #facebook-section > .container{
@@ -278,12 +305,18 @@
 
         margin:0;
 
-        padding:0 15px;
+        padding-left:15px;
+
+        padding-right:15px;
+
+        box-sizing:border-box;
 
     }
 
 
     #facebook-section .section-heading{
+
+        width:100%;
 
         margin-bottom:35px;
 
@@ -306,7 +339,7 @@
 
     /* ======================================================
        FACEBOOK WRAPPER
-       FULL SCREEN WIDTH
+       NO SIDE SPACE
     ====================================================== */
 
     .facebook-wrapper{
@@ -319,17 +352,21 @@
 
         padding:0;
 
+        box-sizing:border-box;
+
     }
 
 
     /* ======================================================
        FACEBOOK CARD
-       EDGE-TO-EDGE
+       FULL SCREEN WIDTH
     ====================================================== */
 
     .facebook-card{
 
         width:100%;
+
+        max-width:none;
 
         min-height:650px;
 
@@ -344,6 +381,8 @@
         border-radius:0;
 
         box-shadow:none;
+
+        box-sizing:border-box;
 
         overflow:hidden;
 
@@ -360,6 +399,8 @@
 
         max-width:none !important;
 
+        margin:0;
+
     }
 
 
@@ -368,6 +409,8 @@
         width:100% !important;
 
         max-width:none !important;
+
+        margin:0;
 
     }
 
@@ -378,6 +421,8 @@
 
         max-width:none !important;
 
+        margin:0;
+
     }
 
 
@@ -387,6 +432,10 @@
 
         max-width:none !important;
 
+        margin:0;
+
+        border:0 !important;
+
     }
 
 }
@@ -394,15 +443,22 @@
 
 /* ==========================================================
    SMALL MOBILE
+   FULL EDGE-TO-EDGE
 ========================================================== */
 
 @media (max-width:480px){
 
     #facebook-section{
 
+        width:100%;
+
         padding-top:55px;
 
         padding-bottom:55px;
+
+        padding-left:0;
+
+        padding-right:0;
 
     }
 
@@ -449,9 +505,19 @@
 
 
     /* ======================================================
-       FACEBOOK CARD
-       FULL WIDTH
+       FACEBOOK CARD — EDGE TO EDGE
     ====================================================== */
+
+    .facebook-wrapper{
+
+        width:100%;
+
+        margin:0;
+
+        padding:0;
+
+    }
+
 
     .facebook-card{
 
@@ -459,9 +525,17 @@
 
         min-height:620px;
 
+        margin:0;
+
         padding:10px;
 
+        border-left:0;
+
+        border-right:0;
+
         border-radius:0;
+
+        box-shadow:none;
 
     }
 
@@ -502,11 +576,11 @@
 
 @media (max-width:340px){
 
-    .facebook-card{
+    #facebook-section{
 
-        min-height:600px;
+        padding-top:50px;
 
-        padding:8px;
+        padding-bottom:50px;
 
     }
 
@@ -514,6 +588,15 @@
     #facebook-section .section-heading h2{
 
         font-size:1.55rem;
+
+    }
+
+
+    .facebook-card{
+
+        min-height:600px;
+
+        padding:8px;
 
     }
 
