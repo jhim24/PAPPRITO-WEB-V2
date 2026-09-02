@@ -25,7 +25,7 @@
 
 
 /* ==========================================================
-   SECTION CONTAINER
+   SECTION HEADING CONTAINER
 ========================================================== */
 
 #facebook-section > .container{
@@ -111,7 +111,6 @@
 
 /* ==========================================================
    FACEBOOK WRAPPER
-   MATCHES index.html STRUCTURE
 ========================================================== */
 
 #facebook-section .facebook-wrapper{
@@ -141,7 +140,7 @@
 
     margin:0;
 
-    padding:30px;
+    padding:0;
 
     background:#fff;
 
@@ -174,7 +173,9 @@
 
     max-width:100% !important;
 
-    margin:0 auto;
+    margin:0;
+
+    padding:0;
 
 }
 
@@ -191,7 +192,9 @@
 
     max-width:100% !important;
 
-    margin:0;
+    margin:0 !important;
+
+    padding:0 !important;
 
 }
 
@@ -204,10 +207,16 @@
 
     max-width:100% !important;
 
-    margin:0;
+    margin:0 !important;
+
+    padding:0 !important;
 
 }
 
+
+/* ==========================================================
+   FACEBOOK IFRAME
+========================================================== */
 
 #facebook-section .facebook-card iframe{
 
@@ -217,9 +226,15 @@
 
     max-width:100% !important;
 
+    height:650px !important;
+
+    margin:0 !important;
+
+    padding:0 !important;
+
     border:0 !important;
 
-    margin:0;
+    overflow:hidden;
 
 }
 
@@ -231,6 +246,8 @@
 #facebook-section .facebook-card blockquote{
 
     margin:0;
+
+    padding:0;
 
 }
 
@@ -259,9 +276,14 @@
 
         min-height:600px;
 
-        padding:25px;
-
         border-radius:18px;
+
+    }
+
+
+    #facebook-section .facebook-card iframe{
+
+        height:650px !important;
 
     }
 
@@ -270,7 +292,7 @@
 
 /* ==========================================================
    MOBILE
-   FACEBOOK CARD EDGE-TO-EDGE
+   FACEBOOK FEED EDGE-TO-EDGE
 ========================================================== */
 
 @media (max-width:768px){
@@ -305,8 +327,8 @@
 
 
     /* ======================================================
-       HEADING
-       MAY SIDE PADDING PARA HINDI DIDIKIT
+       HEADING CONTAINER
+       HEADING RETAINS SIDE SPACE
     ====================================================== */
 
     #facebook-section > .container{
@@ -326,6 +348,10 @@
     }
 
 
+    /* ======================================================
+       HEADING
+    ====================================================== */
+
     #facebook-section .section-heading{
 
         width:100%;
@@ -339,9 +365,20 @@
     }
 
 
+    #facebook-section .section-heading span{
+
+        font-size:.75rem;
+
+        letter-spacing:2px;
+
+    }
+
+
     #facebook-section .section-heading h2{
 
         font-size:1.9rem;
+
+        line-height:1.25;
 
     }
 
@@ -357,7 +394,7 @@
 
     /* ======================================================
        FACEBOOK WRAPPER
-       FULL WIDTH
+       TRUE FULL WIDTH
     ====================================================== */
 
     #facebook-section .facebook-wrapper{
@@ -376,12 +413,14 @@
 
         overflow:hidden;
 
+        background:#fff;
+
     }
 
 
     /* ======================================================
        FACEBOOK CARD
-       FULL EDGE-TO-EDGE
+       NO SIDE GAP
     ====================================================== */
 
     #facebook-section .facebook-card{
@@ -392,27 +431,29 @@
 
         min-height:650px;
 
-        margin:0;
+        margin:0 !important;
 
-        padding:15px;
+        padding:0 !important;
 
         background:#fff;
 
-        border-left:0;
+        border-left:0 !important;
 
-        border-right:0;
+        border-right:0 !important;
 
-        border-radius:0;
+        border-top:1px solid #e8e8e8;
 
-        box-shadow:none;
+        border-bottom:1px solid #e8e8e8;
+
+        border-radius:0 !important;
+
+        box-shadow:none !important;
 
         box-sizing:border-box;
 
         overflow:hidden;
 
-        display:flex;
-
-        justify-content:center;
+        display:block;
 
     }
 
@@ -423,11 +464,15 @@
 
     #facebook-section .facebook-card .fb-page{
 
+        display:block !important;
+
         width:100% !important;
 
         max-width:none !important;
 
-        margin:0;
+        margin:0 !important;
+
+        padding:0 !important;
 
     }
 
@@ -444,7 +489,9 @@
 
         max-width:none !important;
 
-        margin:0;
+        margin:0 !important;
+
+        padding:0 !important;
 
     }
 
@@ -457,7 +504,9 @@
 
         max-width:none !important;
 
-        margin:0;
+        margin:0 !important;
+
+        padding:0 !important;
 
     }
 
@@ -474,6 +523,8 @@
 
         max-width:none !important;
 
+        height:700px !important;
+
         margin:0 !important;
 
         padding:0 !important;
@@ -487,6 +538,7 @@
 
 /* ==========================================================
    SMALL MOBILE
+   FULL EDGE-TO-EDGE
 ========================================================== */
 
 @media (max-width:480px){
@@ -509,10 +561,14 @@
 
         padding-right:0 !important;
 
+        overflow:hidden;
+
     }
 
 
-    /* HEADING */
+    /* ======================================================
+       HEADING
+    ====================================================== */
 
     #facebook-section > .container{
 
@@ -531,7 +587,9 @@
 
     #facebook-section .section-heading{
 
-        margin-bottom:30px;
+        width:100%;
+
+        margin:0 auto 30px;
 
     }
 
@@ -549,6 +607,8 @@
 
         font-size:1.7rem;
 
+        line-height:1.25;
+
     }
 
 
@@ -561,7 +621,9 @@
     }
 
 
-    /* FACEBOOK WRAPPER */
+    /* ======================================================
+       FACEBOOK WRAPPER
+    ====================================================== */
 
     #facebook-section .facebook-wrapper{
 
@@ -573,12 +635,16 @@
 
         margin-right:calc(50% - 50vw) !important;
 
+        margin-top:0;
+
         padding:0 !important;
 
     }
 
 
-    /* FACEBOOK CARD */
+    /* ======================================================
+       FACEBOOK CARD
+    ====================================================== */
 
     #facebook-section .facebook-card{
 
@@ -588,20 +654,26 @@
 
         min-height:620px;
 
-        margin:0;
+        margin:0 !important;
 
-        padding:10px;
+        padding:0 !important;
 
-        border-left:0;
+        border-left:0 !important;
 
-        border-right:0;
+        border-right:0 !important;
 
-        border-radius:0;
+        border-radius:0 !important;
 
-        box-shadow:none;
+        box-shadow:none !important;
+
+        overflow:hidden;
 
     }
 
+
+    /* ======================================================
+       FACEBOOK PAGE
+    ====================================================== */
 
     #facebook-section .facebook-card .fb-page{
 
@@ -609,14 +681,26 @@
 
         max-width:none !important;
 
+        margin:0 !important;
+
+        padding:0 !important;
+
     }
 
+
+    /* ======================================================
+       FACEBOOK WIDGET
+    ====================================================== */
 
     #facebook-section .facebook-card .fb_iframe_widget{
 
         width:100% !important;
 
         max-width:none !important;
+
+        margin:0 !important;
+
+        padding:0 !important;
 
     }
 
@@ -627,8 +711,16 @@
 
         max-width:none !important;
 
+        margin:0 !important;
+
+        padding:0 !important;
+
     }
 
+
+    /* ======================================================
+       FACEBOOK IFRAME
+    ====================================================== */
 
     #facebook-section .facebook-card iframe{
 
@@ -636,11 +728,15 @@
 
         max-width:none !important;
 
+        height:700px !important;
+
         margin:0 !important;
 
         padding:0 !important;
 
         border:0 !important;
+
+        display:block !important;
 
     }
 
@@ -685,7 +781,18 @@
 
         min-height:600px;
 
-        padding:8px;
+        padding:0 !important;
+
+    }
+
+
+    #facebook-section .facebook-card iframe{
+
+        width:100vw !important;
+
+        max-width:100vw !important;
+
+        height:700px !important;
 
     }
 
